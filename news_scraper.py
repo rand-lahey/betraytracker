@@ -6,8 +6,8 @@ Tracks news mentions of a word family (default: betrayal / betray / betrayed /
 betrayer / betraying) in English-language news. No API key, no signup.
 
 Sources, in order of preference:
-  1. Google News RSS  — primary. Free, no key, and (being a reader feed) holds
-     up well on shared IPs such as GitHub Actions runners.
+  1. Google News RSS  — primary news source. Free, no key, and (being a reader
+     feed) holds up well on shared IPs such as GitHub Actions runners.
   2. GDELT DOC 2.0 API — automatic fallback if Google News is unavailable.
      GDELT is also free but its API rate-limits shared IPs aggressively, which
      is why it's the fallback rather than the primary.
@@ -30,6 +30,7 @@ Needs only Python 3 (standard library — no pip installs).
 
 import argparse
 import json
+import re
 import sys
 import time
 import urllib.error
@@ -74,6 +75,54 @@ def or_query(keywords):
 
 
 # ---------------------------------------------------------------------------
+# Heuristic: how many people did a headline say were involved?
+# Not exact — if a title cites a number tied to a group of people, we use it.
+# ---------------------------------------------------------------------------
+
+# Nouns that denote groups of people who could be betrayed / involved.
+_NOUNS = (r"people|persons?|victims?|employees?|workers?|staff|members?|fans?|"
+          r"customers?|users?|soldiers?|troops|residents?|families|women|men|"
+          r"children|kids|students?|players?|voters?|citizens?|patients?|"
+          r"investors?|depositors?|passengers?|survivors?|refugees?|migrants?|"
+          r"hostages?|prisoners?|inmates?|colleagues?|friends?|partners?|"
+          r"teammates?|allies|supporters?|followers?|shareholders?|nurses?|"
+          r"doctors?|officers?|veterans?|seniors?|tenants?|homeowners?")
+_WORD_NUM = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+             "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11,
+             "twelve": 12, "dozen": 12, "hundred": 100, "thousand": 1000}
+_SCALE = {"hundred": 100, "thousand": 1000, "million": 1_000_000,
+          "billion": 1_000_000_000}
+_DIGIT_RE = re.compile(r"(\d[\d,]*)\s+((?:\w+\s+){0,2}?)(" + _NOUNS + r")\b")
+_WORD_RE = re.compile(r"\b(" + "|".join(_WORD_NUM) + r")\s+((?:\w+\s+){0,2}?)("
+                      + _NOUNS + r")\b")
+
+
+def _apply_scale(num, gap):
+    for w, mult in _SCALE.items():
+        if re.search(r"\b" + w + r"\b", gap):
+            return num * mult
+    return num
+
+
+def extract_people_count(text):
+    """Best-effort head count from a headline. Returns 0 if none is mentioned."""
+    t = (text or "").lower()
+    best = 0
+    for m in _DIGIT_RE.finditer(t):
+        try:
+            num = int(m.group(1).replace(",", ""))
+        except ValueError:
+            continue
+        best = max(best, _apply_scale(num, m.group(2)))
+    for m in _WORD_RE.finditer(t):
+        best = max(best, _apply_scale(_WORD_NUM[m.group(1)], m.group(2)))
+    return best
+
+
+MAX_RECENT = 60  # how many articles to keep for the feed / head-count scan
+
+
+# ---------------------------------------------------------------------------
 # Source 1: Google News RSS  (primary)
 # ---------------------------------------------------------------------------
 
@@ -98,7 +147,7 @@ def gnews_fetch(keywords, timespan):
 
     items = root.findall(".//channel/item")
     recent = []
-    for it in items[:12]:
+    for it in items[:MAX_RECENT]:
         title = (it.findtext("title") or "").strip()
         link = (it.findtext("link") or "").strip()
         src_el = it.find("source")
@@ -112,6 +161,7 @@ def gnews_fetch(keywords, timespan):
             "title": title[:200],
             "url": link,
             "snippet": (source + (" · " + pub if pub else "")).strip()[:200],
+            "people": extract_people_count(title),
         })
     return len(items), recent, True
 
@@ -147,7 +197,8 @@ def gdelt_fetch(keywords, lang, timespan):
         "url": a.get("url") or "",
         "snippet": (a.get("domain") or "") +
                    ((" · " + a.get("seendate", "")) if a.get("seendate") else ""),
-    } for a in arts[:12]]
+        "people": extract_people_count(a.get("title")),
+    } for a in arts[:MAX_RECENT]]
     return len(arts), recent, True
 
 
@@ -191,12 +242,19 @@ def main():
 
     keyword_display = " / ".join(args.keywords)
     print(f"Scanning English news for '{keyword_display}' over the last {args.timespan} ...")
+
     count, recent, ok, source = fetch_news(args.keywords, args.lang, args.timespan)
     if not ok:
         print("  All news sources failed (likely rate limited) — keeping previous "
               "data, not recording a snapshot this run.", file=sys.stderr)
         sys.exit(1)
-    print(f"  News ({source}): {count} mentions, {len(recent)} recent examples")
+
+    hours = {"15min": 0.25, "1h": 1, "1d": 24, "1w": 168, "7d": 168}.get(args.timespan, 24)
+    per_hour = round(count / hours, 1)
+    betrayed_total = sum(r.get("people", 0) for r in recent)
+    articles_with_count = sum(1 for r in recent if r.get("people", 0) > 0)
+    print(f"  News ({source}): {count} mentions · ~{per_hour}/hr · est. {betrayed_total} "
+          f"people betrayed across {articles_with_count} stories citing a number")
 
     now = datetime.now(timezone.utc).isoformat()
     counts = {"reddit": 0, "twitter": 0, "news": count}
@@ -212,7 +270,12 @@ def main():
         "t": now, "counts": counts, "total": count,
         "platform_labels": PLATFORM_LABELS, "recent": recent,
         "source": source,
+        "per_hour": per_hour,
+        "betrayed_total": betrayed_total,
+        "articles_with_count": articles_with_count,
     }
+    state["history"][-1]["per_hour"] = per_hour
+    state["history"][-1]["betrayed_total"] = betrayed_total
     state["generated_at"] = now
     state.pop("sample", None)
 
