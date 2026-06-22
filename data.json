@@ -1,0 +1,485 @@
+{
+  "keyword": "betrayal / betray / betrayed / betrayer / betraying",
+  "history": [
+    {
+      "t": "2026-06-20T13:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 86
+      },
+      "total": 86
+    },
+    {
+      "t": "2026-06-20T14:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 91
+      },
+      "total": 91
+    },
+    {
+      "t": "2026-06-20T15:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 102
+      },
+      "total": 102
+    },
+    {
+      "t": "2026-06-20T16:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 89
+      },
+      "total": 89
+    },
+    {
+      "t": "2026-06-20T17:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 88
+      },
+      "total": 88
+    },
+    {
+      "t": "2026-06-20T18:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 87
+      },
+      "total": 87
+    },
+    {
+      "t": "2026-06-20T19:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 72
+      },
+      "total": 72
+    },
+    {
+      "t": "2026-06-20T20:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 75
+      },
+      "total": 75
+    },
+    {
+      "t": "2026-06-20T21:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 72
+      },
+      "total": 72
+    },
+    {
+      "t": "2026-06-20T22:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 70
+      },
+      "total": 70
+    },
+    {
+      "t": "2026-06-20T23:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 52
+      },
+      "total": 52
+    },
+    {
+      "t": "2026-06-21T00:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 51
+      },
+      "total": 51
+    },
+    {
+      "t": "2026-06-21T01:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 45
+      },
+      "total": 45
+    },
+    {
+      "t": "2026-06-21T02:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 54
+      },
+      "total": 54
+    },
+    {
+      "t": "2026-06-21T03:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 51
+      },
+      "total": 51
+    },
+    {
+      "t": "2026-06-21T04:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 42
+      },
+      "total": 42
+    },
+    {
+      "t": "2026-06-21T05:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 59
+      },
+      "total": 59
+    },
+    {
+      "t": "2026-06-21T06:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 62
+      },
+      "total": 62
+    },
+    {
+      "t": "2026-06-21T07:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 62
+      },
+      "total": 62
+    },
+    {
+      "t": "2026-06-21T08:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 66
+      },
+      "total": 66
+    },
+    {
+      "t": "2026-06-21T09:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 62
+      },
+      "total": 62
+    },
+    {
+      "t": "2026-06-21T10:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 64
+      },
+      "total": 64
+    },
+    {
+      "t": "2026-06-21T11:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 81
+      },
+      "total": 81
+    },
+    {
+      "t": "2026-06-21T12:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 73
+      },
+      "total": 73
+    },
+    {
+      "t": "2026-06-21T13:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 79
+      },
+      "total": 79
+    },
+    {
+      "t": "2026-06-21T14:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 83
+      },
+      "total": 83
+    },
+    {
+      "t": "2026-06-21T15:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 78
+      },
+      "total": 78
+    },
+    {
+      "t": "2026-06-21T16:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 89
+      },
+      "total": 89
+    },
+    {
+      "t": "2026-06-21T17:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 86
+      },
+      "total": 86
+    },
+    {
+      "t": "2026-06-21T18:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 93
+      },
+      "total": 93
+    },
+    {
+      "t": "2026-06-21T19:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 80
+      },
+      "total": 80
+    },
+    {
+      "t": "2026-06-21T20:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 78
+      },
+      "total": 78
+    },
+    {
+      "t": "2026-06-21T21:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 111
+      },
+      "total": 111
+    },
+    {
+      "t": "2026-06-21T22:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 108
+      },
+      "total": 108
+    },
+    {
+      "t": "2026-06-21T23:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 93
+      },
+      "total": 93
+    },
+    {
+      "t": "2026-06-22T00:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 82
+      },
+      "total": 82
+    },
+    {
+      "t": "2026-06-22T01:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 95
+      },
+      "total": 95
+    },
+    {
+      "t": "2026-06-22T02:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 57
+      },
+      "total": 57
+    },
+    {
+      "t": "2026-06-22T03:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 54
+      },
+      "total": 54
+    },
+    {
+      "t": "2026-06-22T04:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 52
+      },
+      "total": 52
+    },
+    {
+      "t": "2026-06-22T05:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 48
+      },
+      "total": 48
+    },
+    {
+      "t": "2026-06-22T06:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 50
+      },
+      "total": 50
+    },
+    {
+      "t": "2026-06-22T07:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 55
+      },
+      "total": 55
+    },
+    {
+      "t": "2026-06-22T08:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 56
+      },
+      "total": 56
+    },
+    {
+      "t": "2026-06-22T09:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 75
+      },
+      "total": 75
+    },
+    {
+      "t": "2026-06-22T10:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 73
+      },
+      "total": 73
+    },
+    {
+      "t": "2026-06-22T11:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 88
+      },
+      "total": 88
+    },
+    {
+      "t": "2026-06-22T12:50:27.243552+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 81
+      },
+      "total": 81
+    }
+  ],
+  "latest": {
+    "t": "2026-06-22T12:50:27.243552+00:00",
+    "counts": {
+      "reddit": 0,
+      "twitter": 0,
+      "news": 81
+    },
+    "total": 81,
+    "platform_labels": {
+      "reddit": "Reddit",
+      "twitter": "X / Twitter",
+      "news": "News"
+    },
+    "recent": [
+      {
+        "platform": "News",
+        "title": "Lawmakers decry 'betrayal' of voters over budget reversal",
+        "url": "https://news.example.com/",
+        "snippet": "reuters.com \u00b7 20260622T120000Z"
+      },
+      {
+        "platform": "News",
+        "title": "Fans say the trade betrayed a decade of loyalty",
+        "url": "https://news.example.com/",
+        "snippet": "espn.com \u00b7 20260622T114500Z"
+      },
+      {
+        "platform": "News",
+        "title": "Whistleblower: 'I was betrayed by the people I trusted'",
+        "url": "https://news.example.com/",
+        "snippet": "bbc.com \u00b7 20260622T113000Z"
+      },
+      {
+        "platform": "News",
+        "title": "Critics call finale a betrayal of the original story",
+        "url": "https://news.example.com/",
+        "snippet": "variety.com \u00b7 20260622T111500Z"
+      },
+      {
+        "platform": "News",
+        "title": "Former ally branded a betrayer in leadership feud",
+        "url": "https://news.example.com/",
+        "snippet": "theguardian.com \u00b7 20260622T110000Z"
+      }
+    ]
+  },
+  "generated_at": "2026-06-22T12:50:27.243552+00:00",
+  "sample": true
+}

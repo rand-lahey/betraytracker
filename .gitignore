@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Local scratch
+.DS_Store
+
+# Note: data.js / data.json (the sample snapshot) ARE committed so the
+# dashboard renders for anyone who clones the repo. If you'd rather keep
+# live-scraped data out of git, uncomment the next two lines:
+# data.js
+# data.json

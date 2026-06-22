@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BetrayTracker — Live "betrayal" mention tracker</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<!-- data.js sets window.BETRAYAL_DATA so the page works over file:// with no server -->
+<script src="data.js" onerror="window.__DATA_JS_FAILED=true"></script>
+<style>
+  :root{
+    --bg:#0b0d12; --panel:#141821; --panel2:#1b212d; --line:#262d3a;
+    --text:#e8ebf2; --muted:#8b94a7; --accent:#e5484d; --accent2:#ff6b6b;
+    --reddit:#ff5a3c; --twitter:#4aa3ff; --news:#f0b429; --ok:#3fb950;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1200px 600px at 70% -10%,#1a1320,transparent),var(--bg);
+    color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;padding:28px 22px 60px;max-width:1100px;margin:0 auto}
+  header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:8px}
+  h1{font-size:26px;margin:0;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
+  .pulse{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);
+    animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(229,72,77,.6)}70%{box-shadow:0 0 0 12px rgba(229,72,77,0)}100%{box-shadow:0 0 0 0 rgba(229,72,77,0)}}
+  .sub{color:var(--muted);margin:4px 0 0;font-size:13px}
+  .controls{display:flex;gap:10px;align-items:center}
+  button{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;
+    padding:8px 14px;font-size:13px;cursor:pointer;transition:.15s}
+  button:hover{border-color:var(--accent);color:#fff}
+  .badge{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:4px 10px}
+  .grid{display:grid;gap:16px;margin-top:22px}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .stat .n{font-size:34px;font-weight:700;letter-spacing:-1px;line-height:1}
+  .stat .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+  .dot{width:9px;height:9px;border-radius:50%}
+  .stat .d{font-size:12px;margin-top:8px}
+  .up{color:var(--accent2)} .down{color:var(--ok)}
+  .total .n{font-size:44px;color:var(--accent2)}
+  .chart-wrap{position:relative;height:340px}
+  .two{grid-template-columns:1.4fr 1fr}
+  @media(max-width:860px){.two{grid-template-columns:1fr}}
+  h2{font-size:15px;margin:0 0 14px;font-weight:600}
+  .feed{max-height:340px;overflow:auto;margin:-4px -6px 0;padding:0 6px}
+  .mention{padding:11px 0;border-bottom:1px solid var(--line)}
+  .mention:last-child{border-bottom:none}
+  .mention .top{display:flex;gap:8px;align-items:center;margin-bottom:3px}
+  .tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em}
+  .tag.reddit{background:rgba(255,90,60,.15);color:var(--reddit)}
+  .tag.twitter{background:rgba(74,163,255,.15);color:var(--twitter)}
+  .tag.news{background:rgba(240,180,41,.15);color:var(--news)}
+  .mention a{color:var(--text);text-decoration:none;font-weight:500;font-size:14px}
+  .mention a:hover{color:var(--accent2)}
+  .mention p{margin:3px 0 0;color:var(--muted);font-size:12.5px}
+  .notice{background:rgba(240,180,41,.08);border:1px solid rgba(240,180,41,.3);color:#f0c869;
+    border-radius:10px;padding:12px 16px;font-size:13px;margin-top:18px}
+  .notice code{background:rgba(0,0,0,.3);padding:1px 6px;border-radius:5px;font-size:12px}
+  footer{color:var(--muted);font-size:12px;margin-top:30px;text-align:center}
+  .kw{color:var(--accent2);font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1><span class="pulse"></span>BetrayTracker</h1>
+    <p class="sub">Live tracker for mentions of <span class="kw" id="kw">"betrayal"</span> across Reddit, X/Twitter &amp; News</p>
+  </div>
+  <div class="controls">
+    <span class="badge" id="updated">—</span>
+    <button id="refresh">↻ Refresh</button>
+  </div>
+</header>
+
+<div id="sampleNotice" class="notice" style="display:none">
+  Showing <b>sample data</b>. Run <code>python3 news_scraper.py</code> (free, no API key) to populate live news mentions — or wait for the scheduled scan. See <code>README.md</code>.
+</div>
+<div id="missingNotice" class="notice" style="display:none">
+  No data file found. For live auto-refresh, serve the folder with <code>python3 -m http.server</code> and open <code>http://localhost:8000</code>. Then run <code>python3 scraper.py</code> to collect data.
+</div>
+
+<div class="grid stats">
+  <div class="card stat total">
+    <div class="l"><span class="dot" style="background:var(--accent2)"></span>Total mentions</div>
+    <div class="n" id="s-total">—</div>
+    <div class="d" id="d-total">latest snapshot</div>
+  </div>
+  <div class="card stat">
+    <div class="l"><span class="dot" style="background:var(--reddit)"></span>Reddit</div>
+    <div class="n" id="s-reddit">—</div>
+    <div class="d" id="d-reddit"></div>
+  </div>
+  <div class="card stat">
+    <div class="l"><span class="dot" style="background:var(--twitter)"></span>X / Twitter</div>
+    <div class="n" id="s-twitter">—</div>
+    <div class="d" id="d-twitter"></div>
+  </div>
+  <div class="card stat">
+    <div class="l"><span class="dot" style="background:var(--news)"></span>News</div>
+    <div class="n" id="s-news">—</div>
+    <div class="d" id="d-news"></div>
+  </div>
+</div>
+
+<div class="grid two">
+  <div class="card">
+    <h2>Mentions over time</h2>
+    <div class="chart-wrap"><canvas id="chart"></canvas></div>
+  </div>
+  <div class="card">
+    <h2>Recent mentions</h2>
+    <div class="feed" id="feed"></div>
+  </div>
+</div>
+
+<footer>BetrayTracker · data via Bright Data · auto-refreshes every 60s when served over HTTP</footer>
+
+<script>
+const PLAT = {reddit:{c:'--reddit',l:'Reddit'},twitter:{c:'--twitter',l:'X / Twitter'},news:{c:'--news',l:'News'}};
+let chart;
+
+function cssv(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
+function fmt(n){return (n??0).toLocaleString();}
+function timeAgo(iso){
+  const s=(Date.now()-new Date(iso).getTime())/1000;
+  if(s<60)return 'just now';
+  if(s<3600)return Math.round(s/60)+'m ago';
+  if(s<86400)return Math.round(s/3600)+'h ago';
+  return Math.round(s/86400)+'d ago';
+}
+
+async function getData(){
+  // Try a fresh fetch (works when served over HTTP). Fall back to data.js.
+  try{
+    const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});
+    if(r.ok) return await r.json();
+  }catch(e){/* file:// — fall back */}
+  if(window.BETRAYAL_DATA) return window.BETRAYAL_DATA;
+  return null;
+}
+
+function render(d){
+  if(!d){document.getElementById('missingNotice').style.display='block';return;}
+  document.getElementById('sampleNotice').style.display = d.sample ? 'block':'none';
+  document.getElementById('kw').textContent = '"'+(d.keyword||'betrayal')+'"';
+
+  const L=d.latest||{};
+  const counts=L.counts||{};
+  document.getElementById('updated').textContent = L.t ? 'updated '+timeAgo(L.t) : '—';
+  document.getElementById('s-total').textContent = fmt(L.total);
+
+  // previous snapshot for deltas
+  const h=d.history||[];
+  const prev = h.length>1 ? h[h.length-2].counts : null;
+  ['reddit','twitter','news'].forEach(k=>{
+    document.getElementById('s-'+k).textContent = fmt(counts[k]);
+    const el=document.getElementById('d-'+k);
+    if(prev && prev[k]!=null){
+      const diff=counts[k]-prev[k];
+      const pct = prev[k] ? Math.round(diff/prev[k]*100) : 0;
+      el.innerHTML = diff>=0 ? `<span class="up">▲ ${fmt(diff)} (${pct}%)</span> vs prev`
+                             : `<span class="down">▼ ${fmt(-diff)} (${pct}%)</span> vs prev`;
+    } else el.textContent='';
+  });
+  if(prev){
+    const pt=Object.values(prev).reduce((a,b)=>a+b,0), diff=L.total-pt;
+    document.getElementById('d-total').innerHTML = diff>=0
+      ? `<span class="up">▲ ${fmt(diff)}</span> since last scan`
+      : `<span class="down">▼ ${fmt(-diff)}</span> since last scan`;
+  }
+
+  renderChart(h);
+  renderFeed(L.recent||[]);
+}
+
+function renderChart(h){
+  const labels=h.map(s=>{const dt=new Date(s.t);return dt.toLocaleString([], {month:'short',day:'numeric',hour:'2-digit'});});
+  const mk=(k)=>({label:PLAT[k].l,data:h.map(s=>s.counts[k]),borderColor:cssv(PLAT[k].c),
+    backgroundColor:cssv(PLAT[k].c)+'22',tension:.35,fill:true,pointRadius:0,borderWidth:2});
+  const datasets=['reddit','twitter','news'].map(mk);
+  const grid=cssv('--line'),muted=cssv('--muted');
+  if(chart){chart.data.labels=labels;chart.data.datasets.forEach((ds,i)=>ds.data=datasets[i].data);chart.update();return;}
+  chart=new Chart(document.getElementById('chart'),{
+    type:'line',data:{labels,datasets},
+    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+      plugins:{legend:{labels:{color:muted,usePointStyle:true,boxWidth:8}},
+        tooltip:{backgroundColor:'#11151c',borderColor:grid,borderWidth:1}},
+      scales:{x:{grid:{color:grid},ticks:{color:muted,maxTicksLimit:8,maxRotation:0}},
+              y:{grid:{color:grid},ticks:{color:muted},beginAtZero:true}}}
+  });
+}
+
+function renderFeed(items){
+  const f=document.getElementById('feed');
+  if(!items.length){f.innerHTML='<p style="color:var(--muted)">No recent mentions captured yet.</p>';return;}
+  const cls=p=>p.toLowerCase().includes('reddit')?'reddit':(p.toLowerCase().includes('news')?'news':'twitter');
+  f.innerHTML=items.map(m=>`
+    <div class="mention">
+      <div class="top"><span class="tag ${cls(m.platform||'')}">${m.platform||''}</span></div>
+      <a href="${m.url||'#'}" target="_blank" rel="noopener">${m.title||'(untitled)'}</a>
+      ${m.snippet?`<p>${m.snippet}</p>`:''}
+    </div>`).join('');
+}
+
+async function load(){render(await getData());}
+document.getElementById('refresh').addEventListener('click',load);
+load();
+setInterval(load,60000); // live auto-refresh (effective when served over HTTP)
+</script>
+</body>
+</html>
