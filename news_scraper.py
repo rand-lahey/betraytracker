@@ -314,8 +314,10 @@ def main():
         print("  All news sources failed (likely rate limited) — keeping previous "
               "data, not recording a snapshot this run.", file=sys.stderr)
         sys.exit(1)
-    betrayed_total = sum(r.get("people", 0) for r in recent)
-    articles_with_count = sum(1 for r in recent if r.get("people", 0) > 0)
+    # Every betrayal story counts as at least one person betrayed; if it cites
+    # a head count, use that number instead.
+    betrayed_total = sum(max(r.get("people", 0), 1) for r in recent)
+    articles_with_count = len(recent)
 
     # 2) Full 24-hour volume curve in one call, so the chart always shows 24h.
     timeline = gdelt_timeline(args.keywords, args.lang, "1d")

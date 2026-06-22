@@ -101,12 +101,12 @@
   <div class="card stat" data-metric="perhour" tabindex="0">
     <div class="l"><i class="ti ti-clock-hour-4 ic" style="color:var(--hour)" aria-hidden="true"></i>Betrayals / hour</div>
     <div class="n" id="s-perhour">—</div>
-    <div class="d">24-hour average · hover for chart</div>
+    <div class="d">24-hour average · click for chart</div>
   </div>
   <div class="card stat" data-metric="betrayed" tabindex="0">
     <div class="l"><i class="ti ti-users-group ic" style="color:var(--betrayed)" aria-hidden="true"></i>Total betrayed</div>
     <div class="n" id="s-betrayed">—</div>
-    <div class="d" id="d-betrayed">people cited · hover for chart</div>
+    <div class="d" id="d-betrayed">people · click for chart</div>
   </div>
   <div class="card stat gauge-card">
     <div class="l"><span class="dot" id="gauge-dot" style="background:var(--withnum)"></span>Betrayometer</div>
@@ -148,18 +148,24 @@ function timeAgo(iso){
 }
 
 // Betrayometer: needle = current rate's percentile vs the last 24h of snapshots.
-function updateGauge(history, current){
+function updateGauge(history, currentHint){
   const cutoff = Date.now() - 24*3600*1000;
   const vals = (history||[])
     .filter(s=>new Date(s.t).getTime()>=cutoff)
     .map(s=> s.per_hour!=null ? s.per_hour : (s.total||0)/24);
   let f;
   if(vals.length>=4){
-    const below = vals.filter(v=>v<current).length;
-    const equal = vals.filter(v=>v===current).length;
-    f = (below + 0.5*equal) / vals.length;       // percentile rank 0..1
+    // GDELT's freshest 15-min buckets are still being indexed, so they read
+    // artificially low. Trim that tail so it doesn't drag "current" down.
+    const trimmed = vals.length>8 ? vals.slice(0,-2) : vals;
+    // "current" = the recent peak rate (last ~hour), robust to indexing lag.
+    const recent = trimmed.slice(-4);
+    const current = recent.length ? Math.max(...recent) : trimmed[trimmed.length-1];
+    const below = trimmed.filter(v=>v<current).length;
+    const equal = trimmed.filter(v=>v===current).length;
+    f = (below + 0.5*equal) / trimmed.length;     // percentile rank 0..1
   }else{
-    f = Math.max(0,Math.min(1,(current||0)/6));   // not enough history yet → rough scale
+    f = Math.max(0,Math.min(1,(currentHint||0)/6)); // not enough history yet
   }
   f = Math.max(0,Math.min(1,f));
 
@@ -209,7 +215,7 @@ function render(d){
     (L.betrayed_total!=null) ? fmt(L.betrayed_total) : '—';
   const awc = L.articles_with_count;
   document.getElementById('d-betrayed').textContent =
-    (awc!=null) ? `est. from ${awc} stor${awc===1?'y':'ies'}` : 'people cited · hover for chart';
+    (awc!=null) ? `est. from ${awc} stor${awc===1?'y':'ies'}` : 'people · click for chart';
 
   // delta on mentions vs previous snapshot
   if(h.length>1){
@@ -260,12 +266,13 @@ function drawChart(metric){
 
 function renderChart(h){curHistory=h; drawChart(curMetric);}
 
-// Hover a box → show its metric; leaving returns to the default (Mentions).
+// Click a box → make its metric the active chart; it stays until another click.
 document.querySelectorAll('.stat[data-metric]').forEach(box=>{
   const m=box.dataset.metric;
-  box.addEventListener('mouseenter',()=>drawChart(m));
-  box.addEventListener('focus',()=>drawChart(m));
-  box.addEventListener('mouseleave',()=>drawChart('total'));
+  box.addEventListener('click',()=>drawChart(m));
+  box.addEventListener('keydown',(e)=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();drawChart(m);}
+  });
 });
 
 function renderFeed(items){
