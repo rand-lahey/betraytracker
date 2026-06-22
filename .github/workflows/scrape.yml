@@ -2,16 +2,16 @@ name: Scrape betrayal news
 
 # Runs the Python scraper (Google News RSS + GDELT) on GitHub's runners, where
 # those free sources work — unlike Cloudflare's IPs, which they block/throttle.
-# Commits the resulting data.json to the repo. The Cloudflare Worker mirrors
-# that file and serves it, so commits here = fresh data on the live site.
 #
-# IMPORTANT: set Cloudflare Worker "Build watch paths" to EXCLUDE data.json /
-# data.js, so these frequent data commits don't trigger Worker rebuilds.
+# The result (data.json) is published to a dedicated **data** branch, NOT main.
+# This keeps `main` code-only so pushing code never conflicts with the frequent
+# data commits, and it means data commits never trigger Cloudflare rebuilds.
+# The Cloudflare Worker reads data.json from the `data` branch and serves it.
 
 on:
   schedule:
     - cron: "*/15 * * * *"   # every 15 min (GitHub may delay under load)
-  workflow_dispatch:          # allow manual runs from the Actions tab
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -24,7 +24,7 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repo
+      - name: Check out repo (main / code)
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -32,13 +32,23 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Seed previous data (for history continuity)
+        run: |
+          curl -fsSL "https://raw.githubusercontent.com/rand-lahey/betraytracker/data/data.json" \
+            -o data.json || echo "no previous data yet (first run)"
+
       - name: Run scraper (stdlib only, no pip installs)
         run: python3 news_scraper.py --timespan 1d
 
-      - name: Commit updated data
+      - name: Publish data.json to the data branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          cp data.json "$RUNNER_TEMP/data.json"
+          git checkout --orphan data-publish
+          git rm -rf --cached . >/dev/null 2>&1 || true
+          find . -maxdepth 1 ! -name . ! -name .git -exec rm -rf {} + 2>/dev/null || true
+          cp "$RUNNER_TEMP/data.json" data.json
           git add data.json
-          git diff --quiet --cached || git commit -m "Update betrayal data [skip ci]"
-          git push
+          git commit -m "Update betrayal data [skip ci]"
+          git push -f origin data-publish:data

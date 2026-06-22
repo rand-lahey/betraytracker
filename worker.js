@@ -18,7 +18,7 @@
  */
 
 const DATA_URL =
-  "https://raw.githubusercontent.com/rand-lahey/betraytracker/main/data.json";
+  "https://raw.githubusercontent.com/rand-lahey/betraytracker/data/data.json";
 
 async function fetchData() {
   try {

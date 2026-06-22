@@ -25,9 +25,12 @@ BetrayTracker/
 
 - **GitHub Action** (`scrape.yml`) runs every 15 min. It pulls up to ~100
   stories from Google News RSS plus GDELT's 24-hour volume curve, applies the
-  content blocklist, computes the metrics, and commits `data.json` to the repo.
-- **Worker** (`worker.js`) mirrors `data.json` from GitHub raw into KV every
-  10 min and serves it at `/data.json`; the page polls that every 60s.
+  content blocklist, computes the metrics, and publishes `data.json` to a
+  dedicated **`data`** branch (force-pushed, single commit). Keeping data off
+  `main` means pushing code never collides with data commits, and data commits
+  never trigger Worker rebuilds.
+- **Worker** (`worker.js`) mirrors `data.json` from the `data` branch into KV
+  every 10 min and serves it at `/data.json`; the page polls that every 60s.
 
 **Why split it this way?** Google News (503) and GDELT (429) block/throttle
 Cloudflare's shared server IPs, so a Worker can't scrape them — but they work
@@ -41,9 +44,9 @@ Worker just relays the file.
 2. **Deploy the Worker from the repo** — **Workers & Pages** → create a
    **Worker** connected to this GitHub repo. It must be a **Worker**, not a
    Pages project (Pages can't run cron).
-3. **Exclude data from builds** — Worker → **Settings → Build → Build watch
-   paths** → exclude `data.json` (and `data.js`). This stops the frequent data
-   commits from triggering Worker rebuilds.
+3. **Build branch** — make sure the Worker builds only from `main`. Because
+   data lives on the separate `data` branch, data commits never touch `main`,
+   so they can't trigger rebuilds. (No build-watch-path tweaks needed.)
 4. **Add the domain** — Worker → **Settings → Domains & Routes** → add
    `betrayals.ca` (and `www.betrayals.ca`). Cloudflare handles DNS + SSL.
 5. **Enable the Action** — the scraper runs automatically on its schedule once
