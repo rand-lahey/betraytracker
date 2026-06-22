@@ -17,7 +17,8 @@
  *   • BETRAYAL_KV  — KV namespace holding the latest computed state
  */
 
-const UA = "BetrayTracker/1.0 (+https://betrayals.ca)";
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
+  "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
 const KEYWORDS = ["betrayal", "betray", "betrayed", "betrayer", "betraying"];
 const PLATFORM_LABELS = { reddit: "Reddit", twitter: "X / Twitter", news: "News" };
 
@@ -73,7 +74,11 @@ async function fetchNews() {
     new URLSearchParams({ q, hl: "en-US", gl: "US", ceid: "US:en" });
   let xml;
   try {
-    const r = await fetch(url, { headers: { "User-Agent": UA } });
+    const r = await fetch(url, { headers: {
+      "User-Agent": UA,
+      "Accept": "application/rss+xml, application/xml, text/xml; q=0.9, */*; q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+    } });
     if (!r.ok) return null;
     xml = await r.text();
   } catch (e) { return null; }
@@ -102,7 +107,10 @@ async function gdeltTimeline() {
     new URLSearchParams({ query: q, mode: "timelinevolraw", format: "json", timespan: "1d" });
   let data;
   try {
-    const r = await fetch(url, { headers: { "User-Agent": UA } });
+    const r = await fetch(url, { headers: {
+      "User-Agent": UA,
+      "Accept": "application/json, */*; q=0.8",
+    } });
     if (!r.ok) return null;
     data = await r.json();
   } catch (e) { return null; }
@@ -167,6 +175,38 @@ export default {
   },
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    // Diagnostic: shows the raw HTTP result of each upstream fetch.
+    if (url.pathname === "/debug") {
+      const out = {};
+      try {
+        const u = "https://news.google.com/rss/search?" + new URLSearchParams(
+          { q: orQuery() + " when:1d", hl: "en-US", gl: "US", ceid: "US:en" });
+        const r = await fetch(u, { headers: { "User-Agent": UA, "Accept": "application/rss+xml,*/*" } });
+        const t = await r.text();
+        out.googleNews = { status: r.status, ok: r.ok, bytes: t.length,
+          items: (t.match(/<item>/g) || []).length, snippet: t.slice(0, 160) };
+      } catch (e) { out.googleNews = { error: String(e) }; }
+      try {
+        const u = "https://api.gdeltproject.org/api/v2/doc/doc?" + new URLSearchParams(
+          { query: orQuery() + " sourcelang:english", mode: "timelinevolraw", format: "json", timespan: "1d" });
+        const r = await fetch(u, { headers: { "User-Agent": UA } });
+        const t = await r.text();
+        out.gdelt = { status: r.status, ok: r.ok, bytes: t.length, snippet: t.slice(0, 160) };
+      } catch (e) { out.gdelt = { error: String(e) }; }
+      return new Response(JSON.stringify(out, null, 2),
+        { headers: { "content-type": "application/json" } });
+    }
+
+    // Force a rebuild now and report the result.
+    if (url.pathname === "/refresh") {
+      const st = await refresh(env);
+      return new Response(JSON.stringify(
+        { ok: true, total: st.latest.total, source: st.latest.source,
+          points: st.history.length }, null, 2),
+        { headers: { "content-type": "application/json" } });
+    }
+
     if (url.pathname === "/data.json") {
       let s = await env.BETRAYAL_KV.get("state");
       if (!s) s = JSON.stringify(await refresh(env)); // cold start: build on demand
