@@ -9,16 +9,25 @@
         "news": 59
       },
       "total": 59
+    },
+    {
+      "t": "2026-06-22T14:41:01.158481+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 58
+      },
+      "total": 58
     }
   ],
   "latest": {
-    "t": "2026-06-22T14:39:33.599237+00:00",
+    "t": "2026-06-22T14:41:01.158481+00:00",
     "counts": {
       "reddit": 0,
       "twitter": 0,
-      "news": 59
+      "news": 58
     },
-    "total": 59,
+    "total": 58,
     "platform_labels": {
       "reddit": "Reddit",
       "twitter": "X / Twitter",
@@ -100,5 +109,5 @@
     ],
     "source": "Google News"
   },
-  "generated_at": "2026-06-22T14:39:33.599237+00:00"
+  "generated_at": "2026-06-22T14:41:01.158481+00:00"
 }
