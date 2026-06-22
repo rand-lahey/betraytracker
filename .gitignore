@@ -13,3 +13,10 @@ __pycache__/
 # live-scraped data out of git, uncomment the next two lines:
 # data.js
 # data.json
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
