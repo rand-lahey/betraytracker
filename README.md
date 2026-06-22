@@ -17,13 +17,13 @@ BetrayTracker/
 
 | Scraper | Cost | Covers | Needs |
 |---|---|---|---|
-| `news_scraper.py` | **Free, no key** | News only (via GDELT) | `pip install requests` |
+| `news_scraper.py` | **Free, no key** | News only (via GDELT) | Python 3 only |
 | `scraper.py` | Paid infra | Reddit + X/Twitter + News | Bright Data API key |
 
-If you only need **news**, use the free one:
+If you only need **news**, use the free one (no dependencies to install — it
+uses Python's standard library):
 
 ```bash
-pip install requests
 python3 news_scraper.py
 ```
 
@@ -43,6 +43,26 @@ python3 news_scraper.py --timespan 1d         # counting window: 15min/1h/1d/1w
 
 Changing the tracked words or language automatically starts a fresh history
 (old counts aren't comparable to a new query).
+
+## Hosting it live on GitHub Pages
+
+The repo includes `.github/workflows/scrape.yml`, a GitHub Action that runs the
+free news scraper every 30 minutes **on GitHub's servers** and commits the
+updated data back to the repo. That keeps the GitHub Pages dashboard fresh even
+when your computer is off — no API key required.
+
+To turn it on after pushing the repo:
+
+1. **Settings → Pages** → set Source to "Deploy from a branch", branch `main`,
+   folder `/ (root)`. Your dashboard appears at
+   `https://USERNAME.github.io/BetrayTracker/`.
+2. **Settings → Actions → General** → under "Workflow permissions" select
+   **Read and write permissions** (so the Action can commit new data), then Save.
+3. **Actions** tab → open "Scrape betrayal mentions" → **Run workflow** to do a
+   first run immediately instead of waiting for the schedule.
+
+Note: GitHub disables scheduled Actions after ~60 days of no repo activity, and
+may delay scheduled runs slightly under load.
 
 ## Quick look
 
