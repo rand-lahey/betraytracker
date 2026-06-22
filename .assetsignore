@@ -1,0 +1,15 @@
+worker.js
+wrangler.jsonc
+wrangler.toml
+.git
+.github
+.gitignore
+.assetsignore
+*.py
+*.md
+__pycache__
+data.js
+data.json
+package.json
+package-lock.json
+node_modules

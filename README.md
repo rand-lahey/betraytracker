@@ -1,5 +1,39 @@
 # BetrayTracker
 
+A live dashboard that scans the news for the word **"betrayal"** (and betray /
+betrayed / betrayer / betraying) and shows a real-time counter, a 24-hour graph,
+a Betrayometer, and a feed of recent stories. Live at **betrayals.ca**.
+
+## How it runs (Cloudflare Worker)
+
+The live site is powered entirely by a **Cloudflare Worker** (`worker.js`) — no
+servers to manage, no git commits, no build limits:
+
+- `scheduled()` runs every 5 minutes on a Cloudflare cron. It fetches a full
+  24-hour volume curve from GDELT plus the latest stories from Google News,
+  computes the metrics, and stores the result in a KV namespace.
+- `fetch()` serves the dashboard (`index.html`) and answers `/data.json` from
+  KV. The page polls `/data.json` every 60s, so it's always current.
+
+### One-time deploy
+
+1. **Create a KV namespace.** Cloudflare dashboard → **Storage & Databases → KV
+   → Create namespace**, name it `betraytracker`. Copy the namespace **ID** and
+   paste it into `wrangler.jsonc` (replace `PASTE_YOUR_KV_NAMESPACE_ID_HERE`).
+2. **Deploy the Worker from the repo.** In **Workers & Pages**, create a
+   **Worker** connected to this GitHub repo (Workers Builds). Cloudflare reads
+   `wrangler.jsonc` and deploys with the assets, KV binding, and cron trigger.
+   (A plain Pages project can't do cron — it must be a Worker.)
+3. **Add the domain.** In the Worker → **Settings → Domains & Routes**, add
+   `betrayals.ca` (and `www.betrayals.ca`). Cloudflare manages the DNS + SSL.
+4. Visit `betrayals.ca` — first load builds the data on demand; after that the
+   cron keeps it fresh every 5 minutes.
+
+The old GitHub Action (`.github/workflows/scrape.yml`) is **disabled** — the
+Worker replaces it. The Python scrapers below are now optional / for local use.
+
+---
+
 A live dashboard that scans social media + news for mentions of the word
 **"betrayal"** and shows a real-time counter, a time-series graph, and a feed of
 recent mentions across **Reddit, X/Twitter, and News**.

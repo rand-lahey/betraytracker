@@ -1,13 +1,13 @@
-name: Scrape betrayal mentions
+name: Scrape betrayal mentions (DISABLED — Cloudflare Worker handles this now)
 
-# Runs the free GDELT news scraper on a schedule, commits the updated
-# data.js / data.json back to the repo, so the GitHub Pages dashboard
-# always shows fresh data — even when your computer is off.
+# The live site is now updated by the Cloudflare Worker (worker.js) on a cron,
+# which stores data in KV instead of committing to the repo. This workflow's
+# automatic schedule is therefore disabled so it stops creating commits (which
+# would trigger unnecessary Cloudflare rebuilds). It can still be run manually
+# from the Actions tab if you ever want to regenerate data.js/data.json locally.
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"    # every 5 minutes (GitHub's minimum); often delayed under load
-  workflow_dispatch:          # lets you trigger a run manually from the Actions tab
+  workflow_dispatch:          # manual only — no automatic schedule
 
 permissions:
   contents: write             # allow the workflow to push the updated data files
