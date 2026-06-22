@@ -67,53 +67,34 @@ function parseGdeltDate(s) {
 }
 function orQuery() { return KEYWORDS.length > 1 ? "(" + KEYWORDS.join(" OR ") + ")" : KEYWORDS[0]; }
 
-/* ---- Google News RSS: live feed + head counts ---- */
-async function fetchNews() {
-  const q = orQuery() + " when:1d";
-  const url = "https://news.google.com/rss/search?" +
-    new URLSearchParams({ q, hl: "en-US", gl: "US", ceid: "US:en" });
-  let xml;
-  try {
-    const r = await fetch(url, { headers: {
-      "User-Agent": UA,
-      "Accept": "application/rss+xml, application/xml, text/xml; q=0.9, */*; q=0.8",
-      "Accept-Language": "en-US,en;q=0.9",
-    } });
-    if (!r.ok) return null;
-    xml = await r.text();
-  } catch (e) { return null; }
-  const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((mm) => mm[1]);
-  const recent = [];
-  for (const it of items) {
-    const grab = (re) => { const m = it.match(re); return m ? decodeXml(stripCdata(m[1])).trim() : ""; };
-    let title = grab(/<title>([\s\S]*?)<\/title>/);
-    const link = grab(/<link>([\s\S]*?)<\/link>/);
-    const source = grab(/<source[^>]*>([\s\S]*?)<\/source>/);
-    const pub = grab(/<pubDate>([\s\S]*?)<\/pubDate>/);
-    if (source && title.endsWith(" - " + source)) title = title.slice(0, -(source.length + 3));
-    recent.push({
-      platform: "News", title: title.slice(0, 200), url: link,
-      snippet: (source + (pub ? " · " + pub : "")).slice(0, 200),
-      people: extractPeople(title),
-    });
+/* ---- GDELT helper (respects "1 request / 5s" with spacing + retry) ---- */
+const GDELT = "https://api.gdeltproject.org/api/v2/doc/doc";
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function gdeltGet(params, retries = 2) {
+  const url = GDELT + "?" + new URLSearchParams(params);
+  for (let i = 0; i < retries; i++) {
+    try {
+      const r = await fetch(url, { headers: { "User-Agent": UA } });
+      if (r.status === 429) { if (i < retries - 1) { await sleep(6000); continue; } return null; }
+      if (!r.ok) return null;
+      return await r.text();
+    } catch (e) {
+      if (i < retries - 1) { await sleep(3000); continue; }
+      return null;
+    }
   }
-  return { count: items.length, recent };
+  return null;
 }
 
-/* ---- GDELT: full 24-hour volume curve in one call ---- */
+/* ---- GDELT: full 24-hour volume curve (15-min buckets) ---- */
 async function gdeltTimeline() {
-  const q = orQuery() + " sourcelang:english";
-  const url = "https://api.gdeltproject.org/api/v2/doc/doc?" +
-    new URLSearchParams({ query: q, mode: "timelinevolraw", format: "json", timespan: "1d" });
-  let data;
-  try {
-    const r = await fetch(url, { headers: {
-      "User-Agent": UA,
-      "Accept": "application/json, */*; q=0.8",
-    } });
-    if (!r.ok) return null;
-    data = await r.json();
-  } catch (e) { return null; }
+  const txt = await gdeltGet({
+    query: orQuery() + " sourcelang:english",
+    mode: "timelinevolraw", format: "json", timespan: "1d",
+  });
+  if (!txt) return null;
+  let data; try { data = JSON.parse(txt); } catch (e) { return null; }
   const series = (data.timeline || [])[0];
   if (!series || !series.data || !series.data.length) return null;
   const vals = series.data.map((p) => Number(p.value) || 0);
@@ -125,10 +106,29 @@ async function gdeltTimeline() {
   }));
 }
 
-/* ---- assemble the full dashboard state ---- */
+/* ---- GDELT: recent articles for the feed + head-count ---- */
+async function gdeltArtlist() {
+  const txt = await gdeltGet({
+    query: orQuery() + " sourcelang:english",
+    mode: "artlist", maxrecords: 60, format: "json", timespan: "1d", sort: "datedesc",
+  });
+  if (!txt) return null;
+  let data; try { data = JSON.parse(txt); } catch (e) { return null; }
+  if (!("articles" in data)) return null;
+  return (data.articles || []).slice(0, 60).map((a) => ({
+    platform: "News",
+    title: (a.title || "").trim().slice(0, 200),
+    url: a.url || "",
+    snippet: ((a.domain || "") + (a.seendate ? " · " + a.seendate : "")).slice(0, 200),
+    people: extractPeople(a.title),
+  }));
+}
+
+/* ---- assemble the full dashboard state (GDELT only) ---- */
 async function buildState() {
-  const [news, timeline] = await Promise.all([fetchNews(), gdeltTimeline()]);
-  const recent = news ? news.recent : [];
+  const timeline = await gdeltTimeline();
+  await sleep(6000); // honour GDELT's "one request every 5 seconds"
+  const recent = (await gdeltArtlist()) || [];
   const betrayed_total = recent.reduce((a, r) => a + (r.people || 0), 0);
   const articles_with_count = recent.filter((r) => r.people > 0).length;
   const now = new Date().toISOString();
@@ -139,16 +139,23 @@ async function buildState() {
     total = timeline.reduce((a, p) => a + p.total, 0);
     per_hour = Math.round((total / 24) * 10) / 10;
     current_rate = timeline[timeline.length - 1].per_hour;
-    timeline[timeline.length - 1].betrayed_total = betrayed_total;
-    timeline[timeline.length - 1].articles_with_count = articles_with_count;
-    source = "GDELT 24h timeline + Google News";
-  } else {
-    total = news ? news.count : 0;
+    if (recent.length) {
+      timeline[timeline.length - 1].betrayed_total = betrayed_total;
+      timeline[timeline.length - 1].articles_with_count = articles_with_count;
+    }
+    source = "GDELT";
+  } else if (recent.length) {
+    total = recent.length;
     per_hour = Math.round((total / 24) * 10) / 10;
     current_rate = per_hour;
     history = [{ t: now, counts: { reddit: 0, twitter: 0, news: total }, total,
       per_hour, betrayed_total, articles_with_count }];
-    source = news ? "Google News" : "unavailable";
+    source = "GDELT (articles only)";
+  } else {
+    total = 0; per_hour = 0; current_rate = 0;
+    history = [{ t: now, counts: { reddit: 0, twitter: 0, news: 0 }, total: 0,
+      per_hour: 0, betrayed_total: 0, articles_with_count: 0 }];
+    source = "unavailable";
   }
 
   return {
@@ -176,24 +183,23 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Diagnostic: shows the raw HTTP result of each upstream fetch.
+    // Diagnostic: tests the two GDELT calls, spaced out so it doesn't
+    // trip GDELT's own "1 request / 5s" limit. (Don't spam this endpoint.)
     if (url.pathname === "/debug") {
       const out = {};
-      try {
-        const u = "https://news.google.com/rss/search?" + new URLSearchParams(
-          { q: orQuery() + " when:1d", hl: "en-US", gl: "US", ceid: "US:en" });
-        const r = await fetch(u, { headers: { "User-Agent": UA, "Accept": "application/rss+xml,*/*" } });
-        const t = await r.text();
-        out.googleNews = { status: r.status, ok: r.ok, bytes: t.length,
-          items: (t.match(/<item>/g) || []).length, snippet: t.slice(0, 160) };
-      } catch (e) { out.googleNews = { error: String(e) }; }
-      try {
-        const u = "https://api.gdeltproject.org/api/v2/doc/doc?" + new URLSearchParams(
-          { query: orQuery() + " sourcelang:english", mode: "timelinevolraw", format: "json", timespan: "1d" });
-        const r = await fetch(u, { headers: { "User-Agent": UA } });
-        const t = await r.text();
-        out.gdelt = { status: r.status, ok: r.ok, bytes: t.length, snippet: t.slice(0, 160) };
-      } catch (e) { out.gdelt = { error: String(e) }; }
+      const probe = async (params) => {
+        try {
+          const u = GDELT + "?" + new URLSearchParams(params);
+          const r = await fetch(u, { headers: { "User-Agent": UA } });
+          const t = await r.text();
+          return { status: r.status, ok: r.ok, bytes: t.length, snippet: t.slice(0, 140) };
+        } catch (e) { return { error: String(e) }; }
+      };
+      out.timeline = await probe({ query: orQuery() + " sourcelang:english",
+        mode: "timelinevolraw", format: "json", timespan: "1d" });
+      await sleep(6000);
+      out.artlist = await probe({ query: orQuery() + " sourcelang:english",
+        mode: "artlist", maxrecords: 5, format: "json", timespan: "1d", sort: "datedesc" });
       return new Response(JSON.stringify(out, null, 2),
         { headers: { "content-type": "application/json" } });
     }
