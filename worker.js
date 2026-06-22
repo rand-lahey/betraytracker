@@ -32,7 +32,9 @@ const NOUNS = "people|persons?|victims?|employees?|workers?|staff|members?|fans?
   "students?|players?|voters?|citizens?|patients?|investors?|depositors?|passengers?|" +
   "survivors?|refugees?|migrants?|hostages?|prisoners?|inmates?|colleagues?|friends?|" +
   "partners?|teammates?|allies|supporters?|followers?|shareholders?|nurses?|doctors?|" +
-  "officers?|veterans?|seniors?|tenants?|homeowners?";
+  "officers?|veterans?|seniors?|tenants?|homeowners?|officials?|executives?|directors?|" +
+  "lawmakers?|taxpayers?|locals|subscribers?|clients?|constituents?|generals?|recruits?|" +
+  "pensioners?|savers?|policyholders?|creditors?|landlords?|teachers?|villagers?|protesters?";
 const WORD_NUM = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7,
   eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, dozen: 12, hundred: 100,
   thousand: 1000 };
@@ -71,6 +73,23 @@ function parseGdeltDate(s) {
 }
 function orQuery() { return KEYWORDS.length > 1 ? "(" + KEYWORDS.join(" OR ") + ")" : KEYWORDS[0]; }
 
+/* ---- content filter: keep betrayal/violence news, drop sexual-violence /
+   child-abuse topics. Two layers:
+   1) QUERY_BLOCK is excluded in the GNews query itself (affects the count).
+   2) BLOCK_RE scrubs any sensitive article from the feed as a safety net.
+   (Kept compact: the GNews `q` value must stay under 200 characters.) ---- */
+const QUERY_BLOCK = ["rape", "sexual assault", "sexual abuse", "child abuse",
+  "molestation", "pedophile"];
+const BLOCK = ["rape", "raping", "rapist", "sexual assault", "sexual abuse",
+  "molest", "molestation", "pedophile", "paedophile", "child abuse", "child sex",
+  "child sexual", "csam", "incest", "underage", "statutory rape"];
+const BLOCK_RE = new RegExp("\\b(" + BLOCK.join("|").replace(/ /g, "\\s+") + ")", "i");
+
+function searchQuery() {
+  return orQuery() + QUERY_BLOCK.map((t) => ` AND NOT "${t}"`).join("");
+}
+function isBlocked(text) { return BLOCK_RE.test(text || ""); }
+
 /* ---- GNews API: news that allows authenticated server access ---- */
 const GNEWS = "https://gnews.io/api/v4/search";
 
@@ -79,14 +98,16 @@ async function fetchGNews(env) {
   if (!key) return null;
   const from = new Date(Date.now() - 24 * 3600 * 1000).toISOString(); // last 24h
   const url = GNEWS + "?" + new URLSearchParams({
-    q: orQuery(), lang: "en", max: "10", sortby: "publishedAt",
+    q: searchQuery(), lang: "en", max: "10", sortby: "publishedAt",
     in: "title,description", from, apikey: key,
   });
   try {
     const r = await fetch(url);
     if (!r.ok) return null;
     const data = await r.json();
-    const arts = data.articles || [];
+    // Safety-net filter: drop any article whose text trips the blocklist.
+    const arts = (data.articles || []).filter(
+      (a) => !isBlocked((a.title || "") + " " + (a.description || "")));
     const recent = arts.map((a) => ({
       platform: "News",
       title: (a.title || "").slice(0, 200),
@@ -155,7 +176,7 @@ export default {
       try {
         const from = new Date(Date.now() - 24 * 3600 * 1000).toISOString();
         const u = GNEWS + "?" + new URLSearchParams({
-          q: orQuery(), lang: "en", max: "10", sortby: "publishedAt",
+          q: searchQuery(), lang: "en", max: "10", sortby: "publishedAt",
           in: "title,description", from, apikey: env.GNEWS_KEY || "" });
         const r = await fetch(u);
         const t = await r.text();
