@@ -88,30 +88,27 @@ def build_query(keywords, lang):
 
 
 def fetch_news(query, timespan):
-    """Return (count, recent_items) of news articles matching the query."""
+    """Return (count, recent_items) from a SINGLE GDELT article-list call.
 
-    # 1) Volume timeline -> use it to derive a count for the window.
-    tl = gdelt_get({
-        "query": query, "mode": "timelinevolraw",
-        "format": "json", "timespan": timespan, "sort": "datedesc",
-    })
-    count = 0
-    series = (tl.get("timeline") or [{}])
-    if series and series[0].get("data"):
-        # timelinevolraw returns absolute article counts per 15-min bucket
-        count = int(sum(p.get("value", 0) for p in series[0]["data"]))
+    Using one call instead of two avoids GDELT's rate limiting — the previous
+    design made a second call 1.5s after the first, and that second call kept
+    getting throttled (HTTP 429), which left the recent-mentions feed empty.
 
-    time.sleep(1.5)  # be polite between GDELT calls to avoid rate limiting
-
-    # 2) Article list -> recent examples for the feed.
+    The count is the number of matching articles in the window. GDELT's artlist
+    mode caps at 250 results, so on a very high-volume day the count saturates
+    at 250 — treat it as a relative trend indicator, not an exact census.
+    """
     al = gdelt_get({
         "query": query, "mode": "artlist",
-        "maxrecords": 25, "format": "json",
+        "maxrecords": 250, "format": "json",
         "timespan": timespan, "sort": "datedesc",
     })
+    # A successful GDELT response always includes the "articles" key (even if
+    # the list is empty). An empty dict means the request itself failed
+    # (e.g. rate limited) — signal that so we don't record a false zero.
+    ok = isinstance(al, dict) and "articles" in al
     arts = al.get("articles") or []
-    if count == 0:
-        count = len(arts)  # fallback if the timeline call returned nothing
+    count = len(arts)
 
     recent = []
     for a in arts[:12]:
@@ -122,7 +119,7 @@ def fetch_news(query, timespan):
             "snippet": (a.get("domain") or "") +
                        ((" · " + a.get("seendate", "")) if a.get("seendate") else ""),
         })
-    return count, recent
+    return count, recent, ok
 
 
 def load_history():
@@ -155,7 +152,11 @@ def main():
     query = build_query(args.keywords, args.lang)
     lang_note = "" if args.lang.lower() == "any" else f" [{args.lang} only]"
     print(f"Scanning GDELT news for '{keyword_display}'{lang_note} over the last {args.timespan} ...")
-    count, recent = fetch_news(query, args.timespan)
+    count, recent, ok = fetch_news(query, args.timespan)
+    if not ok:
+        print("  GDELT request failed (likely rate limited) — keeping previous "
+              "data, not recording a snapshot this run.", file=sys.stderr)
+        sys.exit(1)
     print(f"  News         {count} mentions")
 
     now = datetime.now(timezone.utc).isoformat()
