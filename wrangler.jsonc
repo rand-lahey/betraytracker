@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "betraytracker",
+  "main": "worker.js",
+  "compatibility_date": "2026-06-20",
+
+  // Serve the dashboard (index.html) as static assets. The Worker only runs
+  // for requests that don't match a static file (e.g. /data.json).
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  },
+
+  // KV holds the latest scraped state. Create a namespace in the Cloudflare
+  // dashboard (Storage & Databases -> KV) and paste its ID below.
+  "kv_namespaces": [
+    { "binding": "BETRAYAL_KV", "id": "f5788edd69b343a6bb847eb96dd7594f" }
+  ],
+
+  // Scrape every 5 minutes (Cloudflare cron is reliable, unlike GitHub's).
+  "triggers": {
+    "crons": ["*/5 * * * *"]
+  },
+
+  "observability": { "enabled": true }
+}
