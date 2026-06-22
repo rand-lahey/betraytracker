@@ -2,19 +2,23 @@
  * BetrayTracker — Cloudflare Worker
  * =================================
  * Replaces the GitHub Action + committed data files. This Worker:
- *   • scheduled()  — runs on a cron (every 5 min), scrapes the data, stores it
- *                    in KV. No git commits, no Pages/Workers builds per update.
- *   • fetch()      — serves /data.json from KV (building it on demand if the KV
- *                    is still empty), and serves the dashboard static assets.
+ *   • scheduled()  — runs on a cron (every 15 min), calls the GNews API, and
+ *                    stores the computed state in KV. No git commits, no builds.
+ *   • fetch()      — serves /data.json from KV (building it on demand if KV is
+ *                    still empty), and serves the dashboard static assets.
  *
- * Data sources (same as the Python scraper, ported to JS):
- *   • GDELT DOC 2.0 "timelinevolraw" — a full 24-hour volume curve in one call,
- *     so the chart always shows a complete 24h.
- *   • Google News RSS — the live "Recent betrayals" feed + head-count extraction.
+ * Data source: GNews API (https://gnews.io). Free news APIs like GDELT and
+ * Google News block/throttle Cloudflare's shared egress IPs, so we use an
+ * authenticated API instead, which works reliably from a Worker.
+ *   • count = totalArticles matching in the last 24h  → "Betrayals (24h)"
+ *   • the returned articles → "Recent betrayals" feed + head-count extraction
+ *   • a 24h rolling history is accrued in KV (one point per run) for the chart
+ *     and the Betrayometer.
  *
- * Bindings (see wrangler.jsonc):
+ * Bindings / secrets (see wrangler.jsonc):
  *   • ASSETS       — static assets (index.html)
- *   • BETRAYAL_KV  — KV namespace holding the latest computed state
+ *   • BETRAYAL_KV  — KV namespace holding the latest computed state + history
+ *   • GNEWS_KEY    — GNews API key (set as an encrypted Secret in the dashboard)
  */
 
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
@@ -67,111 +71,73 @@ function parseGdeltDate(s) {
 }
 function orQuery() { return KEYWORDS.length > 1 ? "(" + KEYWORDS.join(" OR ") + ")" : KEYWORDS[0]; }
 
-/* ---- GDELT helper (respects "1 request / 5s" with spacing + retry) ---- */
-const GDELT = "https://api.gdeltproject.org/api/v2/doc/doc";
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+/* ---- GNews API: news that allows authenticated server access ---- */
+const GNEWS = "https://gnews.io/api/v4/search";
 
-async function gdeltGet(params, retries = 2) {
-  const url = GDELT + "?" + new URLSearchParams(params);
-  for (let i = 0; i < retries; i++) {
-    try {
-      const r = await fetch(url, { headers: { "User-Agent": UA } });
-      if (r.status === 429) { if (i < retries - 1) { await sleep(6000); continue; } return null; }
-      if (!r.ok) return null;
-      return await r.text();
-    } catch (e) {
-      if (i < retries - 1) { await sleep(3000); continue; }
-      return null;
-    }
+async function fetchGNews(env) {
+  const key = env.GNEWS_KEY;
+  if (!key) return null;
+  const from = new Date(Date.now() - 24 * 3600 * 1000).toISOString(); // last 24h
+  const url = GNEWS + "?" + new URLSearchParams({
+    q: orQuery(), lang: "en", max: "10", sortby: "publishedAt",
+    in: "title,description", from, apikey: key,
+  });
+  try {
+    const r = await fetch(url);
+    if (!r.ok) return null;
+    const data = await r.json();
+    const arts = data.articles || [];
+    const recent = arts.map((a) => ({
+      platform: "News",
+      title: (a.title || "").slice(0, 200),
+      url: a.url || "",
+      snippet: (((a.source && a.source.name) || "") +
+        (a.publishedAt ? " · " + a.publishedAt : "")).slice(0, 200),
+      people: extractPeople((a.title || "") + " " + (a.description || "")),
+    }));
+    return { total: data.totalArticles ?? arts.length, recent };
+  } catch (e) { return null; }
+}
+
+/* ---- refresh: call GNews, accrue a 24h rolling history in KV ---- */
+async function refresh(env) {
+  const prev = JSON.parse((await env.BETRAYAL_KV.get("state")) || "null") || {};
+  const now = new Date().toISOString();
+  const gn = await fetchGNews(env);
+
+  if (!gn) {
+    // Keep the last good data rather than wiping to zeros (e.g. quota/transient).
+    if (prev.latest) return prev;
+    const empty = {
+      keyword: KEYWORDS.join(" / "), generated_at: now, history: [],
+      latest: { t: now, counts: { reddit: 0, twitter: 0, news: 0 }, total: 0,
+        platform_labels: PLATFORM_LABELS, recent: [],
+        source: env.GNEWS_KEY ? "unavailable" : "no API key",
+        per_hour: 0, current_rate: 0, betrayed_total: 0, articles_with_count: 0 },
+    };
+    return empty; // not stored, so the next run retries
   }
-  return null;
-}
 
-/* ---- GDELT: full 24-hour volume curve (15-min buckets) ---- */
-async function gdeltTimeline() {
-  const txt = await gdeltGet({
-    query: orQuery() + " sourcelang:english",
-    mode: "timelinevolraw", format: "json", timespan: "1d",
-  });
-  if (!txt) return null;
-  let data; try { data = JSON.parse(txt); } catch (e) { return null; }
-  const series = (data.timeline || [])[0];
-  if (!series || !series.data || !series.data.length) return null;
-  const vals = series.data.map((p) => Number(p.value) || 0);
-  return series.data.map((p, i) => ({
-    t: parseGdeltDate(p.date),
-    counts: { reddit: 0, twitter: 0, news: vals[i] },
-    total: vals[i],
-    per_hour: vals.slice(Math.max(0, i - 3), i + 1).reduce((a, b) => a + b, 0), // ~last hour
-  }));
-}
-
-/* ---- GDELT: recent articles for the feed + head-count ---- */
-async function gdeltArtlist() {
-  const txt = await gdeltGet({
-    query: orQuery() + " sourcelang:english",
-    mode: "artlist", maxrecords: 60, format: "json", timespan: "1d", sort: "datedesc",
-  });
-  if (!txt) return null;
-  let data; try { data = JSON.parse(txt); } catch (e) { return null; }
-  if (!("articles" in data)) return null;
-  return (data.articles || []).slice(0, 60).map((a) => ({
-    platform: "News",
-    title: (a.title || "").trim().slice(0, 200),
-    url: a.url || "",
-    snippet: ((a.domain || "") + (a.seendate ? " · " + a.seendate : "")).slice(0, 200),
-    people: extractPeople(a.title),
-  }));
-}
-
-/* ---- assemble the full dashboard state (GDELT only) ---- */
-async function buildState() {
-  const timeline = await gdeltTimeline();
-  await sleep(6000); // honour GDELT's "one request every 5 seconds"
-  const recent = (await gdeltArtlist()) || [];
+  const total = gn.total;
+  const recent = gn.recent;
   const betrayed_total = recent.reduce((a, r) => a + (r.people || 0), 0);
   const articles_with_count = recent.filter((r) => r.people > 0).length;
-  const now = new Date().toISOString();
+  const per_hour = Math.round((total / 24) * 10) / 10;
 
-  let history, total, per_hour, current_rate, source;
-  if (timeline) {
-    history = timeline;
-    total = timeline.reduce((a, p) => a + p.total, 0);
-    per_hour = Math.round((total / 24) * 10) / 10;
-    current_rate = timeline[timeline.length - 1].per_hour;
-    if (recent.length) {
-      timeline[timeline.length - 1].betrayed_total = betrayed_total;
-      timeline[timeline.length - 1].articles_with_count = articles_with_count;
-    }
-    source = "GDELT";
-  } else if (recent.length) {
-    total = recent.length;
-    per_hour = Math.round((total / 24) * 10) / 10;
-    current_rate = per_hour;
-    history = [{ t: now, counts: { reddit: 0, twitter: 0, news: total }, total,
-      per_hour, betrayed_total, articles_with_count }];
-    source = "GDELT (articles only)";
-  } else {
-    total = 0; per_hour = 0; current_rate = 0;
-    history = [{ t: now, counts: { reddit: 0, twitter: 0, news: 0 }, total: 0,
-      per_hour: 0, betrayed_total: 0, articles_with_count: 0 }];
-    source = "unavailable";
-  }
+  // Append a reading and keep only the last 24 hours of points.
+  const point = { t: now, counts: { reddit: 0, twitter: 0, news: total }, total,
+    per_hour, betrayed_total, articles_with_count };
+  let history = Array.isArray(prev.history) ? prev.history : [];
+  history.push(point);
+  const cutoff = Date.now() - 24 * 3600 * 1000;
+  history = history.filter((p) => new Date(p.t).getTime() >= cutoff).slice(-300);
 
-  return {
-    keyword: KEYWORDS.join(" / "),
-    generated_at: now,
-    history,
-    latest: {
-      t: now, counts: { reddit: 0, twitter: 0, news: total }, total,
-      platform_labels: PLATFORM_LABELS, recent, source,
-      per_hour, current_rate, betrayed_total, articles_with_count,
-    },
+  const state = {
+    keyword: KEYWORDS.join(" / "), generated_at: now, history,
+    latest: { t: now, counts: { reddit: 0, twitter: 0, news: total }, total,
+      platform_labels: PLATFORM_LABELS, recent, source: "GNews",
+      per_hour, current_rate: per_hour, betrayed_total, articles_with_count },
   };
-}
-
-async function refresh(env) {
-  const state = await buildState();
   await env.BETRAYAL_KV.put("state", JSON.stringify(state));
   return state;
 }
@@ -183,23 +149,22 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Diagnostic: tests the two GDELT calls, spaced out so it doesn't
-    // trip GDELT's own "1 request / 5s" limit. (Don't spam this endpoint.)
+    // Diagnostic: tests the GNews call and shows status + counts (no key leaked).
     if (url.pathname === "/debug") {
-      const out = {};
-      const probe = async (params) => {
-        try {
-          const u = GDELT + "?" + new URLSearchParams(params);
-          const r = await fetch(u, { headers: { "User-Agent": UA } });
-          const t = await r.text();
-          return { status: r.status, ok: r.ok, bytes: t.length, snippet: t.slice(0, 140) };
-        } catch (e) { return { error: String(e) }; }
-      };
-      out.timeline = await probe({ query: orQuery() + " sourcelang:english",
-        mode: "timelinevolraw", format: "json", timespan: "1d" });
-      await sleep(6000);
-      out.artlist = await probe({ query: orQuery() + " sourcelang:english",
-        mode: "artlist", maxrecords: 5, format: "json", timespan: "1d", sort: "datedesc" });
+      const out = { hasKey: !!env.GNEWS_KEY };
+      try {
+        const from = new Date(Date.now() - 24 * 3600 * 1000).toISOString();
+        const u = GNEWS + "?" + new URLSearchParams({
+          q: orQuery(), lang: "en", max: "10", sortby: "publishedAt",
+          in: "title,description", from, apikey: env.GNEWS_KEY || "" });
+        const r = await fetch(u);
+        const t = await r.text();
+        let parsed = null; try { parsed = JSON.parse(t); } catch (e) {}
+        out.gnews = { status: r.status, ok: r.ok,
+          totalArticles: parsed ? parsed.totalArticles : undefined,
+          articles: parsed && parsed.articles ? parsed.articles.length : undefined,
+          snippet: t.slice(0, 160) };
+      } catch (e) { out.gnews = { error: String(e) }; }
       return new Response(JSON.stringify(out, null, 2),
         { headers: { "content-type": "application/json" } });
     }

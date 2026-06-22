@@ -9,25 +9,34 @@ a Betrayometer, and a feed of recent stories. Live at **betrayals.ca**.
 The live site is powered entirely by a **Cloudflare Worker** (`worker.js`) — no
 servers to manage, no git commits, no build limits:
 
-- `scheduled()` runs every 5 minutes on a Cloudflare cron. It fetches a full
-  24-hour volume curve from GDELT plus the latest stories from Google News,
-  computes the metrics, and stores the result in a KV namespace.
+- `scheduled()` runs every 15 minutes on a Cloudflare cron. It calls the GNews
+  API for betrayal stories in the last 24h, computes the metrics, appends a
+  point to a 24-hour rolling history, and stores it all in a KV namespace.
 - `fetch()` serves the dashboard (`index.html`) and answers `/data.json` from
   KV. The page polls `/data.json` every 60s, so it's always current.
 
+Why GNews and not GDELT/Google News directly? Those free sources block or
+throttle Cloudflare's shared server IPs (Google News returns 503, GDELT 429),
+so a Worker can't scrape them. GNews is an authenticated API that works from a
+Worker. Its free tier allows 100 requests/day — hence the 15-minute cadence.
+
 ### One-time deploy
 
-1. **Create a KV namespace.** Cloudflare dashboard → **Storage & Databases → KV
-   → Create namespace**, name it `betraytracker`. Copy the namespace **ID** and
-   paste it into `wrangler.jsonc` (replace `PASTE_YOUR_KV_NAMESPACE_ID_HERE`).
-2. **Deploy the Worker from the repo.** In **Workers & Pages**, create a
+1. **Get a GNews API key.** Sign up free at https://gnews.io/register and copy
+   your key from the dashboard.
+2. **Create a KV namespace.** Cloudflare → **Storage & Databases → KV → Create
+   namespace**, name it `betraytracker`. Copy the **ID** into `wrangler.jsonc`
+   (replace `PASTE_YOUR_KV_NAMESPACE_ID_HERE`).
+3. **Deploy the Worker from the repo.** In **Workers & Pages**, create a
    **Worker** connected to this GitHub repo (Workers Builds). Cloudflare reads
    `wrangler.jsonc` and deploys with the assets, KV binding, and cron trigger.
    (A plain Pages project can't do cron — it must be a Worker.)
-3. **Add the domain.** In the Worker → **Settings → Domains & Routes**, add
+4. **Add the API key as a secret.** Worker → **Settings → Variables and Secrets
+   → Add → Secret**, name `GNEWS_KEY`, value = your GNews key. Save and redeploy.
+5. **Add the domain.** Worker → **Settings → Domains & Routes**, add
    `betrayals.ca` (and `www.betrayals.ca`). Cloudflare manages the DNS + SSL.
-4. Visit `betrayals.ca` — first load builds the data on demand; after that the
-   cron keeps it fresh every 5 minutes.
+6. Visit `betrayals.ca` — the first load builds the data on demand; the cron
+   then refreshes every 15 minutes and the chart fills out over the first day.
 
 The old GitHub Action (`.github/workflows/scrape.yml`) is **disabled** — the
 Worker replaces it. The Python scrapers below are now optional / for local use.

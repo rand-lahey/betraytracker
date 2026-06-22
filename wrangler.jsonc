@@ -17,9 +17,13 @@
     { "binding": "BETRAYAL_KV", "id": "f5788edd69b343a6bb847eb96dd7594f" }
   ],
 
-  // Scrape every 5 minutes (Cloudflare cron is reliable, unlike GitHub's).
+  // Refresh every 15 minutes. GNews' free tier allows 100 requests/day;
+  // 15-min cadence = 96/day, safely under the cap. (Going faster would
+  // exhaust the daily quota.) The GNEWS_KEY is NOT stored here — add it as
+  // an encrypted Secret in the Worker dashboard (Settings -> Variables and
+  // Secrets), so it never lands in the repo.
   "triggers": {
-    "crons": ["*/5 * * * *"]
+    "crons": ["*/15 * * * *"]
   },
 
   "observability": { "enabled": true }
