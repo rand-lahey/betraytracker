@@ -92,23 +92,43 @@ function isBlocked(text) { return BLOCK_RE.test(text || ""); }
 
 /* ---- GNews API: news that allows authenticated server access ---- */
 const GNEWS = "https://gnews.io/api/v4/search";
+// GNews free tier returns 10 articles per request and allows 100 requests/day.
+// We paginate to pull more stories for the feed; each page is one request, so
+// PAGES x runs-per-day must stay under ~100. With PAGES=4 and an hourly cron
+// that's ~96/day. Raise PAGES for more stories (and slow the cron to match).
+const PAGES = 4;
+const PER_PAGE = 10;
 
 async function fetchGNews(env) {
   const key = env.GNEWS_KEY;
   if (!key) return null;
   const from = new Date(Date.now() - 24 * 3600 * 1000).toISOString(); // last 24h
-  const url = GNEWS + "?" + new URLSearchParams({
-    q: searchQuery(), lang: "en", max: "10", sortby: "publishedAt",
-    in: "title,description", from, apikey: key,
-  });
-  try {
-    const r = await fetch(url);
-    if (!r.ok) return null;
-    const data = await r.json();
-    // Safety-net filter: drop any article whose text trips the blocklist.
-    const arts = (data.articles || []).filter(
-      (a) => !isBlocked((a.title || "") + " " + (a.description || "")));
-    const recent = arts.map((a) => ({
+  let all = [];
+  let total = null;
+  const seen = new Set();
+  for (let page = 1; page <= PAGES; page++) {
+    const url = GNEWS + "?" + new URLSearchParams({
+      q: searchQuery(), lang: "en", max: String(PER_PAGE), page: String(page),
+      sortby: "publishedAt", in: "title,description", from, apikey: key,
+    });
+    let data;
+    try {
+      const r = await fetch(url);
+      if (!r.ok) break;            // quota/error: stop, use what we have
+      data = await r.json();
+    } catch (e) { break; }
+    if (total === null) total = data.totalArticles ?? 0;
+    const arts = data.articles || [];
+    // De-dupe in case the free tier ignores `page` and repeats results.
+    const fresh = arts.filter((a) => a.url && !seen.has(a.url));
+    fresh.forEach((a) => seen.add(a.url));
+    all = all.concat(fresh);
+    if (arts.length < PER_PAGE || fresh.length === 0) break; // last/repeat page
+  }
+  if (!all.length && total === null) return null;
+  const recent = all
+    .filter((a) => !isBlocked((a.title || "") + " " + (a.description || "")))
+    .map((a) => ({
       platform: "News",
       title: (a.title || "").slice(0, 200),
       url: a.url || "",
@@ -116,8 +136,7 @@ async function fetchGNews(env) {
         (a.publishedAt ? " · " + a.publishedAt : "")).slice(0, 200),
       people: extractPeople((a.title || "") + " " + (a.description || "")),
     }));
-    return { total: data.totalArticles ?? arts.length, recent };
-  } catch (e) { return null; }
+  return { total: total ?? recent.length, recent };
 }
 
 /* ---- refresh: call GNews, accrue a 24h rolling history in KV ---- */
@@ -175,17 +194,25 @@ export default {
       const out = { hasKey: !!env.GNEWS_KEY };
       try {
         const from = new Date(Date.now() - 24 * 3600 * 1000).toISOString();
-        const u = GNEWS + "?" + new URLSearchParams({
-          q: searchQuery(), lang: "en", max: "10", sortby: "publishedAt",
-          in: "title,description", from, apikey: env.GNEWS_KEY || "" });
-        const r = await fetch(u);
-        const t = await r.text();
-        let parsed = null; try { parsed = JSON.parse(t); } catch (e) {}
-        out.gnews = { status: r.status, ok: r.ok,
-          totalArticles: parsed ? parsed.totalArticles : undefined,
-          articles: parsed && parsed.articles ? parsed.articles.length : undefined,
-          snippet: t.slice(0, 160) };
-      } catch (e) { out.gnews = { error: String(e) }; }
+        const probe = async (page) => {
+          const u = GNEWS + "?" + new URLSearchParams({
+            q: searchQuery(), lang: "en", max: "10", page: String(page),
+            sortby: "publishedAt", in: "title,description", from,
+            apikey: env.GNEWS_KEY || "" });
+          const r = await fetch(u);
+          const t = await r.text();
+          let p = null; try { p = JSON.parse(t); } catch (e) {}
+          return { status: r.status, ok: r.ok,
+            totalArticles: p ? p.totalArticles : undefined,
+            articles: p && p.articles ? p.articles.length : undefined,
+            firstUrl: p && p.articles && p.articles[0] ? p.articles[0].url : undefined,
+            snippet: t.slice(0, 120) };
+        };
+        out.page1 = await probe(1);
+        out.page2 = await probe(2); // if firstUrl differs from page1, pagination works
+        out.paginationWorks = !!(out.page1.firstUrl && out.page2.firstUrl &&
+          out.page1.firstUrl !== out.page2.firstUrl);
+      } catch (e) { out.error = String(e); }
       return new Response(JSON.stringify(out, null, 2),
         { headers: { "content-type": "application/json" } });
     }

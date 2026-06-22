@@ -17,13 +17,13 @@
     { "binding": "BETRAYAL_KV", "id": "f5788edd69b343a6bb847eb96dd7594f" }
   ],
 
-  // Refresh every 15 minutes. GNews' free tier allows 100 requests/day;
-  // 15-min cadence = 96/day, safely under the cap. (Going faster would
-  // exhaust the daily quota.) The GNEWS_KEY is NOT stored here — add it as
-  // an encrypted Secret in the Worker dashboard (Settings -> Variables and
-  // Secrets), so it never lands in the repo.
+  // Refresh hourly. Each run pulls PAGES (4) pages from GNews = 4 requests,
+  // and GNews' free tier allows 100 requests/day, so hourly x 4 = ~96/day,
+  // just under the cap. More stories per run = fewer runs/day (slower cron);
+  // tune PAGES in worker.js and this cron together. The GNEWS_KEY is NOT
+  // stored here — add it as an encrypted Secret in the Worker dashboard.
   "triggers": {
-    "crons": ["*/15 * * * *"]
+    "crons": ["0 * * * *"]
   },
 
   "observability": { "enabled": true }
