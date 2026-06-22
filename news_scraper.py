@@ -1,29 +1,31 @@
 #!/usr/bin/env python3
 """
-BetrayTracker — FREE news scraper (GDELT)
-=========================================
-Tracks news mentions of a keyword (default "betrayal") using the GDELT DOC 2.0
-API. GDELT is completely free: no API key, no signup, no quota to worry about.
-It monitors worldwide online news in 100+ languages and updates every 15 min.
+BetrayTracker — FREE news scraper
+=================================
+Tracks news mentions of a word family (default: betrayal / betray / betrayed /
+betrayer / betraying) in English-language news. No API key, no signup.
 
-This is a drop-in, no-cost replacement for the *News* portion of BetrayTracker.
-It writes the same data.js / data.json the dashboard (index.html) already reads,
-so the existing dashboard works unchanged — the Reddit and X columns will simply
-read 0 until you wire up those sources.
+Sources, in order of preference:
+  1. Google News RSS  — primary. Free, no key, and (being a reader feed) holds
+     up well on shared IPs such as GitHub Actions runners.
+  2. GDELT DOC 2.0 API — automatic fallback if Google News is unavailable.
+     GDELT is also free but its API rate-limits shared IPs aggressively, which
+     is why it's the fallback rather than the primary.
 
-By default it tracks the word family betrayal / betray / betrayed / betrayer /
-betraying (matched as OR) and restricts to English-language news.
+It writes the same data.js / data.json the dashboard (index.html) reads, so the
+dashboard works unchanged — Reddit and X columns stay at 0 until wired up.
+
+Each run appends one timestamped snapshot (mention count + recent examples) so
+the dashboard can draw a time series. Run it on a schedule for a live tracker.
 
 Usage
 -----
   python3 news_scraper.py                       # default: betrayal family, English
   python3 news_scraper.py --keywords war wars    # track different words
-  python3 news_scraper.py --lang any             # all languages
-  python3 news_scraper.py --timespan 1d          # counting window (default 1d)
+  python3 news_scraper.py --timespan 1d          # window: 1h / 1d / 1w
   python3 news_scraper.py --max-history 1000
 
-Only needs Python 3 + the `requests` package:
-  pip install requests
+Needs only Python 3 (standard library — no pip installs).
 """
 
 import argparse
@@ -33,6 +35,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -40,87 +43,125 @@ HERE = Path(__file__).resolve().parent
 DATA_JSON = HERE / "data.json"
 DATA_JS = HERE / "data.js"
 
+GNEWS = "https://news.google.com/rss/search"
 GDELT = "https://api.gdeltproject.org/api/v2/doc/doc"
 PLATFORM_LABELS = {"reddit": "Reddit", "twitter": "X / Twitter", "news": "News"}
+UA = "Mozilla/5.0 (compatible; BetrayTracker/1.0)"
 
 
-def gdelt_get(params, retries=3):
-    """Call a GDELT DOC API mode and return parsed JSON (or {} on failure).
-
-    GDELT rate-limits rapid successive calls with HTTP 429; we back off and
-    retry so volume counts stay accurate.
-    """
-    url = GDELT + "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={"User-Agent": "BetrayTracker/1.0"})
-    raw = ""
+def http_get(url, retries=3, timeout=25):
+    """GET a URL, returning the decoded body or None on failure (with backoff)."""
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
     for attempt in range(retries):
         try:
-            with urllib.request.urlopen(req, timeout=20) as r:
-                raw = r.read().decode("utf-8", "replace").strip()
-            break
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read().decode("utf-8", "replace")
         except urllib.error.HTTPError as e:
-            # 429 = rate limited. Back off briefly, but never hang for minutes.
             if e.code == 429 and attempt < retries - 1:
                 time.sleep(3)
                 continue
-            print(f"  GDELT request failed: {e}", file=sys.stderr)
-            return {}
+            print(f"  HTTP {e.code} from {url.split('?')[0]}", file=sys.stderr)
+            return None
         except Exception as e:  # noqa: BLE001
-            print(f"  GDELT request failed: {e}", file=sys.stderr)
-            return {}
-    if not raw:
-        return {}
-    try:
-        return json.loads(raw)
-    except json.JSONDecodeError:
-        # GDELT occasionally returns an HTML error/notice page instead of JSON
-        print(f"  GDELT returned non-JSON: {raw[:120]!r}", file=sys.stderr)
-        return {}
+            print(f"  request failed: {e}", file=sys.stderr)
+            return None
+    return None
 
 
-def build_query(keywords, lang):
-    """OR the keyword variants together and optionally restrict by language."""
+def or_query(keywords):
     terms = " OR ".join(keywords)
-    query = f"({terms})" if len(keywords) > 1 else terms
-    if lang and lang.lower() != "any":
-        query += f" sourcelang:{lang}"
-    return query
+    return f"({terms})" if len(keywords) > 1 else terms
 
 
-def fetch_news(query, timespan):
-    """Return (count, recent_items) from a SINGLE GDELT article-list call.
+# ---------------------------------------------------------------------------
+# Source 1: Google News RSS  (primary)
+# ---------------------------------------------------------------------------
 
-    Using one call instead of two avoids GDELT's rate limiting — the previous
-    design made a second call 1.5s after the first, and that second call kept
-    getting throttled (HTTP 429), which left the recent-mentions feed empty.
+def _gnews_when(timespan):
+    return {"15min": "1h", "1h": "1h", "1d": "1d", "1w": "7d",
+            "7d": "7d", "1m": "30d"}.get(timespan, "1d")
 
-    The count is the number of matching articles in the window. GDELT's artlist
-    mode caps at 250 results, so on a very high-volume day the count saturates
-    at 250 — treat it as a relative trend indicator, not an exact census.
-    """
-    al = gdelt_get({
-        "query": query, "mode": "artlist",
-        "maxrecords": 250, "format": "json",
-        "timespan": timespan, "sort": "datedesc",
-    })
-    # A successful GDELT response always includes the "articles" key (even if
-    # the list is empty). An empty dict means the request itself failed
-    # (e.g. rate limited) — signal that so we don't record a false zero.
-    ok = isinstance(al, dict) and "articles" in al
-    arts = al.get("articles") or []
-    count = len(arts)
 
+def gnews_fetch(keywords, timespan):
+    """Return (count, recent, ok) from the Google News RSS search feed (English)."""
+    q = or_query(keywords) + f" when:{_gnews_when(timespan)}"
+    url = GNEWS + "?" + urllib.parse.urlencode(
+        {"q": q, "hl": "en-US", "gl": "US", "ceid": "US:en"})
+    raw = http_get(url)
+    if not raw:
+        return 0, [], False
+    try:
+        root = ET.fromstring(raw)
+    except ET.ParseError as e:
+        print(f"  Google News RSS parse error: {e}", file=sys.stderr)
+        return 0, [], False
+
+    items = root.findall(".//channel/item")
     recent = []
-    for a in arts[:12]:
+    for it in items[:12]:
+        title = (it.findtext("title") or "").strip()
+        link = (it.findtext("link") or "").strip()
+        src_el = it.find("source")
+        source = (src_el.text or "").strip() if src_el is not None else ""
+        pub = (it.findtext("pubDate") or "").strip()
+        # Google News appends " - Source" to titles; trim it for cleanliness.
+        if source and title.endswith(" - " + source):
+            title = title[: -(len(source) + 3)]
         recent.append({
             "platform": "News",
-            "title": (a.get("title") or "").strip()[:200],
-            "url": a.get("url") or "",
-            "snippet": (a.get("domain") or "") +
-                       ((" · " + a.get("seendate", "")) if a.get("seendate") else ""),
+            "title": title[:200],
+            "url": link,
+            "snippet": (source + (" · " + pub if pub else "")).strip()[:200],
         })
-    return count, recent, ok
+    return len(items), recent, True
 
+
+# ---------------------------------------------------------------------------
+# Source 2: GDELT DOC 2.0 API  (fallback)
+# ---------------------------------------------------------------------------
+
+def gdelt_fetch(keywords, lang, timespan):
+    """Return (count, recent, ok) from a single GDELT article-list call."""
+    q = or_query(keywords)
+    if lang and lang.lower() != "any":
+        q += f" sourcelang:{lang}"
+    url = GDELT + "?" + urllib.parse.urlencode({
+        "query": q, "mode": "artlist", "maxrecords": 250,
+        "format": "json", "timespan": timespan, "sort": "datedesc",
+    })
+    raw = http_get(url)
+    if not raw:
+        return 0, [], False
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        print(f"  GDELT returned non-JSON: {raw[:120]!r}", file=sys.stderr)
+        return 0, [], False
+    if "articles" not in data:
+        return 0, [], False
+
+    arts = data.get("articles") or []
+    recent = [{
+        "platform": "News",
+        "title": (a.get("title") or "").strip()[:200],
+        "url": a.get("url") or "",
+        "snippet": (a.get("domain") or "") +
+                   ((" · " + a.get("seendate", "")) if a.get("seendate") else ""),
+    } for a in arts[:12]]
+    return len(arts), recent, True
+
+
+def fetch_news(keywords, lang, timespan):
+    """Try Google News RSS first, fall back to GDELT. Returns (count, recent, ok, source)."""
+    count, recent, ok = gnews_fetch(keywords, timespan)
+    if ok:
+        return count, recent, True, "Google News"
+    print("  Google News unavailable — falling back to GDELT ...", file=sys.stderr)
+    count, recent, ok = gdelt_fetch(keywords, lang, timespan)
+    return count, recent, ok, "GDELT"
+
+
+# ---------------------------------------------------------------------------
 
 def load_history():
     if DATA_JSON.exists():
@@ -137,34 +178,31 @@ def write_outputs(payload):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Free GDELT news scraper for BetrayTracker")
+    ap = argparse.ArgumentParser(description="Free news scraper for BetrayTracker")
     ap.add_argument("--keywords", nargs="+",
                     default=["betrayal", "betray", "betrayed", "betrayer", "betraying"],
                     help="word variants to track (matched as OR)")
     ap.add_argument("--lang", default="english",
-                    help="source language filter, e.g. english; use 'any' to disable")
+                    help="GDELT fallback language filter; 'any' to disable")
     ap.add_argument("--timespan", default="1d",
-                    help="GDELT timespan window, e.g. 15min, 1h, 1d, 1w")
+                    help="counting window: 1h, 1d, or 1w")
     ap.add_argument("--max-history", type=int, default=1000)
     args = ap.parse_args()
 
     keyword_display = " / ".join(args.keywords)
-    query = build_query(args.keywords, args.lang)
-    lang_note = "" if args.lang.lower() == "any" else f" [{args.lang} only]"
-    print(f"Scanning GDELT news for '{keyword_display}'{lang_note} over the last {args.timespan} ...")
-    count, recent, ok = fetch_news(query, args.timespan)
+    print(f"Scanning English news for '{keyword_display}' over the last {args.timespan} ...")
+    count, recent, ok, source = fetch_news(args.keywords, args.lang, args.timespan)
     if not ok:
-        print("  GDELT request failed (likely rate limited) — keeping previous "
+        print("  All news sources failed (likely rate limited) — keeping previous "
               "data, not recording a snapshot this run.", file=sys.stderr)
         sys.exit(1)
-    print(f"  News         {count} mentions")
+    print(f"  News ({source}): {count} mentions, {len(recent)} recent examples")
 
     now = datetime.now(timezone.utc).isoformat()
     counts = {"reddit": 0, "twitter": 0, "news": count}
 
     state = load_history()
-    # Start a clean history if this is sample data or the tracked terms changed
-    # (old counts aren't comparable to a new keyword set / language filter).
+    # Reset history if this is sample data or the tracked terms changed.
     if state.get("sample") or state.get("keyword") != keyword_display:
         state = {"keyword": keyword_display, "history": [], "latest": None}
     state["keyword"] = keyword_display
@@ -173,6 +211,7 @@ def main():
     state["latest"] = {
         "t": now, "counts": counts, "total": count,
         "platform_labels": PLATFORM_LABELS, "recent": recent,
+        "source": source,
     }
     state["generated_at"] = now
     state.pop("sample", None)
