@@ -203,7 +203,7 @@ function render(d){
   // Betrayals per hour: use scraper value, else derive from the 24h total.
   const perHour = (L.per_hour!=null) ? L.per_hour : Math.round(total/24*10)/10;
   document.getElementById('s-perhour').textContent = perHour;
-  updateGauge(h, perHour);
+  updateGauge(h, (L.current_rate!=null) ? L.current_rate : perHour);
 
   // Total betrayed (people cited in stories).
   document.getElementById('s-betrayed').textContent =

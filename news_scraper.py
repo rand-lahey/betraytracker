@@ -212,6 +212,52 @@ def fetch_news(keywords, lang, timespan):
     return count, recent, ok, "GDELT"
 
 
+def _parse_gdelt_date(s):
+    return (datetime.strptime(s, "%Y%m%dT%H%M%SZ")
+            .replace(tzinfo=timezone.utc).isoformat())
+
+
+def gdelt_timeline(keywords, lang, timespan="1d"):
+    """Fetch the full volume curve over `timespan` as 15-minute buckets.
+
+    Returns a ready-to-use history list (one point per bucket) so the dashboard
+    always shows a complete 24-hour window, even on the very first run — rather
+    than slowly accumulating one point per scrape. Returns None on failure.
+
+    Each point also carries per_hour = a trailing ~1-hour count, which gives the
+    Betrayometer a real 24h distribution to compute its percentile against.
+    """
+    q = or_query(keywords)
+    if lang and lang.lower() != "any":
+        q += f" sourcelang:{lang}"
+    url = GDELT + "?" + urllib.parse.urlencode({
+        "query": q, "mode": "timelinevolraw", "format": "json", "timespan": timespan,
+    })
+    raw = http_get(url)
+    if not raw:
+        return None
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        return None
+    series = data.get("timeline") or []
+    pts = series[0].get("data") if series else None
+    if not pts:
+        return None
+
+    vals = [int(p.get("value", 0)) for p in pts]
+    hist = []
+    for i, p in enumerate(pts):
+        trailing = sum(vals[max(0, i - 3):i + 1])  # ~last hour (4×15min buckets)
+        hist.append({
+            "t": _parse_gdelt_date(p["date"]),
+            "counts": {"reddit": 0, "twitter": 0, "news": vals[i]},
+            "total": vals[i],
+            "per_hour": trailing,
+        })
+    return hist
+
+
 # ---------------------------------------------------------------------------
 
 def load_history():
@@ -241,51 +287,59 @@ def main():
     args = ap.parse_args()
 
     keyword_display = " / ".join(args.keywords)
-    print(f"Scanning English news for '{keyword_display}' over the last {args.timespan} ...")
+    print(f"Scanning English news for '{keyword_display}' (last 24h) ...")
 
-    count, recent, ok, source = fetch_news(args.keywords, args.lang, args.timespan)
+    # 1) Current articles for the live feed + head-count (Google News, reliable).
+    count_now, recent, ok, source = fetch_news(args.keywords, args.lang, args.timespan)
     if not ok:
         print("  All news sources failed (likely rate limited) — keeping previous "
               "data, not recording a snapshot this run.", file=sys.stderr)
         sys.exit(1)
-
-    hours = {"15min": 0.25, "1h": 1, "1d": 24, "1w": 168, "7d": 168}.get(args.timespan, 24)
-    per_hour = round(count / hours, 1)
     betrayed_total = sum(r.get("people", 0) for r in recent)
     articles_with_count = sum(1 for r in recent if r.get("people", 0) > 0)
-    print(f"  News ({source}): {count} mentions · ~{per_hour}/hr · est. {betrayed_total} "
-          f"people betrayed across {articles_with_count} stories citing a number")
+
+    # 2) Full 24-hour volume curve in one call, so the chart always shows 24h.
+    timeline = gdelt_timeline(args.keywords, args.lang, "1d")
 
     now = datetime.now(timezone.utc).isoformat()
-    counts = {"reddit": 0, "twitter": 0, "news": count}
-
     state = load_history()
-    # Reset history if this is sample data or the tracked terms changed.
     if state.get("sample") or state.get("keyword") != keyword_display:
         state = {"keyword": keyword_display, "history": [], "latest": None}
+    state.pop("sample", None)
     state["keyword"] = keyword_display
-    snapshot = {
-        "t": now, "counts": counts, "total": count,
-        "per_hour": per_hour,
-        "betrayed_total": betrayed_total,
-        "articles_with_count": articles_with_count,
-    }
-    state["history"].append(snapshot)
-    state["history"] = state["history"][-args.max_history:]
+
+    if timeline:
+        history = timeline
+        total = sum(p["total"] for p in history)
+        per_hour = round(total / 24, 1)
+        current_rate = history[-1].get("per_hour", per_hour)
+        history[-1]["betrayed_total"] = betrayed_total
+        history[-1]["articles_with_count"] = articles_with_count
+        src = f"GDELT 24h timeline + {source}"
+    else:
+        # Fallback: accumulate Google News snapshots over time (no instant 24h).
+        total = count_now
+        per_hour = round(total / 24, 1)
+        current_rate = per_hour
+        history = state.get("history") or []
+        history.append({
+            "t": now, "counts": {"reddit": 0, "twitter": 0, "news": total},
+            "total": total, "per_hour": per_hour,
+            "betrayed_total": betrayed_total, "articles_with_count": articles_with_count,
+        })
+        src = source
+
+    state["history"] = history[-args.max_history:]
     state["latest"] = {
-        "t": now, "counts": counts, "total": count,
-        "platform_labels": PLATFORM_LABELS, "recent": recent,
-        "source": source,
-        "per_hour": per_hour,
-        "betrayed_total": betrayed_total,
-        "articles_with_count": articles_with_count,
+        "t": now, "counts": {"reddit": 0, "twitter": 0, "news": total}, "total": total,
+        "platform_labels": PLATFORM_LABELS, "recent": recent, "source": src,
+        "per_hour": per_hour, "current_rate": current_rate,
+        "betrayed_total": betrayed_total, "articles_with_count": articles_with_count,
     }
     state["generated_at"] = now
-    state.pop("sample", None)
-
     write_outputs(state)
-    print(f"\nWrote {DATA_JSON.name} / {DATA_JS.name}. "
-          f"History now has {len(state['history'])} snapshot(s). Open index.html.")
+    print(f"  {src}: {total} betrayals/24h · ~{per_hour}/hr avg · {current_rate}/hr now · "
+          f"est. {betrayed_total} betrayed · {len(state['history'])} data points")
 
 
 if __name__ == "__main__":
