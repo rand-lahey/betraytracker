@@ -6,7 +6,7 @@ name: Scrape betrayal mentions
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # every 30 minutes (UTC); GitHub may delay under load
+    - cron: "*/5 * * * *"    # every 5 minutes (GitHub's minimum); often delayed under load
   workflow_dispatch:          # lets you trigger a run manually from the Actions tab
 
 permissions:

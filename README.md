@@ -47,9 +47,11 @@ Changing the tracked words or language automatically starts a fresh history
 ## Hosting it live on GitHub Pages
 
 The repo includes `.github/workflows/scrape.yml`, a GitHub Action that runs the
-free news scraper every 30 minutes **on GitHub's servers** and commits the
+free news scraper every 5 minutes **on GitHub's servers** and commits the
 updated data back to the repo. That keeps the GitHub Pages dashboard fresh even
-when your computer is off — no API key required.
+when your computer is off — no API key required. (GitHub's scheduler is
+best-effort and often delays runs under load, so treat "every 5 minutes" as a
+target, not a guarantee.)
 
 To turn it on after pushing the repo:
 

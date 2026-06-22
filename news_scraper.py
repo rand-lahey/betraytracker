@@ -264,7 +264,13 @@ def main():
     if state.get("sample") or state.get("keyword") != keyword_display:
         state = {"keyword": keyword_display, "history": [], "latest": None}
     state["keyword"] = keyword_display
-    state["history"].append({"t": now, "counts": counts, "total": count})
+    snapshot = {
+        "t": now, "counts": counts, "total": count,
+        "per_hour": per_hour,
+        "betrayed_total": betrayed_total,
+        "articles_with_count": articles_with_count,
+    }
+    state["history"].append(snapshot)
     state["history"] = state["history"][-args.max_history:]
     state["latest"] = {
         "t": now, "counts": counts, "total": count,
@@ -274,8 +280,6 @@ def main():
         "betrayed_total": betrayed_total,
         "articles_with_count": articles_with_count,
     }
-    state["history"][-1]["per_hour"] = per_hour
-    state["history"][-1]["betrayed_total"] = betrayed_total
     state["generated_at"] = now
     state.pop("sample", None)
 
