@@ -86,7 +86,22 @@ _NOUNS = (r"people|persons?|victims?|employees?|workers?|staff|members?|fans?|"
           r"investors?|depositors?|passengers?|survivors?|refugees?|migrants?|"
           r"hostages?|prisoners?|inmates?|colleagues?|friends?|partners?|"
           r"teammates?|allies|supporters?|followers?|shareholders?|nurses?|"
-          r"doctors?|officers?|veterans?|seniors?|tenants?|homeowners?")
+          r"doctors?|officers?|veterans?|seniors?|tenants?|homeowners?|"
+          r"officials?|executives?|directors?|lawmakers?|taxpayers?|locals|"
+          r"subscribers?|clients?|constituents?|generals?|recruits?|pensioners?|"
+          r"savers?|policyholders?|creditors?|landlords?|teachers?|villagers?|"
+          r"protesters?")
+
+# Topics to keep OUT of the tracker (sexual violence / child abuse). Murder and
+# other violence are fine.
+_BLOCK = re.compile(
+    r"\b(rape|raping|rapist|sexual\s+assault|sexual\s+abuse|molest|molestation|"
+    r"pedophile|paedophile|child\s+abuse|child\s+sex|child\s+sexual|csam|incest|"
+    r"underage|statutory\s+rape)", re.I)
+
+
+def is_blocked(text):
+    return bool(_BLOCK.search(text or ""))
 _WORD_NUM = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
              "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11,
              "twelve": 12, "dozen": 12, "hundred": 100, "thousand": 1000}
@@ -119,7 +134,7 @@ def extract_people_count(text):
     return best
 
 
-MAX_RECENT = 60  # how many articles to keep for the feed / head-count scan
+MAX_RECENT = 100  # how many articles to keep for the feed / head-count scan
 
 
 # ---------------------------------------------------------------------------
@@ -147,23 +162,26 @@ def gnews_fetch(keywords, timespan):
 
     items = root.findall(".//channel/item")
     recent = []
-    for it in items[:MAX_RECENT]:
+    for it in items:
         title = (it.findtext("title") or "").strip()
         link = (it.findtext("link") or "").strip()
+        desc = (it.findtext("description") or "")
         src_el = it.find("source")
         source = (src_el.text or "").strip() if src_el is not None else ""
         pub = (it.findtext("pubDate") or "").strip()
         # Google News appends " - Source" to titles; trim it for cleanliness.
         if source and title.endswith(" - " + source):
             title = title[: -(len(source) + 3)]
+        if is_blocked(title + " " + desc):
+            continue  # skip sexual-violence / child-abuse topics
         recent.append({
             "platform": "News",
             "title": title[:200],
             "url": link,
             "snippet": (source + (" · " + pub if pub else "")).strip()[:200],
-            "people": extract_people_count(title),
+            "people": extract_people_count(title + " " + desc),
         })
-    return len(items), recent, True
+    return len(recent), recent[:MAX_RECENT], True
 
 
 # ---------------------------------------------------------------------------
@@ -190,7 +208,8 @@ def gdelt_fetch(keywords, lang, timespan):
     if "articles" not in data:
         return 0, [], False
 
-    arts = data.get("articles") or []
+    arts = [a for a in (data.get("articles") or [])
+            if not is_blocked(a.get("title") or "")]
     recent = [{
         "platform": "News",
         "title": (a.get("title") or "").strip()[:200],

@@ -17,13 +17,11 @@
     { "binding": "BETRAYAL_KV", "id": "f5788edd69b343a6bb847eb96dd7594f" }
   ],
 
-  // Refresh hourly. Each run pulls PAGES (4) pages from GNews = 4 requests,
-  // and GNews' free tier allows 100 requests/day, so hourly x 4 = ~96/day,
-  // just under the cap. More stories per run = fewer runs/day (slower cron);
-  // tune PAGES in worker.js and this cron together. The GNEWS_KEY is NOT
-  // stored here — add it as an encrypted Secret in the Worker dashboard.
+  // Mirror the latest data.json from GitHub into KV every 10 minutes. This is
+  // just a cheap GitHub fetch (no API key, no rate limits) — the actual scrape
+  // runs in GitHub Actions. No GNEWS_KEY needed anymore.
   "triggers": {
-    "crons": ["0 * * * *"]
+    "crons": ["*/10 * * * *"]
   },
 
   "observability": { "enabled": true }

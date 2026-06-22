@@ -1,18 +1,21 @@
-name: Scrape betrayal mentions (DISABLED — Cloudflare Worker handles this now)
+name: Scrape betrayal news
 
-# The live site is now updated by the Cloudflare Worker (worker.js) on a cron,
-# which stores data in KV instead of committing to the repo. This workflow's
-# automatic schedule is therefore disabled so it stops creating commits (which
-# would trigger unnecessary Cloudflare rebuilds). It can still be run manually
-# from the Actions tab if you ever want to regenerate data.js/data.json locally.
+# Runs the Python scraper (Google News RSS + GDELT) on GitHub's runners, where
+# those free sources work — unlike Cloudflare's IPs, which they block/throttle.
+# Commits the resulting data.json to the repo. The Cloudflare Worker mirrors
+# that file and serves it, so commits here = fresh data on the live site.
+#
+# IMPORTANT: set Cloudflare Worker "Build watch paths" to EXCLUDE data.json /
+# data.js, so these frequent data commits don't trigger Worker rebuilds.
 
 on:
-  workflow_dispatch:          # manual only — no automatic schedule
+  schedule:
+    - cron: "*/15 * * * *"   # every 15 min (GitHub may delay under load)
+  workflow_dispatch:          # allow manual runs from the Actions tab
 
 permissions:
-  contents: write             # allow the workflow to push the updated data files
+  contents: write
 
-# If a run is still going when the next is due, let the new one wait rather than overlap.
 concurrency:
   group: scrape
   cancel-in-progress: false
@@ -29,13 +32,13 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Run scraper (no API key needed)
+      - name: Run scraper (stdlib only, no pip installs)
         run: python3 news_scraper.py --timespan 1d
 
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.js data.json
+          git add data.json
           git diff --quiet --cached || git commit -m "Update betrayal data [skip ci]"
           git push

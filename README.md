@@ -7,47 +7,49 @@ hour, an estimated head-count of people betrayed, a **Betrayometer** gauge, a
 
 ## Architecture
 
-Everything runs on a single **Cloudflare Worker** — no servers, no git commits
-for data, no build limits.
+Scraping happens in **GitHub Actions** (the free news sources block Cloudflare's
+IPs but work from GitHub's runners); the **Cloudflare Worker** just mirrors the
+result and serves it.
 
 ```
 BetrayTracker/
-├── worker.js        ← the Worker: cron scraper + server
-├── wrangler.jsonc   ← Worker config (assets, KV binding, cron)
-├── index.html       ← the dashboard (served as a static asset)
-├── .assetsignore    ← keeps non-static files out of the asset bundle
+├── news_scraper.py            ← the scraper (Google News RSS + GDELT)
+├── .github/workflows/scrape.yml ← runs the scraper, commits data.json
+├── data.json                  ← scraper output (updated by the Action)
+├── worker.js                  ← Worker: mirrors data.json + serves the site
+├── wrangler.jsonc             ← Worker config (assets, KV binding, cron)
+├── index.html                 ← the dashboard
+├── .assetsignore              ← keeps non-static files out of the asset bundle
 └── README.md
 ```
 
-- `scheduled()` runs hourly on a Cloudflare cron. It pulls several pages from
-  the GNews API (≈40 stories) for the last 24h, computes the metrics, appends a
-  point to a rolling 24-hour history, and stores it all in a KV namespace.
-  (More stories per run = more requests against GNews' 100/day free cap, hence
-  the hourly cadence. Tune `PAGES` in `worker.js` and the cron together.)
-- `fetch()` serves `index.html` and answers `/data.json` from KV (building it
-  on demand if KV is still empty). The page polls `/data.json` every 60s.
+- **GitHub Action** (`scrape.yml`) runs every 15 min. It pulls up to ~100
+  stories from Google News RSS plus GDELT's 24-hour volume curve, applies the
+  content blocklist, computes the metrics, and commits `data.json` to the repo.
+- **Worker** (`worker.js`) mirrors `data.json` from GitHub raw into KV every
+  10 min and serves it at `/data.json`; the page polls that every 60s.
 
-**Why GNews?** The obvious free sources block Cloudflare's shared server IPs —
-Google News returns `503`, GDELT returns `429` — so a Worker can't scrape them
-directly. GNews is an authenticated API that works reliably from a Worker. Its
-free tier allows 100 requests/day, which is why the cron runs every 15 minutes
-(96/day, safely under the cap).
+**Why split it this way?** Google News (503) and GDELT (429) block/throttle
+Cloudflare's shared server IPs, so a Worker can't scrape them — but they work
+from GitHub's runners. So GitHub scrapes (free, no key, ~100 stories) and the
+Worker just relays the file.
 
 ## One-time deploy
 
-1. **Get a GNews API key** — sign up free at https://gnews.io/register.
-2. **Create a KV namespace** — Cloudflare → **Storage & Databases → KV → Create
+1. **Create a KV namespace** — Cloudflare → **Storage & Databases → KV → Create
    namespace** (`betraytracker`). Copy the **ID** into `wrangler.jsonc`.
-3. **Deploy the Worker from the repo** — **Workers & Pages** → create a
-   **Worker** connected to this GitHub repo. Cloudflare reads `wrangler.jsonc`
-   (assets + KV binding + cron). It must be a **Worker**, not a Pages project
-   (Pages can't run cron).
-4. **Add the key as a secret** — Worker → **Settings → Variables and Secrets →
-   Add → Secret**, name `GNEWS_KEY`, value = your key. Save and redeploy.
-5. **Add the domain** — Worker → **Settings → Domains & Routes** → add
+2. **Deploy the Worker from the repo** — **Workers & Pages** → create a
+   **Worker** connected to this GitHub repo. It must be a **Worker**, not a
+   Pages project (Pages can't run cron).
+3. **Exclude data from builds** — Worker → **Settings → Build → Build watch
+   paths** → exclude `data.json` (and `data.js`). This stops the frequent data
+   commits from triggering Worker rebuilds.
+4. **Add the domain** — Worker → **Settings → Domains & Routes** → add
    `betrayals.ca` (and `www.betrayals.ca`). Cloudflare handles DNS + SSL.
-6. Visit the site — the chart fills into a complete 24-hour curve over the
-   first day as the cron adds a point every 15 minutes.
+5. **Enable the Action** — the scraper runs automatically on its schedule once
+   `scrape.yml` is pushed; trigger the first run from the **Actions** tab.
+
+No API keys or secrets are required — everything uses free, keyless sources.
 
 ## Endpoints
 

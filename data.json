@@ -1,0 +1,808 @@
+{
+  "keyword": "betrayal / betray / betrayed / betrayer / betraying",
+  "history": [
+    {
+      "t": "2026-06-21T23:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 2
+    },
+    {
+      "t": "2026-06-21T23:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 2
+    },
+    {
+      "t": "2026-06-22T00:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 4
+    },
+    {
+      "t": "2026-06-22T01:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 4
+    },
+    {
+      "t": "2026-06-22T01:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 4
+    },
+    {
+      "t": "2026-06-22T02:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 4
+    },
+    {
+      "t": "2026-06-22T02:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 6
+      },
+      "total": 6,
+      "per_hour": 8
+    },
+    {
+      "t": "2026-06-22T02:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 10
+    },
+    {
+      "t": "2026-06-22T03:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 4
+      },
+      "total": 4,
+      "per_hour": 12
+    },
+    {
+      "t": "2026-06-22T03:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 12
+    },
+    {
+      "t": "2026-06-22T03:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 6
+    },
+    {
+      "t": "2026-06-22T04:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 6
+    },
+    {
+      "t": "2026-06-22T04:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 2
+    },
+    {
+      "t": "2026-06-22T04:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 3
+      },
+      "total": 3,
+      "per_hour": 5
+    },
+    {
+      "t": "2026-06-22T04:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 6
+    },
+    {
+      "t": "2026-06-22T05:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 9
+    },
+    {
+      "t": "2026-06-22T05:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 4
+      },
+      "total": 4,
+      "per_hour": 13
+    },
+    {
+      "t": "2026-06-22T05:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 11
+    },
+    {
+      "t": "2026-06-22T05:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 12
+    },
+    {
+      "t": "2026-06-22T06:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 4
+      },
+      "total": 4,
+      "per_hour": 11
+    },
+    {
+      "t": "2026-06-22T06:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 12
+    },
+    {
+      "t": "2026-06-22T06:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 4
+      },
+      "total": 4,
+      "per_hour": 15
+    },
+    {
+      "t": "2026-06-22T06:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 7
+      },
+      "total": 7,
+      "per_hour": 20
+    },
+    {
+      "t": "2026-06-22T07:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 4
+      },
+      "total": 4,
+      "per_hour": 20
+    },
+    {
+      "t": "2026-06-22T07:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 15
+    },
+    {
+      "t": "2026-06-22T07:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 3
+      },
+      "total": 3,
+      "per_hour": 14
+    },
+    {
+      "t": "2026-06-22T08:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 7
+      },
+      "total": 7,
+      "per_hour": 14
+    },
+    {
+      "t": "2026-06-22T08:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 12
+    },
+    {
+      "t": "2026-06-22T08:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 13
+    },
+    {
+      "t": "2026-06-22T09:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 10
+    },
+    {
+      "t": "2026-06-22T09:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 7
+      },
+      "total": 7,
+      "per_hour": 10
+    },
+    {
+      "t": "2026-06-22T09:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 8
+      },
+      "total": 8,
+      "per_hour": 16
+    },
+    {
+      "t": "2026-06-22T09:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 7
+      },
+      "total": 7,
+      "per_hour": 22
+    },
+    {
+      "t": "2026-06-22T10:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 6
+      },
+      "total": 6,
+      "per_hour": 28
+    },
+    {
+      "t": "2026-06-22T10:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 3
+      },
+      "total": 3,
+      "per_hour": 24
+    },
+    {
+      "t": "2026-06-22T10:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 16
+    },
+    {
+      "t": "2026-06-22T10:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 6
+      },
+      "total": 6,
+      "per_hour": 15
+    },
+    {
+      "t": "2026-06-22T11:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 6
+      },
+      "total": 6,
+      "per_hour": 15
+    },
+    {
+      "t": "2026-06-22T11:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 13
+    },
+    {
+      "t": "2026-06-22T12:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 7
+      },
+      "total": 7,
+      "per_hour": 20
+    },
+    {
+      "t": "2026-06-22T12:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 16
+    },
+    {
+      "t": "2026-06-22T12:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 8
+      },
+      "total": 8,
+      "per_hour": 18
+    },
+    {
+      "t": "2026-06-22T12:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 18
+    },
+    {
+      "t": "2026-06-22T13:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 12
+    },
+    {
+      "t": "2026-06-22T13:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 10
+    },
+    {
+      "t": "2026-06-22T13:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 3
+    },
+    {
+      "t": "2026-06-22T13:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 3
+      },
+      "total": 3,
+      "per_hour": 5
+    },
+    {
+      "t": "2026-06-22T14:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 6
+      },
+      "total": 6,
+      "per_hour": 10
+    },
+    {
+      "t": "2026-06-22T14:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 15
+    },
+    {
+      "t": "2026-06-22T14:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 11
+      },
+      "total": 11,
+      "per_hour": 25
+    },
+    {
+      "t": "2026-06-22T14:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 22
+    },
+    {
+      "t": "2026-06-22T15:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 8
+      },
+      "total": 8,
+      "per_hour": 24
+    },
+    {
+      "t": "2026-06-22T15:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 24
+    },
+    {
+      "t": "2026-06-22T15:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 7
+      },
+      "total": 7,
+      "per_hour": 20
+    },
+    {
+      "t": "2026-06-22T15:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 8
+      },
+      "total": 8,
+      "per_hour": 28
+    },
+    {
+      "t": "2026-06-22T16:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 22
+    },
+    {
+      "t": "2026-06-22T16:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 18
+    },
+    {
+      "t": "2026-06-22T17:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 17
+      },
+      "total": 17,
+      "per_hour": 28
+    },
+    {
+      "t": "2026-06-22T17:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 6
+      },
+      "total": 6,
+      "per_hour": 26
+    },
+    {
+      "t": "2026-06-22T17:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 8
+      },
+      "total": 8,
+      "per_hour": 32
+    },
+    {
+      "t": "2026-06-22T17:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 3
+      },
+      "total": 3,
+      "per_hour": 34
+    },
+    {
+      "t": "2026-06-22T18:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 3
+      },
+      "total": 3,
+      "per_hour": 20
+    },
+    {
+      "t": "2026-06-22T18:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 14
+    },
+    {
+      "t": "2026-06-22T18:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 21
+      },
+      "total": 21,
+      "per_hour": 27
+    },
+    {
+      "t": "2026-06-22T18:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 4
+      },
+      "total": 4,
+      "per_hour": 28
+    },
+    {
+      "t": "2026-06-22T19:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 25
+    },
+    {
+      "t": "2026-06-22T19:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 10
+      },
+      "total": 10,
+      "per_hour": 35
+    },
+    {
+      "t": "2026-06-22T19:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 11
+      },
+      "total": 11,
+      "per_hour": 25
+    },
+    {
+      "t": "2026-06-22T19:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 23
+    },
+    {
+      "t": "2026-06-22T20:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 4
+      },
+      "total": 4,
+      "per_hour": 27
+    },
+    {
+      "t": "2026-06-22T20:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 19
+    },
+    {
+      "t": "2026-06-22T20:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 19
+      },
+      "total": 19,
+      "per_hour": 27
+    },
+    {
+      "t": "2026-06-22T20:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 30
+    },
+    {
+      "t": "2026-06-22T21:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 16
+      },
+      "total": 16,
+      "per_hour": 42
+    },
+    {
+      "t": "2026-06-22T21:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 42
+    },
+    {
+      "t": "2026-06-22T21:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 15
+      },
+      "total": 15,
+      "per_hour": 38
+    },
+    {
+      "t": "2026-06-22T21:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 35
+    },
+    {
+      "t": "2026-06-22T22:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 22
+      },
+      "total": 22,
+      "per_hour": 41,
+      "betrayed_total": 0,
+      "articles_with_count": 0
+    }
+  ],
+  "latest": {
+    "t": "2026-06-22T22:58:34.985315+00:00",
+    "counts": {
+      "reddit": 0,
+      "twitter": 0,
+      "news": 365
+    },
+    "total": 365,
+    "platform_labels": {
+      "reddit": "Reddit",
+      "twitter": "X / Twitter",
+      "news": "News"
+    },
+    "recent": [],
+    "source": "GDELT 24h timeline + Google News",
+    "per_hour": 15.2,
+    "current_rate": 41,
+    "betrayed_total": 0,
+    "articles_with_count": 0
+  },
+  "generated_at": "2026-06-22T22:58:34.985315+00:00"
+}
