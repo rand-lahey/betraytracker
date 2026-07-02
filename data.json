@@ -1,0 +1,901 @@
+{
+  "keyword": "betrayal / betray / betrayed / betrayer / betraying",
+  "history": [
+    {
+      "t": "2026-06-30T16:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 5
+    },
+    {
+      "t": "2026-06-30T17:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 5
+    },
+    {
+      "t": "2026-06-30T17:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 3
+      },
+      "total": 3,
+      "per_hour": 8
+    },
+    {
+      "t": "2026-06-30T17:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 13
+    },
+    {
+      "t": "2026-06-30T18:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 13
+    },
+    {
+      "t": "2026-06-30T18:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 15
+    },
+    {
+      "t": "2026-06-30T18:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 13
+    },
+    {
+      "t": "2026-06-30T18:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 13
+    },
+    {
+      "t": "2026-06-30T19:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 7
+      },
+      "total": 7,
+      "per_hour": 15
+    },
+    {
+      "t": "2026-06-30T19:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 15
+    },
+    {
+      "t": "2026-06-30T19:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 15,
+      "betrayed_total": 89,
+      "articles_with_count": 89
+    },
+    {
+      "t": "2026-07-01T18:32:43.939787+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 97
+      },
+      "total": 97,
+      "per_hour": 4.0,
+      "betrayed_total": 97,
+      "articles_with_count": 97
+    },
+    {
+      "t": "2026-07-01T20:30:26.269347+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 89
+      },
+      "total": 89,
+      "per_hour": 3.7,
+      "betrayed_total": 89,
+      "articles_with_count": 89
+    },
+    {
+      "t": "2026-07-01T22:06:39.961841+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 90
+      },
+      "total": 90,
+      "per_hour": 3.8,
+      "betrayed_total": 91,
+      "articles_with_count": 90
+    },
+    {
+      "t": "2026-07-01T23:44:55.019892+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 95
+      },
+      "total": 95,
+      "per_hour": 4.0,
+      "betrayed_total": 96,
+      "articles_with_count": 95
+    },
+    {
+      "t": "2026-07-02T01:52:38.144283+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 96
+      },
+      "total": 96,
+      "per_hour": 4.0,
+      "betrayed_total": 97,
+      "articles_with_count": 96
+    },
+    {
+      "t": "2026-07-02T06:03:48.609156+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 100
+      },
+      "total": 100,
+      "per_hour": 4.2,
+      "betrayed_total": 101,
+      "articles_with_count": 100
+    },
+    {
+      "t": "2026-07-02T09:33:47.620593+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 94
+      },
+      "total": 94,
+      "per_hour": 3.9,
+      "betrayed_total": 94,
+      "articles_with_count": 94
+    },
+    {
+      "t": "2026-07-02T11:57:20.177764+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 97
+      },
+      "total": 97,
+      "per_hour": 4.0,
+      "betrayed_total": 97,
+      "articles_with_count": 97
+    },
+    {
+      "t": "2026-07-02T14:24:37.319055+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 90
+      },
+      "total": 90,
+      "per_hour": 3.8,
+      "betrayed_total": 90,
+      "articles_with_count": 90
+    },
+    {
+      "t": "2026-07-02T16:20:34.080586+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 89
+      },
+      "total": 89,
+      "per_hour": 3.7,
+      "betrayed_total": 89,
+      "articles_with_count": 89
+    },
+    {
+      "t": "2026-07-02T18:14:53.557421+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 90
+      },
+      "total": 90,
+      "per_hour": 3.8,
+      "betrayed_total": 90,
+      "articles_with_count": 90
+    }
+  ],
+  "latest": {
+    "t": "2026-07-02T18:14:53.557421+00:00",
+    "counts": {
+      "reddit": 0,
+      "twitter": 0,
+      "news": 90
+    },
+    "total": 90,
+    "platform_labels": {
+      "reddit": "Reddit",
+      "twitter": "X / Twitter",
+      "news": "News"
+    },
+    "recent": [
+      {
+        "platform": "News",
+        "title": "The sad ballad of the betrayal of French Hill",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPOVdoTUduaUdoZUh1eFdiRGc1VzRxSGdXV0d6bEh5NEUwSGVEM0trZVVZOEVEU1RVcnk2MHg2U0R0N0lidDNuQlBrdnhILWR5VnZGd2cxUGcwTW1HWTlscUZpRzNFWnZzb2tSektteFdObndyaXZyUmVEZ3p3OFNwYlpmYUpiS2wzUVNUa0d3Y3BibkhOaWxTZHNB?oc=5",
+        "snippet": "The Arkansas Democrat-Gazette \u00b7 Thu, 02 Jul 2026 07:36:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Ariana Biermann Got Her Wish and Georgia McCann Betrayed?: They're \"Coming In and Taking My Work\"",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOakMycC1ZYXBVVEg5VlVPTU5IYTlGWE9PTDJ5T2pZY2JUem5iVkVGTTJ5QW5jTUQxRTVjcnpjU3pxcXhaTkMtQjVDODh6S2JEQ3c5UnRMdkdwaUlMQXFkNDRBVFdYMS14ZUlxcklmaWNQcVRXazNyd01KQ19mNjQ0TXdnWWQyaEJLRVFWTVpLeEM3eVpsSzBJVUtCamwxeEMwTFlwTGFuUEstbV8tcUdTOWkyT194M3FpV1VJMA?oc=5",
+        "snippet": "Bravo \u00b7 Thu, 02 Jul 2026 10:21:45 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "The Taliban and the Betrayal of Afghanistan\u2019s Classical Educational Tradition",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNbkc5YlQwWlM2MEpncXROMzdGRWVJSHQ4VW9jeEdLaktJZXJsTEYxTGpNNVQzN1ZQY2RMZXJNMzFQcU85YkF0d3VGTXFnUDM4cTF1aE9WbGx3cTRySFVTaVBVLXlvQTJsSWRWemJQbFM0bVQtSUlUMFNRSWRORHRMZGJvV2NQb3JzOXB3T2pUQ3lhVE9aTS1RUnJWTjFIV0xs?oc=5",
+        "snippet": "8am.media \u00b7 Thu, 02 Jul 2026 12:15:01 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Iravani: US is the Ultimate Betrayer of Diplomacy",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9sVWhMOTFjVFN1Wmo4TXZZSXRNSDd0SnNwaTNiVV9GYkh0a3Y1SkVVUzZuZklPNFJIb3FuT1JhUVFTX1J2eWFjLVFYWFZNa25XcjFkWnF2NHBKd2phT0owWWZ2RklDd2FuSWVjdmxhNDJRVElRMDE0?oc=5",
+        "snippet": "WANA News Agency \u00b7 Thu, 02 Jul 2026 17:31:32 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "SOMEONE IN THIS CROWD WILL BETRAY ME [REVENGE EDITION] to Return to Edinburgh Fringe",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQOG0tdWxDNHFmUlU2bDh1REZzTFlhVWl4T2FlZjRjX05Ud3JnZG5HR0FENmhtRFlRbWotYV9vQTB6SWtJWlU5d2tkZnVKMFVTY1REV2RMMFU4LV9OWUQ1X2pYcGJCdEtvd1lYZjE5WHprZFdfb3V5RWl2RzNwUlo5NG5pYkJuaTkwTEV0UFVTZ0lvMVFuQ0VFOEl3XzJ2TGhLRExIWUoybDNFelFQVUtqTmVibFJpaWp1U1hfemNsMXVNb2dZNExxNkpmNWtBTXlnUmpBQg?oc=5",
+        "snippet": "BroadwayWorld \u00b7 Thu, 02 Jul 2026 15:56:02 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Wellness Wednesday: How to Heal from Betrayal Trauma",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNUlhoTFI3ZlZ3X3lncG8xNUpkdzUzLVMzM0Y3MVFyTUVVckl5SmZLSWtyNkJab2ZtNDBGUUkxM3dBZnJZemxGRlV6NmktczNwZVRLaEdmc0xBVnpNN3UxUzk0QkY0RGMtbC1tTmIwOGJrSFlYX3g2MFRlS3loS0tNN1lUTdIBlwFBVV95cUxQRUdSb0oyTlltTGNUd3ZycFFBZzRKc0djSUxOcXpfQndpdGtsRmstNzFKakNWQjIyckstRmtFbWRTRzBRVUVUel8zMWlJbXh5d1lfdWZnSk93MU9GTWl3RVc0OGFBZnRCNl9xOXRzclgxY3dFbTFSY2JQcE5hQmR1YlFaMnFsbXo0aXg3YzRXMW9jN19aNl9F?oc=5",
+        "snippet": "KCTV \u00b7 Wed, 01 Jul 2026 18:18:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Trump\u2019s deals with Iran are not a betrayal of Israel",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWDZ0YVFKcVY3d3Z3WkxNV0NmdXI0QVRvNVFyazN2YTJWUjAxSkg1ZGMyTnlRSGRxTjk1VHFTVVAtWnphYzNSV0ZDc0d2ZENjUndhdUh1TnRweVdUVVM0QUl3dTRnU1BqelUwc3lpYWMwZzdqcG1oeXZvZW55UVp4V9IBhgFBVV95cUxPRjVGWURrUFJTc0FlZTdPdElWWU9DeVVSZk5tQTliQ0x2OXdOdlhpVDVGZXZnTHVscFNjQ2U4cU5SbEptRmtISE40dDY2VWxMS3gwQnNrdHJvYjRsZ05wTzVHem9PQVVjRUZIeXVtTW1jQ1Z4cGx2LVY4RGVBaTBnbXZCVmZ1UQ?oc=5",
+        "snippet": "South African Jewish Report \u00b7 Thu, 02 Jul 2026 15:26:37 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Former royal chaplain accuses King Charles of betraying Christian faith",
+        "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxPamRpMUhkV2lVcmtKS1dxaTMyOFJ0Si1pVVo5MXlnd0ZXcXdTdFAtSnE0WHVCUVFBN2VjQ2I0T1Q1RlRMdHNDNzRZTjM4QmpGUVFxVnk2aXp0OHR2LXVHVVNDOXZ4eE84SWdQYWZtU3FmcjZiUW1GWnNSM29hY0RWZUxmVlZfM013eXZHaE84MjZZZWlNNVNTVU5Ub2NBa1J1MUp1TjJnaDJHbG1qalphcDJjSXB6dThtbWZNaXBpbWtwbTdIMGNoeGs2YzVEZUxZTnlDYzRsSXNBR3J2UzRYYThscUF2OVlZYVJuZDlZblRYUmc1cmUtZUcwRWduMTJIVlR4NEhzbDhIelpOOWlYaldZVHRGYk9CS0F3NE42WWZPVUQ1TnpsSzlYc1I3SHpXOTdaMEV3?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 02:35:22 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "717: Are North Dakota leaders betraying Theodore Roosevelt's legacy?",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNUnhGOUF1aWJHY1A4aWZHeVdUWVY3bk5TMEV1UlJOZExvR3pVWDhnVi1leFozU0lkVnVTYkc0WU9YQ09NRWh6bURlbjI1bEtJVnVfdW1FWl9BWlpGbmltczF6Zm5uZHgtN09WYXR1bXdHRWdtWHFieDR6WTFKdzM1NkVhbDcyT283cXBKZ2pwWGtPSG8?oc=5",
+        "snippet": "InForum \u00b7 Thu, 02 Jul 2026 09:15:55 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "An act of betrayal? Bayer\u2019s Monsanto glyphosate CVD filing faces growing criticism",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNUHFJZ3VLSHZEVHNGajE4cTNmeThkMk8xdzlyNE9ZVXcxTU83ZzFKbkRkU051N3VwU2JxUWk2TThLZFVwY3YxNjZOYXhEc0FENGFXdkVtdXhQYlM5S2RnSTQzMzhGTFpiM0ZrSUZEaGtRbW1qMTNvb0VUNXRRQ0d5UDA2ajlEcGkzWEs1dGtQeDI3MXhVQklQSG9DSjdER09pSkFoNmpuZFRESEFXTmZNR2tGR20?oc=5",
+        "snippet": "Michigan Farm News \u00b7 Wed, 01 Jul 2026 19:42:01 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "'Betrayal of his Christian faith': Fmr. royal chaplain rebukes King Charles' stance on Jesus' Gospel message",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOWUpPZU81cmZOMnRwU3VnX01CLV96YU05YV9MSjZVVl9hNENlVG81SlpkSy1KSW1yR1J4V0NzaDc5VlhheDJXekFaYWI1STd4YXN2ZTFCUWhJRU92Um8zNmp5YU8zdkVnTHVUY2x3UWNzR1ZvSU05WW1BYlRmeEdlaFhqQ2VyVF9pLVlVUXdCREVLd25tY2VobVQ0NDI2M1d3S25EYQ?oc=5",
+        "snippet": "Christian Post \u00b7 Thu, 02 Jul 2026 02:40:15 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Proposed Changes to Federal Employee Discipline Rules Betray Nation\u2019s Public Workers, AFGE Says",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxONUpyM1hiSV9od2ludFQ0LWZ0dm5IUFFNWmxkNHIxQ203ZTBFMDBYdGVxUUJFNF9vV3JSX0pGQTdjM3ZzUjNQTmpfZW1UVFpIeGFHc2ZMWm5RTkhNam9Ta1lzcGFhaDRRLVZHVFRCc2dVUFRWZEpIUW5QaVU0cXVJc2lVZ1pSUElkMDB4WXcyZU50cTkzUU9HMFBlNDlCT3k2WGZNbVN3SG5wNHcyQWNFcWI5LXp1WFZ5U0FnVFU4WXNkS2RIb3c?oc=5",
+        "snippet": "AFGE \u00b7 Wed, 01 Jul 2026 18:51:17 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Why did Vance betray Israel while coddling the Middle East\u2019s biggest bully?",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOSmhmaUdPM2o4dzF6VDhyQnhqWTJfQ1BXYWRnb0xIWUVZOTBDUTJ1UWRoajJCTkpneUVwYjBTdGYwdkFzamxyVmY0bFRTX0JsTFluRVBnV2dqY1BNdUJURFM4REZXSmVXYjB6TU04cDdFWlU3aG9hY3FHSWxMZ3VtcW5oYTE4WUE0UE56ODFtNG1iWFlZQ2tDcE5HYllTTEtnbnRmOENpRVU1WDlKekZDWEx3dF9KWmpl?oc=5",
+        "snippet": "JNS.org \u00b7 Thu, 02 Jul 2026 08:00:58 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "The betrayal, rebirth, death, or who knows of Sanok hockey",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPdHp4M053VHhLQmdCLW5yMVJMQ2pfTEtFNHZvbEh4RDg4NTgtNkFTdllFMGJ3UEMyalFpZnB5c2k0UmNMd0tlOWxuclZSS1BfaEJaWWw4cTlGRklYR0lUWTFfenhQemxDOUwzX1dZTEg3QU1NZWZGdGhQcFYtSmFvN1VTSUdoSkJ0WkVRc2xvOGRLTzdnc3ZPR2ZxT2h3c0Eybmc?oc=5",
+        "snippet": "Eurohockey.com \u00b7 Thu, 02 Jul 2026 10:39:34 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Kate Middleton\u2019s Feels \u2018Utterly Betrayed\u2019 by a Royal Amid Deal Rumors \u2014 Source",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNYXd3ekZiUE5wc0VqaGpGNmgtcThsaUgzQk1GMjBrUXNmQ3dLc09XQU95Q2plWkZrT0JTYS0zNUtHaHNVR2JDSHA3ZWd3aGFYUjlwZnhsZlRoVU5rM0kydXozRFpfNElxVHcyZUM2N01EZHFmbEVsOWlwOXY0ejN4NGk2cDBRN1l4Y1E?oc=5",
+        "snippet": "AOL.com \u00b7 Thu, 02 Jul 2026 12:44:14 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Ex-Labour Councillor SLAMS Party's 'BETRAYAL' After Being Accused Of Racism In Taxi CCTV Row Thiago Agust\u00edn Tirante (8rVHceVryW)",
+        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5ZaHVtamQ2bnU5Vlc5WWxMWDduLS1SZVo3dndGWlRpSmRDRjBYNlZoV1FOQk1vVXNXOHVzR090VElhYjVNWi1XRDJTamlNWkJfbVJDSklVVXg0WDR1WnN5Ug?oc=5",
+        "snippet": "Mshale \u00b7 Thu, 02 Jul 2026 06:48:19 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Former royal chaplain accuses King Charles of betraying Christian oath",
+        "url": "https://news.google.com/rss/articles/CBMitAJBVV95cUxQMmZ0VjRtWHlHd1dsNmJWWnlnY3loTThkemtTdkVHenZPV1JLT0t5aWRlQUJyY2Rha21SZnNTOUpuanAtOUNfOUdBbHN4aDl1WE9BVEYzcGstb2tnMGsxMUNfSzFBRG1Vb2UzMlpOR08xMVJZb0NoQ2g1dXluZDQwenNHWWFhYnBzQ3ZNS1JxbXhiMERONFZHMm5qX21pR3kwRzNyLWc2X2hUNVZkSVJfdFI5b3lVU0ljSHMzVHhrSks5cU5KRzZQVDh1ZU5nLTVGVW9OaDUzM3FnT3dDMzVTNzA4MHNfUUkwX1BwZDdoSmR1N2tVazBCYjBUSW1QLW5NUUZBQTVnRWowLU5JV1RHazg3dmZ5S01DUktYR21EbDZ6ZlJHWEdmZmdyNDRsekdxWTl6Zw?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 03:50:15 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Plain Talk: Are North Dakota leaders betraying Theodore Roosevelt's legacy?",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTXdTaUNQUXJJWmwwd3EyRUJDRnVIdjczWUpsZnJnYV8tTlRtbF81bDlXQjNxOE5tM2pzbFU2TUFJdGVzRk56U1ozTndRMzI0YVFqYm5haGpSV1FhTGM2cU9sb1RyYkNnY2Y2d1ZLWDIzN1ZZUTFGb0sycWJpVGRNb3Z4M2lseG1YSUw4Q19YY296MkJENmRoRTd4VFF0NHFOaVdNZ0Y0NThtRk9PRXc3NVl3?oc=5",
+        "snippet": "InForum \u00b7 Wed, 01 Jul 2026 19:45:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "New humanlike robots are built to never betray you",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5wSGx1dDFmVzJCcXVMS2NGVDlSMm03WVF4Y1NoUEZPMmNFRHFDamE4VXNmTi1ibGJTdGNMSDhTZUpZVUZNOHkySGNMSU5vQlZENTNWTmt4WFdXMjd5bnJzclRFeHYxWXFzY2dF?oc=5",
+        "snippet": "geekspin \u00b7 Thu, 02 Jul 2026 11:02:19 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Republican accuses SCOTUS of betraying US, pushes bill restricting birthright citizenship, pregnant visitors",
+        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNaWFGSXJXVWRXbWZ1Z3FCeFlFYUlkZnY3cHRIR1E1bUw4a1Z5S0lXRFlqR2FiMTllR05kcXRmVGp1dG1WVzdlU2NyV0stck1td0ZMdFREa3dFSHZZRUNLcVlBYkVVRThsbVFIR09QRElTdWxabFpfUzRVMzExMDBsQnZhSGF4dklzLUlUWC1LbnZVdVFXZjRvbGo1SXRIX2FnVWhCOEdCMWhqNXBTLTNnMUdLc1BpVTJVQnpRSXdHZUVPYU9ZejdFX05FUEVGZWhqMVE?oc=5",
+        "snippet": "Fox News \u00b7 Wed, 01 Jul 2026 18:46:40 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "MAHA feels betrayed after Supreme Court ruling on Monsanto, glyphosate",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZzVkWjhhVXh2MXRDZnJDMl9RYTZ5SEZucUIzUGwtUDllX0RXb3gzVnJNQTQ0ZGt4eWZLczJQb0ZOb1poVThLcVZGdGFuc3gzYVFQQ19QOEszbzN0UUxJT0xWamtJanFVUVBTTEpSVUJrM1lRM3gwd0pqZEN3bjd1VFA0bw?oc=5",
+        "snippet": "AOL.com \u00b7 Thu, 02 Jul 2026 08:20:31 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Ram temple donation theft: \u2018Betrayed by those I trusted,\u2019 claims Champat Rai",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPbEt1cFV5bEY0dGhBVEhQQm5hSVFfSjh3cUFvWVMzSElmZFpjZFI0UnhRU0oxNFRMREltYWxXTXI4aTFvUHhnRGl4UnBEVzFVbXB2aHdEcklreUZIZ2ZHNkJMZUJ6LVhmcEdQTS04RVM4cHhxRE5USFZpNk5mY3Z5bjZiSnQxSl9sbFk3eDFYSXZ3bXlCNlFzanVyTnRaaGVCWXc3STdYcUM2N2kzdFdCeGlUSdIBtwFBVV95cUxPbVd0YkhKb3lfOHN0MUNmWEdsNDRVR1Y5TlNabW9WZDdsOGNNLVdiSlI5c0Zpd2htUGFFS2dqSmFPX3dTMmpJM3dodDhRaHZza2JLZkNORU54Y2dJcVEyTlJsVWxCUEZ6NTk0Uk5VR2ZNZlhjT3BQOWtwd0pOMnBhNkFIeUJuVkh3RXRBNW5jSVJzT29GMGwwR0hnYVZsZEdEWkNnQVJURkpPWEIyUHFfUDhpc3R1cG8?oc=5",
+        "snippet": "The Tribune \u00b7 Thu, 02 Jul 2026 16:13:53 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "EXCLUSIVE: Princess Catherine 'Feels Utterly Betrayed' By King Charles Over His 'Peace Deal' With Prince Harry and Meghan Markle, Sources Claim",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPcm9PUTFod1pRUUY1STJnYWlrX3BtRFJfQkZQRElvRE9ET1N5SXhBTEdlbEZEbVAzdnBYTDQxbS05YUN0czlQU3RZLXU0MjNDLTlMUTdiYXM3QlZBVFdVSlZ3ajJlRzBZYjE2OEZJVHRydUhyTW5JSndYUldYejBRYzZ2V1hObVJ2Y0duaVRJZw?oc=5",
+        "snippet": "AOL.com \u00b7 Thu, 02 Jul 2026 11:32:41 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Betrayal, Jealousy, And Revenge: Shahrbanou And Qasem's Fierce Fight Over Kobra! Alex Pereira (tdzvIB4bOe)",
+        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBZVnJseGF5ZGhSR0hkdXZqUUVhOGxZbmdEMFpybGZhLVNGekVCZ01EWnpvaEpnQVVQSjRSN3dSZmpBYnVBc2hnQ2packxIcE1YeEwweHd6ZzNTMkk?oc=5",
+        "snippet": "Mshale \u00b7 Thu, 02 Jul 2026 00:03:58 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "The three crimes at the heart of Starmer\u2019s defence betrayal",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPQ0VXRlZYTVpITUhVUFdiaHpIZ21ORUFzVXF1OVJ6MHNybFZPZ1JqZURXbXFaMEJhZElJbUxCX0NzN2VOTWxBTnROcVdmeVktbVR5YmctOHo5VHJCbjlWdjZvTXFqU1lGaDJUYU12NUNDUmdfVGNKSUpoSHVuc1lLcE9rQkE?oc=5",
+        "snippet": "AOL.com \u00b7 Thu, 02 Jul 2026 12:58:28 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "NC Accuses BJP of \u2018Biggest Betrayal\u2019 Over Delay in Restoring Jammu and Kashmir Statehood",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMlFOTmg4YS0xRVRaaTkzVnJSQXVIa005OVotUlVYLXI4YXBOQWY0TVdjSy1LMVktNXpocnhIMXdDekhxNGI5eGtSYmlGV1ltTThmaEtPQVVxdUtySm5iNmJSTTRMb0JLSmFldm9QdXd6VG5vc1lFRWZTYk05clA4RnZxQ3lsbktmV3NQaGF2bWNtNFZjUGVHUjFlUTgtMWw3S05maTFicXBYREFBampXbzRTZzdkd0dublE?oc=5",
+        "snippet": "Kashmir Life \u00b7 Thu, 02 Jul 2026 15:09:32 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "BJP betrayed public faith, Lord Ram will not forgive them: Akhilesh on donation theft row | Hindustan Times",
+        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPQkh6M1dmdGZneHBreG5odlpRbzNqQThTbi1seWdNV25QZlI2cWNmZ0tJWFRwVllnQWFMSkFSY0dfSHNCVHY3eDNPS3pseDBmUTduTFBVc3VKV1ZYOGMxTW9VZEFNY2F1cGNLMnh1ekpSUjUxdzNsYkQxcmZDdzEtdzg1TVFhd210WkctNkc0SmhTLTNoQkU5a0VFVlNUSnpQUFhfd0UxbGwxcUJ3WnZKNG5yLUNXNVJhbk1PcmFCNGFrVHVISDd4UFZVNGpoX1N6N2tBQTk1MEVsWXg1c3pCZ0d5NnRya1dsMnNEbjFWNWfSAfYBQVVfeXFMT1c4dnl1UXdxYl8xaEdLT3pIajdYRmJIQjd1bm9VanhxWUt2RFdQYjJTU2t4ZThKTUpTV182ZTRuTjhLSm1VNUpscGp6cmEwa1ZjUHgwR1Npa2NlTTZpX1FZX055c2xRUXIzcG9lTGpZMDdZUGNLSUg1T3hzdXM4R0JNcE9ENm1jWEJ0Mk5Ga1huQjFXWUtiYVVwOFJ2Nk5JWHo1dGtMS2x2RUxDeG83VDlzRU9BX2xqZ2xDUFJoWl9fTGZQVmFXVElNXzQxaFlvd19POTBMOFBKSnhRLWE2TldaQl8zazRZX3Awd0lLcmY4ZWI4RE9B?oc=5",
+        "snippet": "Hindustan Times \u00b7 Thu, 02 Jul 2026 14:50:25 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "'Betrayal of the Republic': MAGA Melts Down Over Birthright Citizenship Ruling",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPbGVWTmdqeGVlTm9UV0J3WVQ2OWE2cXg0ekNZWXVhN2hGemo4Q2xkVFhMZUplUlNmWUpkUzA2Mm1nYjRpVWRDWnJDT3h2V3gxVmJhWnlpMnBLUFZ2QU9jQnBVaFlTUE11a01tQS1qNE1Na1dCY1lnSDVhWk1LeDVYU1pYR2lqZmwwbFhLVDB1UFh2WG1pblNJem9uczN3bkZldmNOMDRQU0JUZmJLcEJN?oc=5",
+        "snippet": "Religion Dispatches \u00b7 Wed, 01 Jul 2026 21:22:22 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Former Royal Chaplain Accuses King Charles of 'Betraying' the Christian Faith Over Controversial Royal Role Shift",
+        "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPNVFmQ3FuOTJmV0Jfd0dSY1EzSk9UNFg0WElUR1dqNUR5RFE5VjI3RGpvLVROVmV0LVRkb3pLQm54Ny1aZmluT2dBZkdNLVppRXc5YWxzU1I5RU9TR2hqVGNPa08tSFd3VXN5QzVvM25iVUg2bVViSEc2bkdLREFnajhRRnlXV2Nxbng5YWZhcGJrUXVXV2t1QTA2d0pLWUhldzFnbjI5bndHRU45NGZkNk1KVnlXTWZZcF9obW5RcTdINU9OWFZScXNkMUlXSXpkMXU0ZGJqVHlwRG5VdmdId3JYOHgxTXRlODJpRDE0MlVQdEpvQkc5dkJLVQ?oc=5",
+        "snippet": "JubileeCast \u00b7 Thu, 02 Jul 2026 07:04:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Irate columnist claims Liverpool starter \u2018betrayed\u2019 his country in furious diatribe after World Cup exit",
+        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPLVNqZllKMF92dzRYMVRuVVRkaW5nX082aFY1RHoxaGxYMWppRkx1Q296VDkxTVZESWZ6MTNCR2J5LUtidUNWaXBUelctSTd2SzRLenhMajRmMG9SSE1zU01YbTBHb3RLUDAzcl9WbHNQY2FiSl9TUTNNMTh1LTRMaWhIdHhhMngtNW53bUF4M2Mxd2RySDg0VnFScjkxcHV5ekdVcFFrb2F2MjZEdjdlanU3UzlkM0FLZWR6VWpNaHNCUkN1N3R6U0hCNXFITnJOMENWTHhNMzAzb0E?oc=5",
+        "snippet": "OneFootball \u00b7 Thu, 02 Jul 2026 06:25:08 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Shiv Sena MLC Ambadas Danve on MPs' defection as betrayal",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNX1JycTlxbENWamJ1UHZWYzVlUXpWQlJOWGgtMnNiSHJDenpSNURfMlAyMXRkVXZyeURpSHBteWNvWVZNbDluSHVneEdTTENNV05zYzcxT1dCMnVEeWliVTBVVnZ0ZGlSX2h5SThJeTFYZ0t5NDBDVUs5ZHYwMFZhTDE2eTdjRll6M29UQkxkQXZvcDNQU3VZLW1QZnR5WFZpSG83bA?oc=5",
+        "snippet": "The News Mill \u00b7 Thu, 02 Jul 2026 15:38:27 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "House of the Dragon\u2019s Emma D\u2019Arcy Explains the Latest Betrayal That Robs Rhaenyrav",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8xUmJYWG52OUdkSEh1aVA2ckwzcDBuakNqdjk5dUtpZlNLV0xmLV9FYUZSVTJFQ3RkOGRJck4yMGV2RFE3bjJWWU9SQ29wb3hhS2VZNk55b0xSNjdIdUI1ejFvTThfVkxkbkdpcGdXQ1JTS1EyV2p1NkVBZjdPZw?oc=5",
+        "snippet": "AOL.com \u00b7 Wed, 01 Jul 2026 23:43:56 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "WATCH: Obama, Harris advisor warns \u2018betrayed\u2019 Black voters could be Texas Senate candidate\u2019s kryptonite",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOdTI4YmFPWGZGT25VYWp1SEhydVdaeWFuY0pKeXV4bU1OU2hPa0R6TkRnWWlGdEFFTXZTSFdLSVVKajY0WGhPeF9wMUY5WkF5TzFRY1dvNUVlQkZGSzUwWnJ0S0hmbFhIUjEzVzBfd0hieUpZelRWNHJZSUloYUs0Wmp5OUJuMUJaak12ZUo0LWhqZzVEdHlBaGNteFV5dlBYR19CSFVxcEd6aTNhWEw1QWxTRklHLWxyUDNpVFBCYnVHckVFdDhiWEJSWTNlZDJY?oc=5",
+        "snippet": "WFIN \u00b7 Wed, 01 Jul 2026 18:39:54 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Annika Noelle teases fallout from Hope\u2019s 'B&B' betrayal",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdU93ODYtR28wUjFXRENlSUVONVN0a0xwSFFHNjVtY2gxTWZVRWQ5X1dVME1YS190bWVwb19NOGlxOWRwRl96d3dTSkRuUVY5M0c3cWwyVm1zMXJoeE8yRXh2RlZKVnEyUmpXTjJIVFM0dHgzMTZpVzA5dm9OX0MyWWVNMTJBVGRhZmJJLTJIdEcwVWRtMmZkZ2pmVEpFNDhYTFF1ZkFZSlFsbTcyZ1E?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 07:58:35 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Champat Rai says he was 'betrayed' amid Ayodhya temple donation row: Sources",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPczZIM0h3empGSV9TcmVZM1JvNUc0V1dNM0l6dlh1X00xcUtwMFQzQzVNYXhyay1ZVmVyY1E0b2lWaGNYdG5FVjk3cldOVlI1OXUyckZPYVlKWGtFNG9TWnFvbEJPVWdGeENGcXdfQ2FmM1pRdG1IRFBHLWxONDJXQk1NYjFaMnFiYkdfQnEtX0NmRklFMXZ3QlI2eEdwLUU2VC1DeV9xdXNDUWxrRjJlSXgxZmpKUVBsU2xOUEsxNWNtaDJJUXd5YlZHdU9idDV5cXM0aWFR0gHjAUFVX3lxTFBRZThPSUZsTUFFaVhpQ1BmOUxZbzZVV3kybTJLUUdFdkhYdEtYaXM3MkxpMU9PQjhQTjdpcktXaXhMY0RXazltZlJUMjJUXy1neGJjYmVaLUoxSmFJWEZjVjUtU1ZYdzVzVC1QT1VIN1VQNE1FMDc4SXdpR3VZc2t4cmNtbFZudGN1bjE4d0x1UEg1ck5fZDVSdExwQkFtVmREM0x6RFQ3bFdTSVVPVGNsWS1KWVlXZXNGOC0za3dHZlJhd0pfdFZCTGlKUFlzN1l2SGpOZkdXYUtwZWJtcUIxNXVV?oc=5",
+        "snippet": "The New Indian Express \u00b7 Thu, 02 Jul 2026 09:27:25 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Monumental Betrayal of Hindu Faith: K.C. Venugopal Writes to PM, Calls For SC-Monitored Probe Into Ram Temple Funds Theft",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQaXVseEFsRmhmeDhFZWxUb3pqQ1dxdHNheXM1V2Fkems2LVpIUEdVVXg4TEljUGM5dE05eWg2NGMycmN3eDJMd2xHM1VSQ1V4S2VHWHNCRGdObDJKUGtHTnlEeC1ySmFHR2pKZ2dzQ2tjMWw2TWtza3l5Rm8tNG5UbXpHdE9pa0t5dDB5dTJGLURUMk52YUduLUNuUdIBmwFBVV95cUxQaXVseEFsRmhmeDhFZWxUb3pqQ1dxdHNheXM1V2Fkems2LVpIUEdVVXg4TEljUGM5dE05eWg2NGMycmN3eDJMd2xHM1VSQ1V4S2VHWHNCRGdObDJKUGtHTnlEeC1ySmFHR2pKZ2dzQ2tjMWw2TWtza3l5Rm8tNG5UbXpHdE9pa0t5dDB5dTJGLURUMk52YUduLUNuUQ?oc=5",
+        "snippet": "TheWire.in \u00b7 Thu, 02 Jul 2026 13:07:47 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "PlayStation disks are done. Fans feel betrayed. Here's why.",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQN2ZaNlVQZWc5LW9ROGNRajF6b2JtZHIwNFowTTRQbnJjb2hFa3FFV2NFSzlYRlJHRllqNW9TbUpueXhsQmVUOHRqTDVUUlh5X0ZFYmNWMm44dzI3QWt3VENTTDFrTVhrNkNGdGZXdU1OODVJeHB5UkM1dVpyUGpldzQ4T0VIeGhtakFXMTd4bw?oc=5",
+        "snippet": "Yahoo Tech \u00b7 Wed, 01 Jul 2026 22:01:56 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "9 thrillers exploring obsession, manipulation, and betrayal",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQT3E2QU5vTDBhamRDdWlPQlJIY3BRSy1fdXlqNURvYVhfdjcwTXpsZFZtd0VmRzVXM2RlbWJMV3ZBZkF6Q2RoeHQ4Vk5OdG8zd3VVcTZidEk3a1RqMk1NS0l0bDc3NTltNGRZZkFFdjRyOEV4Q3hsS3k1YlZ1ZkZFREpEY2w0SERQUElHMEZ2OVg1RnhTVU05MEhMcWR5ZkRHQ1dKcVVKRS01eGd5MHFv?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 09:08:25 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Arsenal given priority to sign 'betrayed' star in record-breaking deal for top target",
+        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQRTN2NzVyS1EtZVdHVGZvTVluODI4eks3Q1NrTUJsY3pRV3V5ZEZmNjJNSDFIQmpTeF9PUWlFRUZUNjQwZ25WSFY1M1k1LU5hdmRjd3d6dzNDSzZVMnNfRUMyeS0ycHNOZVBOZHhPTkZRYjhMNEJlUWtuZjVnUXRDbVNPX04zcUJfUlZOdGFEcXoxZ0FpTmRDd3dXZGNaNWVLZ1ZQOS1PN09jSVdLTmc2QTA3SXJ4TEhrM25aVjQxQ2JtOUFic09CSjBVRnJNMWlNNzNLNXp4X2d0Y0h0ZkhaMDQ1X05neGlZLUFGc1h5cXZMU3hxLVM1eTl5LXF1c2p2M1E?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 13:02:15 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "What From Season 4 Finale\u2019s Big Henry & Victor Betrayal Means For Season 5",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1COXFSZGlMSFI4WF9henp6bE5IS1A1MTlnSjhicG0wLXRzTXlYM0RoQWlEWHE3VG03YzNDSmdXYkFhdVIxVG1DZUpNdVNPZ1hJcW1CMXpBLVVCeTRXTmU1QkVVdWE0al90UlQ0LV9qSEw4UkI2dGdOcVFWVzlGWGs?oc=5",
+        "snippet": "AOL.com \u00b7 Wed, 01 Jul 2026 20:53:21 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Champat Rai breaks silence on Ram Mandir donation theft, claims he installed hidden cams to expose...",
+        "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPbzlWdk1jelZXaVB4blI5OFNiTEpXdWhXQ0pmVlBFVGJUVGwxMHg4UUNsUTUxVGdteTQyVHJSRFNCekdUVXBRaW5PTkxmX0x3QlFvMkV5ODBfNS1HQTg4cHUyQXpyQ1BsWG9oQkp6OUkyUGlIRlZxTmVpbkFMRENTZ0ZzTXpjUVFnZ2pONTlhYTEzU2lvTFNyZnRNbEtEMF9Qc1dQWF9Xa3ROd1dnSEN3R2tUQTh3bGVLMFRiWDg5elpWTGs3aGZBR2pwQkNoeU10MjR3YXFweFVsdDVQVWkzRVFBRUxDUTZnQXp1eWFNNWIzczk3ejgw0gH8AUFVX3lxTE9iZG01dWpYSTVNdHg5eVFaczJlNHpHY1hBTng0TmtydnhUWkxvOEFIX2NROTc3dkYteWtTZzBQNmdYZjFqU2dEY1pDMWYteTVGOGZnZ0ZxdlIybEdiclRXZ0gzTHF1cTd3UjhMRW5mX1o0YmRXaEVfaHFTbDQ0cXNfTW1mQjRWSWFCc3BTUklMRmJOSTFLNndRaEVKeTdRZWhwTkpJbmtndllBN3ZlNDV1ZEROV3ZVZTRZUUpOZndfRW5GV3ZXS0UxRERiaVBHZGNVSS1JaEdNa2twMGtNYUNBNmt3YVZlVmpyTVRDdFQzV1BuZ3BxUnlaWF9UYQ?oc=5",
+        "snippet": "Moneycontrol.com \u00b7 Thu, 02 Jul 2026 05:02:22 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "WATCH: Obama, Harris advisor warns \u2018betrayed\u2019 Black voters could be Texas Senate candidate's kryptonite",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNYlR2Q0ZCUDd2UWM5U1JQc1V1VHRTRGhBRW9udTAtUkxjTzhzbWczRE9Fc01jdU83M0E3ZnNKTXA5dk0tWXRFR1B2bzV6YThqRTVWeFRHaDZHVE1QSVR4NjZRNmFCZ2xaYkZNYWlBZGFjQkFWU3hLNERXWm9VTzlpTDlR?oc=5",
+        "snippet": "AOL.com \u00b7 Wed, 01 Jul 2026 19:59:35 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Ram temple donation row: CPI MP urges PM for CAG audit; cites 'betrayal of devotees'",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNZFk4WW5ydnJ3M3pyazcwdXVsQzNlNDh3cUNHUUc4ZmlkdVdUSzhNMUtCbGduTWZyb3lIZEd0TU1wVkZCZ0RjRVQzQV8xd29USGZCSHUzcTBCNmZGUUhJbll1RVQ5LV95dE5sQWQwZkhBV2ZUZTI2aGkyMTZKaWZQNGNfVnN3cHNCSlZKSzQyLVhXbWhha1NIOVZxRk5EYXJjMlpyV1V1T1F2Z1AtUVpXNHozNmdqdlU?oc=5",
+        "snippet": "DT Next \u00b7 Thu, 02 Jul 2026 12:45:28 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "New humanlike robots are built to never betray you",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPTkpiQ24td3p4OUEwTzhiMWJIQk9la3JsT1pPVDZWUjIxNURhR09mN3ViSnlER2hucGthbDQxM0xZeEZYWXFpeHdqYWNLZlptcXh2T0lLYWt1YU5hUHNRVEVVTkctRm5aNzE4TU9oazNvaXJZNUVRcTljWkpJdW9ReUtEM1l3TFptOWRhc1liZ2pqOXM5dkM4MDJhQWt3V0NDTVExUkFtMA?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 15:01:06 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "The Ultimate Betrayal: How Modern Xenophobia Threatens South Africa\u2019s Pan-African Legacy",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOT2Uya1NydDlWNXRLdERFSXpUdmNFeGloV2JIWXlhR0ZXUk1pbl9LQXJhZWFsdEI2VktoSnd5Wk1HeFVPSjdhMW1ldGliZFV2eHJ0cVBJd08wT1ppc0lKc2FVYVJiM0dQd0xJYnpPcXBiR21EVlB0QkVia2liX2NBRk1UOXhUOC14Xzl4RDRXS2NxSlhROGd2Y1N2VDJuZllCZE5FZXM1MGZiUmNnclHSAbMBQVVfeXFMTVhGVkN3MkZpa24teERQa1d4di1ha0tqa2ZKMG5tVXdoLWRnRHduMjlqUk9IU2R5ZXpNOXRmam01Snhodk51RFZpZEdCZVIzYlFvZ2xKeVp2Z2VZNWN3djg4UkpaSFRMVVBJUExDcmtGNzhjSklyRFNwZ1I4clBScklPeE1rTVVUTnU3Z2JZajc0aWRCREliQ3QwQWM0NzdacUNyZEtKWVIxa0F4ZHEtY0lJd0U?oc=5",
+        "snippet": "Borkena \u00b7 Thu, 02 Jul 2026 00:12:45 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "JKPC stages massive protest in Handwara, accuses NC of betraying people's mandate",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRjZyX1RwalNkOUtwXzg0dGJ2di1xQlJEdmZ5V01RYWVpWUZrOU1Qa3V1M1ByZW9YSVVxU205TzlPNEpiRmxTTHhiXzU0Vm0wM052emVCQ3JnQWdqem82YmNUSmJVOUFQWU54ZGkyZXh2VUVDcG16aVhjdFVMc1lXaXM0LWpGWVQyZ3NHVEhmTFlVd1ZxUUZJU0hVWG5qYUM3YS04Ni0tNlNVYm1ScGFhaFBVLVlKZw?oc=5",
+        "snippet": "KNS News \u00b7 Thu, 02 Jul 2026 10:02:45 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Mariska Hargitay 'felt betrayed' after famous dad 'denied' her discovery of biological father",
+        "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxQN2pXbE56Y2NYdUNCVk1hRU9lYm1YMEU2cHh0M2c3VGNBSEdRWlN6YURXeXo2ZDBCMS1MNXNROXJkaXZ1bjRFZWl6YnY0Rk5qM1lGUFpxNlFkdGtlTjdlVDNodmFpVlUtbUVpV21CNXNmZjBNdm1WUHRocGpCN0QxV0pEcDVmbE1BN0pUZ2RfSllDSC1iaHEzR2NuSzE2QS1Mc0k3WEV0V2lzZ3RrZzFRQ3RBWXUxM0lRa0ZxSG44cXFOdDNRdExHcW04dkQzUzdZNjd5UGpYWTJiX09mNERZM0FhalpoaVVXVlJQTC1FRDdrb0Q3MmpHbW1HOUJoYjVhenUwNHNNVjdBRkxOcVZ6OTR6aFc5RmJKUHc?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 10:52:39 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Does Zuko Betray Aang in \u201cAvatar: The Last Airbender\u201d Season 2? Here's What Happens in the Final Moments",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE00WFBXMFczV1ZNSnpoWWtFV1Z1emJXdDBCVWFjOGFWa2tma3FhYTA4b0VhSC1SekZqNlpzNDRTUmVsd2U5MHNScnAtMmNIdzNaZWVRMzROUDRjOFYzTkMtZDExVUItT08yU2Z3Yy1PYV9nR2xranBrTmRJVEY?oc=5",
+        "snippet": "AOL.com \u00b7 Wed, 01 Jul 2026 21:53:10 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Debt, ambition and betrayal collide as \u2018Inside the Office\u2019 raises the stakes",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZEdzQ0JIY0wzb0xUNUZVZVp0cDV1V2VpdXBZZThuY3ZuWDZZaER2eURMMEhxb3Rmd1pYMFFzYWhoa1h6dWtISU5RNUFNa0l4Nkh0RndSNVJLUm5WLUpkcmRvLTZmNDVZcGtQSndaUzdOVDNBYk4tVGJtTTlORTl5QjFMbzFDTXF4UzBrUlUyS2g0T0YxNm1SNW5VZ0pkZ1Njc1JxbXduamJzckk2VXRWUW5pYw?oc=5",
+        "snippet": "GO! & Express \u00b7 Thu, 02 Jul 2026 08:17:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Gladiators star Giant's OnlyFans ex says therapy is helping with 'betrayal'",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQVlUya3p5T1M1TFpoTE1DRlM2dHZsa2VIeUgzMHlDUldySVdYeWk0ZGdFSFBnYnB0M3pJOE5CYk96V1R0YXpjeXVyWktMdG1FUndDVUF2M3BYWWpDOWU0RmZyeEdQTTNNTWNqNE1BNUpBOGR6emFlQ00tdDlaeG4yLXM5T3lTcVZ4ZW9sX2s3YWVYVFBNS21oSGx1R3FiQXJ2ZXAzTXBNRXVLTVk?oc=5",
+        "snippet": "The Sun \u00b7 Wed, 01 Jul 2026 22:54:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Breaking! Wang Qishan Under House Arrest? Xi Jinping Fighting Him To Death?",
+        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE00MkZwMVRsNHpWaG9fUENJbXRvNzBuZDg5X0pORHp2SGUtQ2l3azQ0UnRkbDRvN0tOeGVyaEJMS05nM2wzRi10SF9iTHBWcHVmeWJLUmk5UGNqMXlQ?oc=5",
+        "snippet": "YouTube \u00b7 Thu, 02 Jul 2026 00:00:17 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Love Island host asks 'are you okay?' as star faces brutal Casa Amor betrayal",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQaXMyQ1JPQmJoRE9oaGJtem9aMWdRUmlVdjlkMmk2XzJaUU9JUk15V0twT21rVVF1Z2x2UGp1U1VtcmZJS3ZmaEZYazJQbXdSYURqekVxVEc0NmRmNmIwbTIzd1hIN1RQWUZkc1RwMkZvNkhsMmgzUENqZlkwNTJLb284NXUtUQ?oc=5",
+        "snippet": "Bristol Live \u00b7 Thu, 02 Jul 2026 14:22:48 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "'I Installed Hidden Cameras To Catch Ram Mandir Donation Theft': Champat Rai Claims Betrayal",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPV0tUbHpacm54RFMtNDBham1hUGNvMVBkMm0wRW9sdGtxcXh4bk4zMkxkSGswSWxlN2xPOUZ3NmJJMmNXM2R5RGc4a0xkM3JBcUVyalppR3N6clRyZ0lRX0lrUDJkbHVXYjBqMDcyOFIwVWRVS3kweWd3NjhPT2NKZjhIaGpLczZRREtjZE9GcnRNQ2U5SDlodERnejZmY0I4VlBVOXhhQlVUSlN4QlE2bFFPRGNUdUdrdjZ1N21EdmdXNXJrWHI3RHlxekVWU1pHQl9OUdIB2gFBVV95cUxPdkdWc1dHTGtlYnNFVk5vNWZCcVlFbXl1aXBFdThVZWJXLVJoSEpTRmtGUkdLcjduOF9XWGNCcWdlSDd1ZTZWaUVRMmF2aWlJXzhxbWZpUFF3ZklXVGxsN0JwcWp2TUFNdVlrV1VMdVd1djNhUTFCVVF1N0RQZzI2T3IyRnNPaVFuMXFDazVWOGx4bHFmaFVtM1lEb3VsMmo0c1pYZnhWVm1qOTZfXzFrbGQ2N3VwUVJlM1B2UGdOSGRKU3ZkZm9pRmtHOTdYSmNWUXF6cm9SVS03dw?oc=5",
+        "snippet": "News18 \u00b7 Thu, 02 Jul 2026 02:32:42 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Ram Mandir Donation Fraud Case: 'I Was Betrayed' Says Former Trust Chief Champat Rai | News18",
+        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPeEg0a0Q2N3BhZjZiVkNHSkRWaV9VZERCdEhYMVNwUnYyR2pibUlLYTJFcldEeWFPQVpIbDNLbjgzUk5LOHc3VjhuN0EtMGl0MFF3ZmQwNUN0cEFMWjQ2VDdyZ1lEZTE0eEdzWkVUajJibGFUb0JjTkFrVklyVXZfS1dxc29SbzV0VlNHdmFDcEEwb3p1SC1UTnRhNXp2R3Z6d1RDRWVyb05melg2Rk03RkpsUU8wSDNMOWkzdEx2NHZRMUJMeUxiVmZ2WjktX3pZd2I1ZExpQ0R5OWU0X2hN0gHkAUFVX3lxTE5qaGtvY0REUlE0UXg1NjZJUXpyUXZpcTN1UUxwZmFxQklwRHJRZXdqUEppOEVWcldLMmJVbzRiVUhHeGJxUEktdmZ1VlZQOXczcUVMWjcySXdWSW5LakNTaTV5bVJQazZrVjlQUXJxZjdBU3BkMU55RHplRTF6TGc0YUhUeDNrS281cVVhdk95Qm5oRnNEN1NtVW5TVVM2TGtyM05EeG1BOHdhUjg4SjQyWUVKRDBzNkNZY1JDQlNzMmh5b2swcURpaVJCOXh3VEI2aXZ2Q2QwM094eXVHRjhlMUREbw?oc=5",
+        "snippet": "News18 \u00b7 Thu, 02 Jul 2026 10:16:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "\u2018Appalling betrayal\u2019: Elderly man loses $600,000 to alleged fraudsters",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOUGdHTlVRWXBmUjdqUHprN2hscmlDWEZTZlVUOGlSLWxoMldEME41UmJmVnpTUXgyV29ib1dIb015T1R6ZXRsbjktam16VHo3WTF6M0dESGt6ZDNqUWZWcC01bElqYTVxSm5Rc0NEcHFYREZNUTRVaU1DTTVWMk1HelFrUHBiaGo2RHpCV3EzeFM5amVmcjZ0SFNvdlhLQW1fOTFLZXBjemNxYU52VEliQWdaNjZESDVfZld2U3ZYdEpfOVNNODI0Z1NR?oc=5",
+        "snippet": "Nine.com.au \u00b7 Wed, 01 Jul 2026 23:58:05 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "\u2018Appalling betrayal\u2019: Two brothers accused of taking $600K from elderly man",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQNGlhSlZMekt2Q2dMUlN4cnlKYURkZFFIdEQ2MVptQzJPWDUzUlFvcVV4V2FRdGJ3ZHh3aGFHUHlQWWQxSXlLc180ZU94NG5HdXdxV0w2VV9hNjdQV0k1LThRNFBmbl9MbjRxR2RuX0NYbkp4bWlLQzl2blpMMEcyVnlXMk5FZm5FeHl5MTVVT1FEdTA2bVB1QjB3TU9lOGMzeU5HaElYTjNXQjA4VThsSng0YWxiUGNWN2JOWFZxSFk?oc=5",
+        "snippet": "SMH.com.au \u00b7 Wed, 01 Jul 2026 21:01:32 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Espionage, betrayal, and loyalty in The Agency season 2",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNUTd3VHVac3dSZ2dYX0JoSkFnRjdFZ3R2bzlVcDFsN1hpdUVIV3lIUWprbGZpTUdFTU9FZmVDMGJlWm83RmRJOUVjVkNBMTF2cDdFa1pBaHEzbGJJcFlFQ0tLR0V1cDZMV1NkcFFxLVJ1ZkVMRmpaWVVQeUt3bDI5cFNBNVVLSTBwd1NPTHVWdWJYUGxnUDFlU2JObVdDLU1a?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 01:02:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Betrayal of pupils as cash for schools slashed by \u00a3300m",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQNFJCVE1EMWc4TTlHckt6Q2h2RE1tZWtFLTZQTUNmN25hbWg2VlVzQTRoS1NBS200MmljRXZDZGFVeFdyTXBaT2F4Z2dUYVhNX1l5VjBpanlGR1dkc3pSM3JONThBXzdxVUx4WG9WZ1JLS0ZzVWV0dnV4dTNBcWM1aV9ZRFlHQ0hNY1UyM2RiaExOV0lhclVZWjRVMWNHcnpZazNFQ25JVkx2bEYxcWdF?oc=5",
+        "snippet": "Mail Plus \u00b7 Thu, 02 Jul 2026 00:25:32 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "We Are Betraying Our Children With Fossil Fuel Pollution",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNLUpvU1J0N2JKOTBseU5SOGxBWWlzNHBVWnUyVC1BMnZybjJMVTRZbzY5aW94VXlWWGpWcmJuamNoMVJtdktIQUxnTFJndEFoR0FYUUtUZXNGOWFNTVJHQzdaa2Y1SXlZX1RJSmRMU2tRdm1UUDVFc21PVUNkWnd6eXBrR2VZb1RUMzhEdDdTNHc4QVYteFRhQ1E4cmtqY01BbHI4cW1lMUVvM202WTVBZHln?oc=5",
+        "snippet": "RealClearEnergy \u00b7 Thu, 02 Jul 2026 05:44:41 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Prahlad Kakkar says Aishwarya felt betrayed after industry backed Salman",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPeEZ1RldDeWFmR0pRUmw2aTdZeHhGSHlKNkN3cW1zOEwzZ0xKWDhyZmNVZlBiSVExbXlxUHhlNFJGU0J2ZnpoeTk0eG05ZGhhNWNVR0pHV3Q5S3I3Q3lVdWUwNDR4UnlTV1J5eXkzc2VfM25hak9jdTlFWER4MHJEWWJpcy1zOWhIS2FULWN5MzlRRmFXUHUwc2lBWWdIZUZJcVYtVUdrR2pNdVlyVFlBUlVHY1dRX09Uczk0bG1NWFo0bVktZnVnWTkxRWt2UQ?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 01:02:42 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "\u2018Ultimate betrayal\u2019: Lewis family rift deepens",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPcThFbjJzMjJhbjd2dWduODF4QVRNQ2l1d3dIU3RJQlc1UWNaTjZjbGRwTlM1SkNfWFhmNlVRb3A4YkRnVVVRUUdWcDJzWjVrcVBxUlRvNV84QUw3bFRNWDl0aHlKeEZJQjVWNVRFV2ppLU5tYWtiRUtZMWUxQ0s0bzh2WnRYeVJsRWp6aDducEs2M29Cc0dYMVo1VnQ4Z0ZOcU9EcGJsR2dCb09VSFBvZnNDQzJiNVlyN3VQckRJQy11NXJkcVZ0bW90MVVNeFpPT212bExUUkRobDR0ZmplQtIB5gFBVV95cUxOcTJQejBSYkVYSC1RSGtIUkpRbU96SVgyN2N3WjJHaTNrYVZSbE9aOG9ITHVhc1MtVTg3SE5oWk5CTDRsVm9SZkFyRVF1VW9nM1lDRVcxUk5yYnFGSnhhWkk0bTdfSFNXOS15QUR6REw1ajhNY2Q0YXdmTmpHZXFQbUllNHF0WWluYkhMRWpZd3ZPNG1JekJieUVadHVTV1MxaHFBSUJ6U1A3eVItZjdLaWNTVm9VXzhaQXZwTXhkck9BcVp3bmxMZWEwVGQ2VXk2ekR2QXFLakpHQ3lPdHhZYlVBbk8zdw?oc=5",
+        "snippet": "News.com.au \u00b7 Wed, 01 Jul 2026 19:36:24 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Union Minister Dharmendra Pradhan attacks West Bengal government for betraying educators",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUEZsRXhUSGZDOEJRMEJUX19UOWpxSDZfeC1CRWhVMEF6SHlKaDJubDlEM25ucEV0S1NIb3owTHdzQVVuOGpiM0VTeVR2dnlRbm50WEhsNThzNWJRRjVmM0xncDB0NVhTY1BrWGxaV05vRXJuRHpJelE1RXNPdUJTUS1CWFJnUnY3anpGLVpaeDYwbVJ6aUZ0MEx1aHNaZ29hOXctREVtMEprZzNNTWg2YXJvU3M?oc=5",
+        "snippet": "News On AIR \u00b7 Thu, 02 Jul 2026 12:23:14 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "The FTSE is being betrayed by Labour's high taxes, says Alex Brummer",
+        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOUUJKWDRGdEt5UzdTTkVVT0tUOG9jd1ctY1RwVWw2VHJtYzRCcFZLTnNwaVZQc3V0U0JfVU80UVFNcVY3SF9rbTlrTnlHNFZIRGxxcXdWZTRSTzBSTzJpazk4Ny0yb2tjc0JQX210NzNuZ0hickZZc2pHbXVRbGpNZERsaVNnaTNyOXEtWnZmM2U1NEhoTkJwdGRuUEhncnItOG9TX3NQNXZBZUdzS0FyY3lTUF9EdmRBeXk4X2t5TU11bUMxX2ZPRVJIeHI3SEdXTTFZNTBKa0huVXoteEVKNDVfcExfNi1jX3JhXw?oc=5",
+        "snippet": "MSN \u00b7 Wed, 01 Jul 2026 21:40:49 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Prahlad Kakkar says Aishwarya felt betrayed by Bollywood after split",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRnRKeERGS2ZZTWpsWEdQRXpyY3Zhd0k4ZzBsOXhyS1k5SU94VDdrTmJrMFBCdVd6aDlrd09PMnRWUlZGbV9SY3lFZ3dOVnhWVkZEUm9EYVN4aG4yYkNHcDdReTR3QjEtOWxzUGpzakVrSC05MTdvOFlXY3lJV21BZ1JhYTBNUW1fWU5ZejlfSkhVQVJZLTRCTG9RMTk0TWFFZVlESS1NbXRvSjA0czVYS2ExT1psZw?oc=5",
+        "snippet": "MSN \u00b7 Wed, 01 Jul 2026 20:42:18 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "3 WWE stars who could betray their current ally before SummerSlam 2026",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQU3JLUm1mR21MRDdZNGhpU056TjhHcUhkNGU0Z1R6d0hSNUppaWNRLUFkR1hpNl8wVW5oTGpkOVBfcUNKOUI0RmJYOTNCMVM3SkVzZ3lMcDdYWHZIOXVxY1VEVG5rUGVhS2F0QjNPdWVmRDhBbkZDd091TnppTTdHMWdFdnZUUQ?oc=5",
+        "snippet": "Sportskeeda \u00b7 Thu, 02 Jul 2026 17:18:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "'Backstabbing of the Highest Order': Tiger Woods' Ex-Agent Reopens Old Wounds Over Alleged Nike Deal Betrayal",
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQb21Va1VZUmI1ZUxxNm1pVGNzTUtQazBKT1Y4ZHA0cjNfQ0NMdFExODBVUnVYSEt1S2dqMkdmV19iX2cyTl9PMHRiTU5qeEZWQnBaNVFRYjdSVDJ0TGM3NjM1Nm5FNnF3MFNaZnhBbkRKYzg4eGtIbjhiWWxwZlA0QVFUSUV5aHdDUV9aS1VmSWN5TTd4UTBZLTdfSUlIQ043bnNaR1RrSXg1NUxfNzB2MF9oQ3UwRVF0azVxOUQtN0g1OExkZWQ5SEZkTXppYnhzODdGVUJPTXUxSTBUWXlIZW05X1I?oc=5",
+        "snippet": "EssentiallySports \u00b7 Thu, 02 Jul 2026 10:40:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "It's funny because Anakin also betrayed the Jedi after 13 years. | /r/PrequelMemes",
+        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBnT0lHdDRVOVE2anhDeDdPM2VoVmtqSl81SG5TU3JZM0ttc1owQ2RBS29kcmNEWFNaVnA3M01yT1d2bVZvVm1aTHhFTXpCNTNrV20xcjdDYklmalY1UUVrRkhyVQ?oc=5",
+        "snippet": "Know Your Meme \u00b7 Thu, 02 Jul 2026 16:20:56 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "The Bold & The Beautiful Spoilers (Thursday, July 2, 2026): Hope Pleads For Forgiveness While Ridge & RJ Fear Aftermath Of The Betrayal",
+        "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPZXowdGFaS3ozT0xGeUdGbVlJRHRfUDc1MEFjMmJrcDlPeFo3UGpfMjdWQzVBa2pfeFpTUy1laWNWU3VMNnh5SkgxRVctLTJDRFd5dE1zSzV5dW9ZVk81Ti1mM3lhM0R4ZUs4RVhvZ0F0bEtrOEEzbGlsYjRDWjkwWkxEaHNGS05vbEQ4eXBOblZhVVF0dzBNaFNkR3JYd05fYm9SMGkycjhkVnBiekpqdnoxR09XQllRSFFyaTA5R3hSYzE0R0ptbXR0V0ViUTFiOS1SVkxZWFZKcUJ4U0hMWVktbkN1aHMtVFJOYjRVQVdPWU0?oc=5",
+        "snippet": "Koimoi \u00b7 Thu, 02 Jul 2026 11:49:15 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "'I'm such an idiot': John Cena Admits Betraying Vince McMahon's Trust Over Money",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBUdnJKaHpocVAtMHhRR0h5cktfMng2LWQ5LWtLSjRVOXJ0YXZwZFlSY3czUHZGc3lBeGJUU180LUMxcFJsUVBudGl4SFJ1SG5HSTl2dTI2eGgzNGh4dkdjc0ZrcGZqVFk2bGN3U2V3TW9LYWN2SmZVT0dGeGZsdw?oc=5",
+        "snippet": "International Business Times UK \u00b7 Thu, 02 Jul 2026 16:30:59 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "'Betrayed faith, propriety and devotion,' Akhilesh invokes Ambedkar to slam BJP over Ram Temple theft case",
+        "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOYTFreVNkR3YtVGU1QVYxZVNnd3ZNM3BPTzFiX0UycU52UkM1ZzZab2lCT1pTblRFQlFLRjBhY05ZRUFFU3hxV01EbjNQM0Yxak53bmJHOTdnd2RBa2J5S2lQWTFKMkNieExxQXV0OUpxUnJRaXBUdnJMRTZkTkdwT2o4M1RYQkNEUHV2eFFfN3FNZVp3UDhoNUpVcFN0TXFKS0NaY1Y1VDJJOFp2UXR5LUdkNV9WV2RDaWJUQUVMSjdkREl1Y25pNm1DbUUwVmw3eUxqLVktUXlwNVhlZ2dZTXdYblVacGN4ZlNkaEVmQ0luZGdteHpEc2hR0gH_AUFVX3lxTE5Tdy12ZTRGUVBjZ3N5QkdMWm1QcjNDbmNyT3AtSFl6aWdoWnJua1k0NlRJQjdUZUNrV2ZsbHc4Q3BVcDMydUFxMHpES0NubHdSMDZjbnV4V05tMzRWeDJYVk80VjNSVlZhNVBDYXlHNjlnbXFxaUwyUUlXNVB4TmdfQlBTdFBFdllCSjU5b0NlTTRuamx2N3UwcmpVcDhNOWpsai1MSkoyeTg5YmFmZGJReEtacS0zUDV0bXoyNFhZdGFsQmNhMTNzU3AwT0FEZ1d3akRSZ042SmpScVVnUnFkb2ctWVNneDBodm5vaEFmWEpHMVB3WU9mdkFueFdWUQ?oc=5",
+        "snippet": "India TV News \u00b7 Thu, 02 Jul 2026 13:08:18 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Trisha Khalid opens up on betrayal by close friends and family",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOcmhyQXdueWdyakVSdER0b1MyQTNkd3RhSDB1ZmFBSlFscjRMQjZGVGowUUl6dHJfUEM4T3FHbFgyMDl4QXlvRWdqZjBnc3V4dGV1cV8tV3pNR1dIaFgxYkNlNzdvMEV4TE5xdmtMTHJGcmI1aDl1RDZXcURQWTlVeU1ITVhLNXRLM05ld1ZWNG5wSVl6aTY5bDE2a3g1RTVLZTZTVkRJMnB2QQ?oc=5",
+        "snippet": "K24 Digital \u00b7 Thu, 02 Jul 2026 10:43:52 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "The Fatalism of A24\u2019s Consumer Betrayal",
+        "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE45OTc0dFJ0dkRlMkhocTdIbEx0SnVKTTd0XzA5Z05FSFlKX3doWmI5Vk9WLVZ5aklXUi13?oc=5",
+        "snippet": "t.co \u00b7 Thu, 02 Jul 2026 17:52:06 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "A Wheelchair, 105 Degrees, and a Deadly Betrayal, Police Say",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQejZHcHV3cjIxRXF5dUpkTTd3dnNMaDRITmFTWFBYU3lQcC13SU1jek54MVlRV1Zha05sZWltZXhyX244bFJQY0NHU0lsaHlhXzJqVVlTbGJKcFZ3TU1xR0dtdkpmZkNvYi1Nb1JkekN1VS03dmdMU25IdU5XY3drNk44bm92ekhFaFc1SQ?oc=5",
+        "snippet": "lawenforcementtoday.com \u00b7 Thu, 02 Jul 2026 00:36:34 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "\u201cHe betrayed us\u201d - Trump\u2019s former ally shares his view now, after 8 years of support",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPRDBpVU45M1lCZmRNb0ltLTV6aUZmTU02bHNQTmtiZUcwOGxQMlRKZTVKa3Y5YzktOGdqX1ZCVk5qTk1DY0I5OGc3SHlkVDUwLUhhYUZsVml2WE1nYjFkSURqRWdqNHVmMVo1NHBsWlBWa3h4bk5xQ3FoRUprM0ZsS0c2dVpScTBqSmF3UjRpQUdNY2w3cFNtLUFmUENZbVBjcGZMWERaY21IaXBkcFN3dlJVYVFGSlNTSHpnQ2dTR1YzYnNDYS13?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 13:26:49 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "B&B weekly spoilers - June 29-July 3: A runway betrayal, a sister war, and a mother pushed to her breaking point in LA",
+        "url": "https://news.google.com/rss/articles/CBMiygNBVV95cUxORzU2YzVYa2R6cDJnSmI2ak9vYndMaE5VVnBoVWFkb0VHeHRlNHdqbGFRYklaVTBKLWkwb2JwVzR4R2ZHOHFVN282a2w5dGxNWGVzUjVETnhtYmVFc0hjVktTWDNSZ2dXMEtOcjVKb3FfSl85enl0bXpSa0Q1NXZjbmpPNW9TOTR2QUgtRjR6X2ppeDlGaEQ5SnZCZnN4bTBmV09QdmIwOU5HTHM0a28xYm1NSlZVb2ZzZU9HNEhpSVROQnJTZXlyZjJZaWFPQTRWdF9qNXRXQ1FZSXlMWTJxdmMtRWlsb2lRZUtRYk55c2g2aTFzcmFiUy1YU3liZFNtSDJpOUR0RWxUaGxhRWxGNUZTbUxkMjNTTHQxOGVhekU5TVVzZ1h2RkN2bzRvMFc2VnV2Rmh0VjN0eWpLaTQxTEpEOFB5T0dqWHJqcjNNbzFKanJqM09qM2pmUEZ1cmVCRk0xdGJLMmlIc3lMZkRwS3NfaDh2SVMzY05oczV4UVhCSTFOQzlzY3lLN0pJU2gtcE92clVreFJrTThEdXdCY21YZ1kzN0hMdmI5TVphUTlsOXEyX3EwYzdaTHNGcHhRZ1QzZHFranU3UQ?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 05:43:20 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Deliciously soapy spoilers - June 29-July 3: A runway betrayal, a kingpin's trap, a cancer fight, and a vigil light up daytime",
+        "url": "https://news.google.com/rss/articles/CBMi3gNBVV95cUxNSTVBck5zLUN0Z1VXMV9lU25LenNLX1FFWU1rVEJpOWJ2SWw2eGE4T0cwTTNzUTBGU2h0el9QZ1pIYmxINWttaU5GbGdYZ2xGTW1qQXBkMU9JSDR2QV85eFFqZUU5X3lBRUkwallYSGE2Zm5KZ1Vyb0wwQlRVaFpsdlF3cVcyaUtTTE9qeGZ2QmttSDhnSk1VNHZoWmZob3lXWU5Wbi1lOFZkZ0E0Ynp2aEp6Tmt3ZjRwdGtPZWQ1cUlxVEE3NVJGRWVOTlNsM3VNT21LYWpsWFJoTUtSeDJKMm1ucG5CYVZ4czg2c0x5NlFhSFlLTDlIa2VUNzd2cHE2MzVFQTV5NEJRMjVqdzFxbVo3UjlsUTVEZzlaSl9RVmh0Z29BZThBalNaZW1Wd0p6MWhQZWh5WFI1OG5FUm9VOVhjaE13eTI0NW5UOENZSl9EMlNad2lCcUZGUTZhdk56LWJ0alo2MGtaYkhPRUpaaFJnRzUyZDExVzJ6NEpKTm16dXFFenFTOUpJRzU2MW43S2hFUWN6Q0hfTjBUU1RNVVV3NnlYVU5BZzlIZWVMeDVWSDk1YWw1Y1FHR0RWeG1xRVJuZVM2LU5WWXJHTWpiS3V5dmVBQnRkMkQ5SHRB?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 05:53:17 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Wyndham Clark shares unexpected story behind Baker Mayfield dislike following alleged betrayal by former girlfriend",
+        "url": "https://news.google.com/rss/articles/CBMiywNBVV95cUxQOGlJTENQb2d4ZUREelFrUi04blNkSjBrM1dmQklCUGQxWERsd3QwdGR0REN1czQyZ3lMZk50MXE4czRxUlNUSktsSHNVN1JqS1dFLTdaVHVnZG5tNGo0RE1lM0pwc05PTDlUajFTUFUzZjZSaXR6NVFOZkVfQk1sZXVuQ200U3EyYXJSeDlFSHpSV3pjOTNpTEE3b19DSlFmNXdWd0ExVFd0UkVocFFPT19tNTJSUG1DZXhPSTRJcVR1VjNlVVRwSmhWTG1YUDhHTmhUcFNQb1N5TkRJQmc0OFRRZEZJWUZBQmJRLWZQNHJaYlhTWTh0MlYyelUyci1QRmFMWWs2TF9ZZFZyTzFMbnhYYzlxTmxCdXVHVWlWOHlSaXFIbWFvWGR1TThqS1VpUnZQZHBfTWNJNVdhTXlJN2dJRnNZU3EtVTRnZW9xRkFxRElHX2JuelpjMm1jenZyem5vRXdGOGMzbUpmazlZWXpLYmYtMVNONDlQOHdPbDJLSk9SdGM1ZFp0ZV9TaDlrOWFNVUNKajBGMWdMSVd2aU9kblphVWExaEpEbFFUamhmMF9XNU5GNGw3bDdTWWRlejVxa0tmWG1ZdW8?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 06:00:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "He betrayed us - Trump's former ally shares his view now, after 8 years of support",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQbWlpZ3Z1TUMyRnVJbjN0YUNyMzZ5aHlGRjBoSDA5OWNydXhucmdzVTlKVDl4bURaWmZfbFBrX2pid0xUazZqTENKSjVpNGlMczNqN0VjVDRuMVEwYjR0b3kyNmlQTklFUkkzQ3F1bm5nZ29mN2VGb0lrdGhpdi1rSDA3QlJCNlNDaVZmZlJ3aVRkbkFVRnRHLWRFS2VqcHhxTWg0b1NqZDNzbWNpTV9JUnhfYm9Qby1Jc0plcFZRb1N5TWRSdGdNSUtVdw?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 11:35:24 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Gladiators star Giant's OnlyFans ex says therapy is helping with 'betrayal'",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNNEkxQ044bGZaUjBfRUI4eTV1a1VwaTg4d2Y4UThEVm5MS1NKTDRlaXR5bDA2MEVNNE5fX3RyWTctQ3A5d1FQa05sd1VMU0tDaVRCTmlKWE92RGdZQzlJTDhlZmxTRVZWRGVscGZISXFUS3o4MlZiZ2lpa3JmMktqUzY1cmlFVXRnOF9RbVVlNDZmMk1aUkZFckF0S1pwY1RGYkltTGJn?oc=5",
+        "snippet": "The Irish Sun \u00b7 Wed, 01 Jul 2026 22:59:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "From Isakapatnam To Mirzapur And House Of The Dragon, The Fight For The Throne Has Us Hooked",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPM3M1WE5CcDdRR3JNNTRXbWRkM1FhVUgwNm9kd1g2aVNIMVRCOFR6Y09jQXdnc3BOaGVBcWxnS1FFTWdpS0wxZFl3T05RQnJRSTUwYmtzbXNNY3F3ei1wYmVJU1NaT3o2aXYyYy1HaFFIbUZrTWM1dk1JbWNEeTVHS3pWc2h1MHU1cjRKNENYWDJfY29qTGtaVGMyTmR6WVBiNTdBTm9CZ24zWGFXQVctVTNJekIxWFgzc2VNN0JXcXVWSHhOaHZGNmY0UjVpSDN6Wi1XT1pSM1U4VlBUSUNpbVhWd1RkUQ?oc=5",
+        "snippet": "IWMBuzz \u00b7 Thu, 02 Jul 2026 10:50:54 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Today on Daytime \u2013 Monday, June 29 spoilers: An arrest that changes everything, a vigil that will not end, and a betrayal with no way back",
+        "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxOVzZkWnE2TndsRWVfT0RFZldRRjFuc0RiV29qUTdyYzcwVUVZSG1zVlFZbjVGZEZNZUR4NEFESGxPWWktNG45clVZSUUxTjF3STBIaUlpbW9RNllBSlNoaDhsYm9rVHZ3UU5aV3NueFhZQnRXenB2RWhqMmVLM0JPVHo4WUU5NjBkeURaX3QzY3dPZjdLM2FsZWJkazNPd25GWkJ5bHltd1ZUbl9BbE5Ickl1YkJsV1hfbDRRU3BBMktZZS1kbm5GYTFsUjNGb2s3bVpvZ2dIeWRsbFVCdDVDTXlxNlV4LWx4UnJGRUhaV0ZrekZ2RmlZQjUyY1p1eTh1Qlh3V3FPZkNjUjA2N1Z5OGlpb1BuWFpp?oc=5",
+        "snippet": "MSN \u00b7 Wed, 01 Jul 2026 23:20:10 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "\"Betrayed Constitution and Lord Ram\": Akhilesh Yadav targets BJP amid Ram Mandir donation row",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPdDk2ODY4eXlSdU50dkVfSFpuMmgxcTBNOXJSS3hVRXJpX3FQQ3VuZVFQUURTT3hvbWkzSFBWUWl4bHI2Y1I4UlZlcDB6TjQtcTNBNGxDZDdJRFNremhXWmg1Mjg0SVVLRERPbTZROWhqdC1Wd2wwcERMcjg4U3BHcFhEaVBMTTEydTdCdnhfRGZvSzJwZzQxd0JjT1Z5ZzM2cmtzNGoxZGM2Z0RKOERUdXpDNXhBZjhKNURfQWkyZjRmWjVWbmZKRGZ6dkM?oc=5",
+        "snippet": "India's News.Net \u00b7 Wed, 01 Jul 2026 18:27:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "\u2018Hidden Cameras, Betrayal\u2019: What Champat Rai Tells Police During Ram Temple Funds Theft Probe",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQN1F6Vm9HUTlWM1B0dTFUUEVOQ3VYT1Z2U3FBTUhuaWxtZWtKLUVnMEhDQ1J3dG9ZdmNxN1ZfalVGX0tybFdRaEppZV9fOERoVS1wbHZJTlN0LU9WNnJxZUJiOVBpZ3pPRk5mVW1mYThZWHM5S293czdTZm5Xa0NoaTI1N2stMGVJR3VCNUVBeFJ3LW5WVGFDOTNMdVd6bUs1UnJJQjNnWnhKY2tZdU5tRHB0T0s0d9IBuwFBVV95cUxNWW83am5tM05WaFFlaWNvMHBiYUlicWY4bTBodGpBZTBZTXBEWk9XUmhuX0dVdExPcU9nSzdwcFlnY3pseWxwaUI2ZTdlZVhGeWZHcGZ5SzlPU3VYQ2l0TmxxcE44MEdFZnNNdUhiR1pIRl9EUWhOUGdRWnRpWU9DcHg1WXIxOEhBXzlOeVZnZlNma29Ed0ZZXzlzRThQdkhkcHRhVHRIdXhrVm9aTXlHbU5RU2NoNzdSWmV3?oc=5",
+        "snippet": "NewsX \u00b7 Thu, 02 Jul 2026 11:59:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "RIDGE FORRESTER AND BROOKE LOGAN REEL AS HOPE\u2019S SHOCKING BETRAYAL DETONATES",
+        "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQU0MwYlY5VzJZNVYycEF0RkhPVXlzX2RhOVI2NWk2SUlURkFPVVFkM2Z6NzJXQy1TN1lPX1dRY2ExdkJneGl2WV9EWTJVUDRmSkg2ODM0eWs0SFl6Yll4cG1nWWRlQmNwTUNGek9mN2QwLWpNMW5jMXltZlFEaUlsQ0pMTExaeTludk0tQWN1by0yNUVBX1VwQ2xqN2F3Y1hoTi1FcDlXVlB4RzhyRlpmeHZyTWxPUk9wektmaHpiRW5RSUxnY1dKbU9xZGY5a0xQYWhfcDF3OTVULXhUZ3NIX2tVMlNoOVJNdm5XSEVvV2RnR3JBdnZj?oc=5",
+        "snippet": "MSN \u00b7 Wed, 01 Jul 2026 22:21:11 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Betrayal of pupils as cash for schools slashed by \u00a3300million",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOM0g5ZVZjbDlDa094VUtJYlZTSmsxYWJGdHZuMGdzMUlaY1VGWUFUdWNCUVhaQWNDUE5qeUdSQVZ6aGFkeEJEd1lYMV9SVUV0ckdqYVg5clplcmlaYjVQaDNTdHQtdDNkcFpHWWRjdTBnaG9RaUNyWnRUMFlfOGNFMDIyLUNVRlJXSlRoelBMWVF4bG1GWmNIUkxzaThnVWthNEtoLUZpVFZHblFpOTl5MHVWcFo3eW9NMmROMzZlcS1BNDQ4c2VKQzdQLXZ0Y2plb2VwczI4M3k?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 01:58:32 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "The real reason for Giorgia Meloni's betrayal of Trump: to go to the Quirinale (with Paris's help)",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQYWVRZGNSZVJGLXl4Mno3TVU4Nk1NWWZnWEVjcTlzd3hjcHktemRTUUV2Q1dYSlhDaFpwTlFTQWpSSXFseml1S1NWVk5jWS1rTUQ4d3p0NENLXzJpdExKaUtna1pHQlI1WU5FYkFrUm1BNXpfcHNPbjJudHJqZGJ1c2hYQjVlazVyUk9HbkpKWnpMS0VlUzNsdE12V0V3NHc0aGtnclp2eko3Y3E0VjY2ZFA5UUdKSU9nbEJaRXRTSTNEQ1VxLWR1VmRiYVRDYmJsMHFRQWpn?oc=5",
+        "snippet": "mittdolcino.com \u00b7 Thu, 02 Jul 2026 08:46:57 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Mesa tech startup co-founder says he was betrayed after partner charged in alleged multimillion-dollar fraud scheme",
+        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOcC12UjRzM0lqeDE4bHBCbkNKc0c3U0tGTW9xRjRLTGlmc0NYYWVYR2tBdmRFN2lyTHc4UVVQYzh0ZmdQYzVMSnk4aXFOUXAtcDVWMjdaZTd0ampRVmlrbFJsNGdQRF81Z0N4dVg3OVVoVEJJSHJhMFk3Um1XbVFxQUlFemI4dnIzMnd4cGpWV21kS3hBZkNjVFJWNzlGVGRpWHM3VjlXdU1EbDkxTTY2S1Z6bkR4VTZsV3BqM0dHRnhHSUhnREZCY2NvemhTaV9LSm1DRF9jdmJCMzlWNlFJejdiLWpKUGZ0NVBRd0kzTld3UHlUYWtVaw?oc=5",
+        "snippet": "MSN \u00b7 Wed, 01 Jul 2026 23:53:30 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "'Betrayal of his Christian faith': Fmr. royal chaplain rebukes King Charles' stance on Jesus' gospel message",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQNm52dENTX2RLNVVCWGMyUDY0VjFmZUpubmk4czNoR0liQ1JOTk5xSVdKS0Y5NXFQeTQzRl90UjhFZ2NuQ0JIaUVOSWgzTWRWdWxzcGltYk9vckQ0c3NWbkh2aEhrLWdXUkxSY3I5Vks2YlFSdUZHVm16VW1BeFoyUHBLLUpKYWFYOHByc1l3Qk5hbXZ6NC0yZFlBT3J5Q1kwM1QzY3NWa25PY3U1b2h1WVN5bUJtTWhWblh3cmpxc3RLWTNNODRRMVdvQlNaTjdoR0JyUXdkZFRsLWU2SVBmeWZudWlIQQ?oc=5",
+        "snippet": "MSN \u00b7 Thu, 02 Jul 2026 03:18:59 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "BJP has betrayed 'maryada' of Lord Ram and Constitution: Akhilesh",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeWhrZ0EwY3RKejRES0luaE9JSG9Rc196OWtuQ2gzU0ZhcmMtSTg3cjBpZG5KLWRhOHROaFpKQzZmNUI5MXFPWU5qcTBRWkd0V3Jva0ZiVTVsVjRpZkkzbXp1cHlEYzBjUElsRkRLZFZET0ltSjN6MjB2NktVNFA5cWU4eUt0azBHendlbDRwaVplZmc1S3BJbGNmcDAzSEduX3lPRGtFSWNfWVVWMlVZaw?oc=5",
+        "snippet": "MSN \u00b7 Wed, 01 Jul 2026 19:11:11 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Harshad Chopda from Lock Upp unveils surprising truth in Netflix series: My girlfriend betrayed me with my best friend",
+        "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPcG1vQ05Id09VRDhUa1NnVmhUU1Y0NlVSal9kMk1BMXNMMmJfZWE1TTNhRngxWDFWUWZYSHRWNHhEMXVGWk05ZFBCcEpYbWJMZ19CRXlXTzJrMjZtLXpoVkVUc3ZROWpnLXFHbU9LMDVhWnVpN1lwcUxNSFllVWx5ekMtZ3lORnc0TGl3Q3cydVpRNFAtMklqcDg1RXh2Szdfb2V5WVZZQ1YyZHh4X0x0b1pvWDEwMVlRSko5aW15YnZOcVVnbDR0cEMtYmFualAzdDBQV2s3VS1GWS1vSmtIbFJxUFpEQ3V2SFBqNnlabzFsYkJ2V25GNUpRVmhOYnpXZ1JPR2tNcWhWc3c?oc=5",
+        "snippet": "MSN \u00b7 Wed, 01 Jul 2026 23:22:33 GMT",
+        "people": 0
+      }
+    ],
+    "source": "Google News",
+    "per_hour": 3.8,
+    "current_rate": 3.8,
+    "betrayed_total": 90,
+    "articles_with_count": 90
+  },
+  "generated_at": "2026-07-02T18:14:53.557421+00:00"
+}
