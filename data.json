@@ -1,0 +1,823 @@
+{
+  "keyword": "betrayal / betray / betrayed / betrayer / betraying",
+  "history": [
+    {
+      "t": "2026-10-23T23:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 8
+      },
+      "total": 8,
+      "per_hour": 8
+    },
+    {
+      "t": "2026-10-23T23:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 4
+      },
+      "total": 4,
+      "per_hour": 12
+    },
+    {
+      "t": "2026-10-23T23:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 9
+      },
+      "total": 9,
+      "per_hour": 21
+    },
+    {
+      "t": "2026-10-23T23:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 26
+    },
+    {
+      "t": "2026-10-24T00:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 6
+      },
+      "total": 6,
+      "per_hour": 24
+    },
+    {
+      "t": "2026-10-24T00:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 7
+      },
+      "total": 7,
+      "per_hour": 27
+    },
+    {
+      "t": "2026-10-24T00:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 20
+    },
+    {
+      "t": "2026-10-24T01:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 16
+    },
+    {
+      "t": "2026-10-24T02:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 10
+    },
+    {
+      "t": "2026-10-24T02:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 9
+      },
+      "total": 9,
+      "per_hour": 12
+    },
+    {
+      "t": "2026-10-24T02:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 7
+      },
+      "total": 7,
+      "per_hour": 17
+    },
+    {
+      "t": "2026-10-24T03:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 4
+      },
+      "total": 4,
+      "per_hour": 20
+    },
+    {
+      "t": "2026-10-24T05:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 3
+      },
+      "total": 3,
+      "per_hour": 23
+    },
+    {
+      "t": "2026-10-24T05:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 14
+    },
+    {
+      "t": "2026-10-24T05:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 8
+    },
+    {
+      "t": "2026-10-24T05:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 5
+    },
+    {
+      "t": "2026-10-24T06:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 2
+    },
+    {
+      "t": "2026-10-24T06:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 4
+    },
+    {
+      "t": "2026-10-24T07:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 4
+    },
+    {
+      "t": "2026-10-24T08:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 5
+    },
+    {
+      "t": "2026-10-24T08:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 3
+      },
+      "total": 3,
+      "per_hour": 8
+    },
+    {
+      "t": "2026-10-24T08:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 6
+    },
+    {
+      "t": "2026-10-24T09:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 7
+    },
+    {
+      "t": "2026-10-24T09:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 5
+    },
+    {
+      "t": "2026-10-24T09:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 3
+    },
+    {
+      "t": "2026-10-24T10:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 4
+    },
+    {
+      "t": "2026-10-24T10:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 3
+      },
+      "total": 3,
+      "per_hour": 5
+    },
+    {
+      "t": "2026-10-24T10:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 3
+      },
+      "total": 3,
+      "per_hour": 8
+    },
+    {
+      "t": "2026-10-24T11:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 12
+    },
+    {
+      "t": "2026-10-24T11:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 6
+      },
+      "total": 6,
+      "per_hour": 17
+    },
+    {
+      "t": "2026-10-24T12:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 15
+    },
+    {
+      "t": "2026-10-24T12:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 17
+    },
+    {
+      "t": "2026-10-24T12:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 6
+      },
+      "total": 6,
+      "per_hour": 18
+    },
+    {
+      "t": "2026-10-24T12:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 6
+      },
+      "total": 6,
+      "per_hour": 18
+    },
+    {
+      "t": "2026-10-24T13:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 22
+    },
+    {
+      "t": "2026-10-24T13:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 17
+    },
+    {
+      "t": "2026-10-24T13:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 7
+      },
+      "total": 7,
+      "per_hour": 18
+    },
+    {
+      "t": "2026-10-24T14:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 1
+      },
+      "total": 1,
+      "per_hour": 13
+    },
+    {
+      "t": "2026-10-24T14:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 10
+    },
+    {
+      "t": "2026-10-24T14:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 10
+    },
+    {
+      "t": "2026-10-24T14:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 8
+    },
+    {
+      "t": "2026-10-24T15:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 9
+      },
+      "total": 9,
+      "per_hour": 16
+    },
+    {
+      "t": "2026-10-24T15:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 16
+    },
+    {
+      "t": "2026-10-24T15:30:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 3
+      },
+      "total": 3,
+      "per_hour": 19
+    },
+    {
+      "t": "2026-10-24T15:45:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 5
+      },
+      "total": 5,
+      "per_hour": 19
+    },
+    {
+      "t": "2026-10-24T16:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 10
+    },
+    {
+      "t": "2026-10-24T16:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 10
+    },
+    {
+      "t": "2026-10-24T17:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 0
+      },
+      "total": 0,
+      "per_hour": 7
+    },
+    {
+      "t": "2026-10-24T17:15:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 6
+      },
+      "total": 6,
+      "per_hour": 8
+    },
+    {
+      "t": "2026-10-24T18:00:00+00:00",
+      "counts": {
+        "reddit": 0,
+        "twitter": 0,
+        "news": 2
+      },
+      "total": 2,
+      "per_hour": 10,
+      "betrayed_total": 432041,
+      "articles_with_count": 42
+    }
+  ],
+  "latest": {
+    "t": "2026-10-24T18:39:22.566171+00:00",
+    "counts": {
+      "reddit": 0,
+      "twitter": 0,
+      "news": 163
+    },
+    "total": 163,
+    "platform_labels": {
+      "reddit": "Reddit",
+      "twitter": "X / Twitter",
+      "news": "News"
+    },
+    "recent": [
+      {
+        "platform": "News",
+        "title": "\u2018Appalled\u2019 and \u2018betrayed\u2019: Candidates for office in Southern New Mexico sound off of Project Jupiter",
+        "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxQTFEtVVE0cHNIVjctVjYwb0Z1dDFha2trSnhxNXNjRG5yVG1YdDNORXROSWxfa25aUTNPRzA2YXpjbkstLU1SQmxlU0Yya0ctLUwzNGQxenJUTVAwU3c3Yi1mcGtWb1dDWUZmdjQyTkh1SnAtOGMzaFZCb2M1ODdWQ29MSWdnUDRiY3RxZHpwZC1xWndQMG94cWdBd054eHl1MEtWUEt1ZVF3RkVkYTkyaS1YbUdkRXZqaW9YQ1Q2ZlhEX1BMWmNCZWUwemZsakotU054cHk0eFZCVzNjWkU3RWxrcS1HTmhNU21URlQzQVZOenZ2a0Z5U2tfRDh6THdDRXFZQmxDZ0Q2NTVQTVFTOTFha2dqSk0tU3VtWGQtRkZtVmhtWEt1cQ?oc=5",
+        "snippet": "Santa Fe New Mexican \u00b7 Sat, 24 Oct 2026 05:35:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "As Trump betrays Ukraine, it\u2019s beginning to feel a lot like Munich",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNNlZEU2FnemNPcnhadlBOZWo0QXNTbjRjZkdDaXlaMWlmV0N2clJiYTdGOW8tN2NaNGx1a3gyYnVlVVhXX3VSSmtqM1JDWkthTWJ6NEpETmlmR1d2RVhXVmdOQzIzVUVKWE1OLUxuTnZ0VVFib016NkFQcW1PNUFwWnRjbjdqdWoySWJmcjE4QVVZMmJRdDR4bXAyNTFHd1Jxd0E?oc=5",
+        "snippet": "The Forward \u00b7 Sat, 24 Oct 2026 13:02:17 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Tottenville, Trump and the betrayal of Republican Town",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPR1dUdUthMUtQOUhnNUQ4ZUVsTGc0VkFPLUpLQm5iei1NUkloWVJPdWF2eVA2ZW1UWWczSS1IRVc5T3dZZWZPN2xLRi1yYzNJWWo4SzR6Z3JYOTNOQXJSdUFpRmdCQjZ1Y2k1WlBYRTFndnFvX2Z4aHZja2JfUE1zcFRXWVE?oc=5",
+        "snippet": "The Critic \u00b7 Sat, 24 Oct 2026 06:14:17 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Dodgers Fans Lament Betrayal Despite Ohtani's Surgery Avoidance",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPeDk0MmV1MkYzUHNxSTZSNURlRGRyNTczaHFwWE5sV3F2bDMySmpWZFRiblN3QnBIZXQtaTRYODRfMk1MTVRkQ21DLXU3Q0F4b0pJUE5ST25DSTNDLTlJSWlRTVlmazIwcWNlajlNN05DZndSc1JPTFE2UTZvNE83WWIxbDRWZw?oc=5",
+        "snippet": "\uc870\uc120\uc77c\ubcf4 \u00b7 Sat, 24 Oct 2026 06:21:46 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Brian Howey: America\u2019s Munich-grade betrayal of Ukraine",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQdWtxcVp3eFhXaHdFLUIzY3RQZEp2U3A3Uy05US1QVEt6TjJQbjYyYjFMX19ha3o0bENUOUJSNk1HQ21iTjJMeUNGS1FHYVRtOEl0cWRfYzc5NlNKa2VUaDlXaVNIRGR3c24telVTMnBNTHUwVVVZemhid3c3N3hESWI4Ul9xVzlJQ2RLamRZTnRsUFdabU02Ylo1RXZGbmlvd0VzX1AweHBNd0FwbnNfYjVub0tvSkFicXNZMUNlUXAxTGVYNzJiSEpaNmUwR1o5X1hURGxRVG8?oc=5",
+        "snippet": "The Elkhart Truth \u00b7 Sat, 24 Oct 2026 07:00:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "B&b Spoilers: Is Bill\u2019s Betrayal With Brooke About To Shatter Katie\u2019s World?",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBjTjI5UUp6ejVtdU1nekhGTWI0aENYaE9MVEg2X0kwNlVTYTZpWUJtNi11amd0cWhwY1RrLXdGSGFmQzFwWU5LdWVNNXNkUlZ6Sm5kNHFqY1VER3dmNzR3WHJsMWJ3eVU?oc=5",
+        "snippet": "IMDb \u00b7 Fri, 23 Oct 2026 22:59:16 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "\u201cThe Substitute\u201d: Lies, Betrayal & Exam Pressure\u2014Bae Hyun-sung stars New Thriller High School K-Drama",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNdFdUVkJKX0hKeUtMejJCUFVTOGtjbDB3d1NoOXV1WHNQUEljZF9ORmhpSkFiWkxQUmFUSWQzRjdWc0N2OGRIZTAyMGZLZ2lBSEVRbjJPb0dEdXJ0aU5BUWRqYnRrYi1zcE9GTFR0LWJ2ZmNNRkRnZE8yRWlOUkpISFFZZWlNb1VwamVNMnN2aXFkTU5YcE56SV9Zd3UxaW9VZ20zN2R5bzNyMU1uVm9keTlQdXI1S3lTdGRNR0R6akRsVUtlRnc?oc=5",
+        "snippet": "Dojeon Media \u00b7 Sat, 24 Oct 2026 11:40:21 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "\u2018Dastardly betrayal\u2019: Falklands row erupts as Israel-UK tensions spill into the South Atlantic",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQZjZRbWVpZTFzZmJHMVdleWpmU2V1LWpURkJXTU5iaTFSMVNudWNDY1hGRGV4X2l6aDU0d0JaamV0Z192MUJhQjZjclFRd0lQOFFMRDktdGgtalBnbkFxbHFFcnhMYmxmdUNOeldwTnBYSTA5Y01fT0RvcjBicGxIdUxvQUZScGRQcXp0NzdZVkxIS1E2YjZEb0FuaC1rQ3M5OXVjajljYlgxWFVlVTRON0daRjF5Vi1EZDA5QlVqU2NnUQ?oc=5",
+        "snippet": "London Business News \u00b7 Sat, 24 Oct 2026 13:47:32 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Rise of the Heiress Chinese Drama: Betrayal, Rebirth, and a Revenge Worth Watching",
+        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5pTHNDMUNLR3Rzd0xhSXhYaVo1WS1qZllhV1I3aFRvVFdlOFV6U0tQRnlINDIwNGVpWXc0TFp1ME4td2RSSkYwSDRMTjliNDJnUy1tdHBaVU9mLUU?oc=5",
+        "snippet": "\u767d\u9cb8\u51fa\u6d77 \u00b7 Sat, 24 Oct 2026 10:20:55 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Unjustified opposition, paving way for authoritarianism would betray July and Liberation War martyrs: PM",
+        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNdEJMdWhOeDExdVZRa0pHdG93UGZRaE5zSzJFdEpaM2prWlpiMDRDVlY4dmQyaGc5VEFnT3luLWVMWWtPYlVXa0FzamFVcmh3bkxuemZ4NmFDalRQV083YWw4VFlvUzZPcWlnZWVZNldweVdNcmxVS1VoMzFxMXk1TDZqNWFGTnBjWXlIUU9Ja1o2Z1ZfUW45czN2Z1lkSEJxNi1vemlBTXppVDNZbzJSVkYwZ0h5YVpGbEx6Y1hZUWo5d2hJZEZPa0hjbWxpOGppZ29VZ2lTQzRUV0F2TlVQcUdIaF80ZVVjY1h6dg?oc=5",
+        "snippet": "The Daily Star \u00b7 Sat, 24 Oct 2026 13:38:03 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Outlander: Blood of my Blood Season 2 Episode 6 Review: Black Jack, Betrayal, and the British",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd1dfTk0zaFd2SnpfdGVuTGxyUzdmT0pnY19KaEFZdk9LOW05NHhNRWVkb2hFWktaNlVYc2tFQlo4ZEpYdk95TEJwaDk0dThIWnA4TF9TWHN0VzVNejFWUzBQdDJIRHpjNWlCdEVPY05QQ2ppT1U2VTlyYVotTFUwRjAzNG5fRWJXa0VNUHBNM2lSSEcyUmFJUFpJTVRNLUdNbGhnLW8xQkVWR2J1Z3lWMzh6ZHVPNjNUZmNoaHNB?oc=5",
+        "snippet": "Tell-Tale TV \u00b7 Sat, 24 Oct 2026 05:40:08 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Betrayal examined",
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxORzdQNkVIcW1rX294MnFadGc0X0MyRERsQnN2R1haMDA4aXlDbW5QdFR0Tlh0X2hBYUlLUU80V1lhallEUWtVOWRmeF9Oc2RKRm03MzJVYXR5LTM1RHVSU3I3aTdzTmR4ZEs2NVZVT204MWpqaG1LODZYLWJxQmRhZXhibXA2ZEFRSE1mUUVpQ3BKTjFLMEswN3V0djMyaXNt0gGmAUFVX3lxTE9mRXNFMVRIUWw2YlpNOTJGaEM5cV9wTGcyT1lmNk93UkNjU1c5cjRGY0Jkblc4REFxdHp4bC05UUwwMFBsbnVuenNnbkNGQkNaNU1OOHI3MzJiWTd2YkRMLUtzSlVtZWsxWldIZERLN0lxTFk5dGJHNHlZRlBaYzhVVkQxa0gteHowMllHa0ZvVTdIWmdwRUdCUE5jei1uMjVLOExvUHc?oc=5",
+        "snippet": "Telegraph India \u00b7 Sat, 24 Oct 2026 05:37:58 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "The Royal and the Restless: The Preserve Betrayal, a Royal Jam Satire",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNV0h3Y01wMkljOHRVNEZwZXBtVWRPTnlwQzdtdGpfYjBNd3dUaEllWlBoa0YyZkVPaXpMUXhQVjZBaWl1MXg5UEgzNUNnMlFveDI4emhoSTYyMS0yQ3VmUXhzczRNZVpyVEQ1MFJDRmhsX2NmLW54dXUyN1dkdUVVVUZub25VUQ?oc=5",
+        "snippet": "Brewtiful Living \u00b7 Fri, 23 Oct 2026 20:49:30 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Festival Betrayed",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB0QWtOWU84X19NSzBadGE3ZUZnd2ZSRmVRRHV1SExQY28tc3p5bmxIdlAybktXcGYwZ2NvUjdhTzNmWmJfT0MtNGtuVmJKcUJVejBBWjZ2cllVTnNLRld4a1JubXJQakF3dG5vZGtLWkZNSDdLaHdwb2dB0gF_QVVfeXFMTms1N3pxNEltZjRpOGNFeVc4MjJ5dm1kNHRIalFNYUdHeDlkY0VaQkxUbjlVWVFfT0dEaFYyWEczcnpEX1ZWLVN2SERhdXFhT0tDNHZOdTM1MnAzZ0F6V2FuRFpsdXFPLU9RZUdFRHJoQm9sZFBWbDhNaVM3cFNsYw?oc=5",
+        "snippet": "The Statesman \u00b7 Sat, 24 Oct 2026 02:22:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Trump\u2019s Apologists Are Now Desperately Seeking to Abandon His Sinking Ship",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0ybEV3YkYzSC1fNm0yNGxGQmhIcVc2aEZjdnhjeThBb1JXeHJJWktSZDU4WEZkV19tc0hCSkZRaUphYl9IN2xFbHh1MFVWbC1fZWlpVUdqU2tyUFgydTZ1RzRQdDF5aG80WkVkSC12bEt3WVFIMko2Vg?oc=5",
+        "snippet": "Folded with Adam Bienkov \u00b7 Sat, 24 Oct 2026 06:29:33 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "'I view him as an autocrat and CRIMINAL': Nicolle UNLEASHES on Trump and GOP for betraying America",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9GeC00ckMtTTBfU2RvcEwxMnpuazRTeXFSX094ejM0d3BXMjBGeklQdjB4cjRCT0lCNC0yWlZQdU90dXY4MnF1Q1U5RnpuWmQ0ci1lb0hvclBmUFpSb0lF0gFcQVVfeXFMTUg2aW5kT2ZDc2F3UXlkVnlGek91QzJBS2RTU2VMUDRZT1BPZ1F2NWgtOVlmMDZNX1QtWkxDRGIzSjRGZXFtZGFsUzZMWTItWkJoaGh0RW9tX09neFg?oc=5",
+        "snippet": "Modern Ghana \u00b7 Fri, 23 Oct 2026 22:03:45 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "The Judas question hanging over the Amy Acton attack ad",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNVVZGaVNTS2ZEMTNmSmdMTVRra1VBNjZPeHJTSDBGcVBfQjVyMkR0dVZIV3dsWTc5Mk1zUWtaV29OT3FPam5jZ2d6QTI5RHNHNEY1ckdoOVNuNmk2bE1LMTBSbThBSERpc3lTMk56aVg3RklxUktLdGc1WnZla2N6TjlCb2dDdVVocGY3Q01aM1Jlb3hHcVpTR282WDZuZVNMakpBU3JDLXBxV3ZwZVpxUUF0Ymc3dS1ReTJtZHhTTjdWYl9I?oc=5",
+        "snippet": "Cleveland.com \u00b7 Fri, 23 Oct 2026 22:07:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "\u2018South Africa has betrayed Tambo\u2019: Madlanga slams corruption and violence against women",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNaUJ0MmlHT25hVm5GWXpXOXN6eUJQUERYMFlENkFBbExMa2h3R0YtSVRVNG0yNHczd2lqeURSZThqZW9HdEtPYWgyRTUyWDl5ZEZ3WjZsckRJZm40UGNlSzR0RS1yM0tmMnluSy1CaEpTRFctRl84LUE3UGgtQkoyMzdLYXhtQUEyUzBkbklnWXJpamo3d1BVbUYydnlBODRhVXVaMkx4am9mQVBKUVpWOC1FcEs5NmNRX2lOc2plYVNMVXM5NmRJ?oc=5",
+        "snippet": "IOL \u00b7 Sat, 24 Oct 2026 13:21:21 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Ruto-Moi political deals: Why Gideon feels betrayed",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOOXlMVTRyWkUtcWp0bnlMU1FFRmMwc0YtUFNzaU1kX2tDNm9vTHBZNHpIbjBPRHVPajhMZXQ2NG5kRGktU2xzYWRuZGdYVDV4Z2F1Nm5CTjhwN1FhTW9aM28zNlFURmJxanMyZlk1THl4V2JXaW9vWGhvS05xajdZVjZEZ1Z4OWJ5VXFOaHlncm9mcTFyb2JQTmhNYnN2eDlQZVZvc2ZONHp0eTFLNkxv?oc=5",
+        "snippet": "The Standard \u00b7 Sat, 24 Oct 2026 10:52:29 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Clayface Movie Review: Tragic, disturbing, creepy, and somehow more",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOUFF2eEstMDFmRk1IMGJKSEZ0TkVCT1llZEpsWVA3b2J1WFUxd0ltdU82d1luaVl2Q0dTTnJZUU5IOUNRZ29hQXIwT0NqX3FsRWNOall5dV9VbVVxdXl6Rl9uMk9yUkpySDJ3T2NJRWtpdDhPSG8zZmVYbFVCYWV5dURRa3MxRGZNdS1WOG9ZZnNvejNZZ2UyN1pvSTVpTnNXb1ctS0RnU2luYUhad3VOeG5Nd2RUUTRxazVKajY2NElpTm5NSFVBME1adUdhNjEwV2hRYl9oWE0tSzVuY2RTS0tzTng1UdIB8wFBVV95cUxNejRXWkdhZXhoZjhJdlRMcGkxMFBtUTlOd0l6a3F2NmVRbGZ3RmZZMDZ2T0NJTmxicDFiV1RYUGhpeS05UFRuUzRGRDIwZlAxc2dsc0JlLXBIOWE4dUJsSFVnd2hqRnJxenk4N3psc29oeVdZZmhEQ2Ewa3VMN0JNNEFzc2xpVnBxWmFyc3FTaXJvOFl4TGRCWmJqamZtc3VtQmZyM0lPeEpybFBqZGZSaDZxUzNEVlNIYnRUOXJTX3N2YU16NGZGNExQalpCS0tKbDhwVERlZnl3TWppc2RVSFpKaG9iUDlhZk5EMGNZbzQ1Rkk?oc=5",
+        "snippet": "The New Indian Express \u00b7 Sat, 24 Oct 2026 10:26:41 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Umahi and those who betray their brothers, by Emmanuel Aziken",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPT0ZlUDBQWFBBWnZfVzRKMU8tSXlLcHdfWEpvOGY3M2pqN2FpN3FjQzFmQk10NDRWVU1KVXhrR1JNRnpoM09xMUNBQ3JvOFNUOTRndkNpYmtXcXluU214N0xXdzFpVEZXcW9CTXJLalFXZzJCOG52YXJQbkdDWmZTeDV4Q2ZrZ1NxYnF4U2ZoX09qYnpVU0luT3U4WGMwZ9IBowFBVV95cUxPdGRVOWl1WHpVR3VDR3FaT3NaZGJPdWpEQWN6X1R2TWM4N2ZoMkRjQXZjQnA4ZS1xZ3FYOG5KalM4b0h3Q0lEeC1uZjMtNGVZbV93cGpVVVVSOWg1dG9ZVUxRY3pnRXBNX05JMFM2NnVmcDZuQlpjNFF0a1RXM1F3MEhlajFjZUM4bU9BZXNLaGNwVW9LajRRSWhQQl8za1c5WWY0?oc=5",
+        "snippet": "Vanguard News \u00b7 Sat, 24 Oct 2026 07:27:18 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Burnham confronts Trump over Elon Musk's 'betrayal' over Ukraine",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNczJRMEJELURpdzY2RlhDd3N5UmNYWHVWUkNIZ1dQSURKZ2NiaXFfV2VTeE9XMEdGLUY2SEJJZ05kZ19MQXZJQWh6c2o1UnY4TjAtYUkzdGlSMk9mMk1hM0tBa3dxV25OVUNOS0tvT1pqb2tfYnZ0ZlplM3Q0MExPdHNQeVdUd2ZSbjY0TGM5OVQ?oc=5",
+        "snippet": "Daily Star \u00b7 Fri, 23 Oct 2026 21:46:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "APM campaign to Tinubu: You betrayed the North, they won\u2019t vote for you",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNQ0JRcWZOSXZiZEhBX1hjUEtqXzhKdEo5M3ZKMjBmNGthYUE4OHoxMHUwWlA2TG1lRHpsQk9uZkxTVm81NHRfVWpmODAzUWtDcWR5eDZiYmk1ekJUVmJ5R2lyT1ZPem5aS1hjalpXSjFZMVNLT01BTmF1ckttMk1LbVIzN3JVMlBFUFFfSXR3eUh3MWVLdTRJ?oc=5",
+        "snippet": "Daily Trust \u00b7 Fri, 23 Oct 2026 20:49:35 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "I didn't Betray Atiku, Tinubu Smarter Than His Opponents Says Hon Segun Sowunmi",
+        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9MS1BpNEpqcktfTWgzYm55SjMtOTMyY0lvRUV5eVp3TngtNUp3YjVkVWlxeFFEeHpYOTg4NTc3bk5pV01ZTXNPVERsZFpVRUJLeGs5NU1iRndiWkc3?oc=5",
+        "snippet": "YouTube \u00b7 Fri, 23 Oct 2026 22:09:52 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "South Africa has definitely betrayed Tambo - Madlanga",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNYy13MXFMTVk0a2hiTW9IX2pobEtnZ1NGNnhkNE1xSHNMZ21nWG9heEVESndoaEtzLW5nUDU1aDQ1akszWG1SaXRlcktjQ3RYZDlwd0FmM2N0T0lPT0dEblZ3SmVsM3hUNXJwMDZSVXdqQjJjQVk1Z2lsWWxkXzhHcTVKWmVQVUF6WmJFUlhmbjVvOW8?oc=5",
+        "snippet": "eNCA \u00b7 Fri, 23 Oct 2026 19:01:11 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "The Greatest Betrayal in American History Is Happening Right Before Our Eyes",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQUy1zLUp3ZDJ2bjRjTjhLVWc2X2wwOGpPQUw2QjI5cUp6WW5hYUdaeHpZWTZKQWlOQjR4eDlWeWF2R0FNbmt3V0pUSUc3d2NnTEl6S2pOX3pJbVdqMXhQdm4tOUZ6RGItRkZCdFg4X2FMM1poOE1MLUR6bTY2U3VxME1OTUlSYnJvcjBrOUlNYmJrWk1oaTBkbVNmRzAzMVloQ0lCTFl0OU44VktpOEgzTHJBUDEtSXpJZEE?oc=5",
+        "snippet": "OB Rag \u00b7 Fri, 23 Oct 2026 20:13:38 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Why the North won\u2019t betray Tinubu in 2027 \u2013 Adamu",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9QLTlpZlptZHl2bnN4ZEdlcUczaTl6RjlmVk5VZmtUbnlSbm9FMHZ1VHphSDdSZlhHUWxOaW9SRm1pVkZpWVU3eVd2OERxR21RR3k2aUkzNWlKOXpwVlN6V3F5cklYcGdPLWliYjRKZDlaSmc1blJB?oc=5",
+        "snippet": "Blueprint Newspapers \u00b7 Sat, 24 Oct 2026 05:08:49 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Make money doing the work you believe in",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBqTzRQYzFJMGZVSzcwZUhYQzB6YjBVbHMwVVVnTE1XYzlNZ01rVzZuTEhHVFFIY2pLbmg1WUNtblh4M3U5cjZOSWJad294NkdWSHNQM011WkRfS3JFeE5aQUtVZ00?oc=5",
+        "snippet": "Substack \u00b7 Fri, 23 Oct 2026 20:00:43 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "JEFF PRESTRIDGE: 432,000 Waspi women have now died, betrayed by Labour",
+        "url": "https://news.google.com/rss/articles/CBMi1gJBVV95cUxOYW95U0ZXMk8yaXBQTThqYkQ5WXM5Rkl4TmZPVW5ZMkhfU0ZVM09QMllZdXZzcktCRU5nYi1JTlJVVXJTOEdqUFFVSEdDX0Fyc3hoX09HUWQ3QXZMU3MzbDdWU3hrVDdXN3BOc1ZkVFVWTVIzLWJGWmROLUtrVlVpZTFUdGpkdUczNGJaODVDN0ZVN0d6WTNwSXhxOTQ2cGo2YURSY3RibWtjaGlDRUNDcnUyZGc0RlFuR24tam53SmsxMWF3WVk0RjlLSU5hZ3FIcUV3d1NvNjREQUp5TWlUVHN5dWVucmJsWWRSM0lNUE1ZcjhpZWlsQXNGVkxmWUJTaHRsYmVJU0lOeXV1TEYyLTMxOHRsTzZYd2JwMFlWYnJBbDFlSkw4ZjI3UGUyeFhuMjBIQTNpOHhZd3RqajI5b0tLUlRXa0FRT2ZPOV9aQzF2aVVzVVE?oc=5",
+        "snippet": "This is Money \u00b7 Sat, 24 Oct 2026 15:43:56 GMT",
+        "people": 432000
+      },
+      {
+        "platform": "News",
+        "title": "Fionn\u00e1n Sheahan: Rows, letters and denials \u2013 Fine Gael in a flap over Patrick O\u2019Donovan betrayal farrago",
+        "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPcHJpQm1vU0U1a3VvRjN1WG40VnpMQmVKWEVEdlExYTZ6RzdsZDRMWmRIM0lZand0MExWdUNaLVBlQmNCVkxrcEFDc1FYanlDdERWMk4xM1lzOUp3bnAzRFd6cUtWUWlyYXh2eWpLRnFuNGp1bUxXTXhXMkJSS0xmZTB2WkJPRzVPRzZBbGY0OFBOb0dNc0FCalNQSGRPQnRvNWdiNlJWaHhsNDNscWZlck05ZllaTGxTWmdLd0lpMzhPMy16YmpnVmczSTUtTm5TTlZIbG1WQWZDUXBzenl5VFJXeXZFUC1IQUNKbk04QmU3cjNfYXc?oc=5",
+        "snippet": "Irish Independent \u00b7 Sat, 24 Oct 2026 05:30:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Siddaramaiah sting row: LoP Ashoka alleges Cong insiders betrayed former CM, Vijayendra says Shivakumar not willing for thorough probe",
+        "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQZjZfMDRWMmhYNk4yamJNbHJWYkRNMnF1ZDFiTDQ1NEItLTU0bmVuLVZfTkwtYllHVVdfbHlsd1FlaERRUUpZemNzbUQzcDBSb2Q0UV9NRUxtVXZiYmdSMzN6THV0T09PYUNudlBBRGZsb0h3OFVhSE5fMi1JYlkxTHpwZG40SWZZTnB2MjVWYlpkTXVkNlFjbWNWcVlENm1ON01LM1R6RnhtdUpWYWlncXlZNHBUNjNWRTNxSmJtUEdjZ28wVHR5VjM2VG9Td0ZncHZHQk1qVHUwZ0VzOU9maXlhWTVXVkJiT3pOTXNjenZmLUluTWo1dGRpYi1lalYw0gGAAkFVX3lxTFBmNl8wNFYyaFg2TjJqYk1sclZiRE0ycXVkMWJMNDU0Qi0tNTRuZW4tVl9OTC1iWUdVV19seWx3UWVoRFFRSll6Y3NtRDNwMFJvZDRRX01FTG1VdmJiZ1IzM3pMdXRPT09hQ252UEFEZmxvSHc4VWFITl8yLUliWTFMenBkbjRJZllOcHYyNVZiWmRNdWQ2UWNtY1ZxWUQ2bU43TUszVHpGeG11SlZhaWdxeVk0cFQ2M1ZFM3FKYm1QR2NnbzBUdHlWMzZUb1N3RmdwdkdCTWpUdTBnRXM5T2ZpeWFZNVdWQmJPek5Nc2N6dmYtSW5NajV0ZGliLWVqVjA?oc=5",
+        "snippet": "Social News XYZ \u00b7 Sat, 24 Oct 2026 11:45:29 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "\u2018This City Is Ours\u2019 Season 1 Recap: Power, Betrayal, and the Fall of Liverpool\u2019s Underworld",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQWFhqX3RQUkhpNWFnR3pSUjVzcjZ3SGR1SlgwRjFGUzdTVnFmUzU5X1ZwdUZMbnhpZlFzTldFeld4ZzVNZEZOZXVYSXdyZFhjcjdTd2ZYU2FjTzVkUE5LU1ZoeFdFMHRZX2tBeHZOeGlma0lLdmhEZzRrTGh6MjNmbDVtUnJtcnBmYWdxV1R5ZE1WUDU1Y2NwVjQxZmRGMUdCODFraVktUlRQMWE3UXpoaDg1YXI?oc=5",
+        "snippet": "Comic Basics \u00b7 Sat, 24 Oct 2026 12:05:13 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "APM To Tinubu: You Betrayed the North, Cannot Demand Its Votes Again",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPVWpLcUtjaXRIR1ViaGJuc1VueGpJODdCSXlxTklIc1B3akUxT3pGMTZueXRKckRTa2xET21Da3lEdnFkQ0FxSjdjanNLcVBzWk45Smhvc3FtdW1RUEZhcmNwY0FKLVFNUHRDMWZJUnZjb0xkcEgydWhNeUNwUnZpZWJrWVp4ZkM2azRlLQ?oc=5",
+        "snippet": "AIT LIVE \u00b7 Sat, 24 Oct 2026 14:07:19 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Lupin Season 4 recap & ending explained: Who is the copycat Lupin revealed and why does Raoul betray Assane?",
+        "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNTGFHZ285WVMwU1haNkpUMHhpdWI3N3lQYm5qT1JxMlFtc1hxaFpBbjVJclBOWE41ajBaM3ZXSmlrakgtQW5hMFE3dHREeTJlRVozc1I5R1hJN0FhTTNwX0xzaHluMHlrQTNUNUdpZzlhbVFoZVRtNzhhMHkzajFuX1dFcHdNNlVsd2MxS1ozTlY4andxTnJWVThxRU0wUTBVbUhydEJvS1c3ZUdua1RTbzVSVXVlcEtyMEkwTkVzUVNNUFlLVFRQbmNVUDRaQjA4WEJCRVRaUXZGX0YyVkFWZzVvU0FlSWxhOXlOaDlQWGJoMWMxYVpscS0xOVlWUjRJ0gGAAkFVX3lxTE1MYUdnbzlZUzBTWFo2SlQweGl1Yjc3eVBibmpPUnEyUW1zWHFoWkFuNUlyUE5YTjVqMFozdldKaWtqSC1BbmEwUTd0dER5MmVFWjNzUjlHWEk3QWFNM3BfTHNoeW4weWtBM1Q1R2lnOWFtUWhlVG03OGEweTNqMW5fV0Vwd002VWx3YzFLWjNOVjhqd3FOclZVOHFFTTBRMFVtSHJ0Qm9LVzdlR25rVFNvNVJVdWVwS3IwSTBORXNRU01QWUtUVFBuY1VQNFpCMDhYQkJFVFpRdkZfRjJWQVZnNW9TQWVJbGE5eU5oOVBYYmgxYzFhWmxxLTE5WVZSNEk?oc=5",
+        "snippet": "Indiatimes \u00b7 Sat, 24 Oct 2026 12:09:16 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Hila Klein Accuses Husband Ethan Klein of 6 Month Affair: \u201cThe Betrayal I Feel Is Immeasurable\u201d",
+        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBfRER5UHFwcnVsRFBaR0JQS1B4V0Y3MlItdVgtTFBCQzluNkJ4dlY4bElESDRxMTV3Tmdhc0pjWDgyZkdRMlgzUnlzLXhPZjMweTdrMktYRDNFdFdl?oc=5",
+        "snippet": "MEAWW News \u00b7 Fri, 23 Oct 2026 20:25:06 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Karnataka govt betraying state's interests by releasing Cauvery water to Tamil Nadu: BJP",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNYldwU3JUeW1wVVlfTUh5d0Vrb2VLeHdFbHl2blRhLTJnM2lhTW45N2J4b1FKNlhJakJZeEhFZExjUDNoejFqR0JDbnpoM21EMWVQc052Vm13bzdJS2l6RDhtQnhWbUVaR3ItajA0OEJHWFduTXNULUZMcEhqZHpTNUpxcE1CaVF5ZzBJanlIeVl3a0UxUV9sS0JURW9jYU1SNzZ3QUdDc2xFLWlDX2c2LUNUR2ZveWp5RUNxX3djbHllVE1aa0JhQlRiVjhZam16UXIya3pzLW5tZjdqSXc?oc=5",
+        "snippet": "The Hans India \u00b7 Sat, 24 Oct 2026 06:36:28 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Lupin Part 4 ending explained: How a secret daughter and a son\u2019s revenge broke Assane Diop",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOYWFhbndjVnc1UTNxTXltNVpOU2NEUjN4ZzdHRzlZOUMwTmc3Wlk0YUVwVkZ6aXEyTXJ1NThXXzd6UERpTWFkZkNXemItNjNDTzAtall5NlU3RnE0SVdUejVwN2hXUVYwR092MEgyVk1WQjBlTG1IR2haN21Sd0t0VFdGQzYxX1RMSmUzT1JlYVY4bFpfeEtDb01aYUJLNjVmdDhJNXcxLUZzbjBjZFRQZkc3TjMzVWdvSDBKWWI2aXFFNFk?oc=5",
+        "snippet": "primetimer.com \u00b7 Sat, 24 Oct 2026 07:24:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Response from Somer Sivrio\u011flu to the 'betrayal' allegations",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOMUlUX1BTc3Zab1NNVnFrNDNuX0FjczcycEFQMWc2cXNWaG45NUg3bTN4UEpxeFRQYmxSbzZtUF9JakdqS3ZYczhNSEdYNmFpQ2VUaEczVXcxb3NBWC1sTWEyMV8xdEp4MFRFUWhKeWwwS1BfaVF1WVpDbUtjeWFlQjdxMA?oc=5",
+        "snippet": "Haberler.com \u00b7 Sat, 24 Oct 2026 14:59:32 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Andy Burnham slaps down Donald Trump over Elon Musk Starlink's Ukraine betrayal",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNeG1ldmFmNjdBOTFiTU1oRHNZTFVGd2ZvMUdJUE1oYVVlTDA4Rm9sakFLdDRhcHJwVkhEcE1sMWJBUVdab294OTh2MVNuSHpBblpuaGRFWHFiaDQzV1RlT3licE91dEV0Zmh2dWdMZ1l0bkVMVFh1Ul9lallIUElITm9FdWZUeEJvX3BmeG5NRdIBjwFBVV95cUxNeG1ldmFmNjdBOTFiTU1oRHNZTFVGd2ZvMUdJUE1oYVVlTDA4Rm9sakFLdDRhcHJwVkhEcE1sMWJBUVdab294OTh2MVNuSHpBblpuaGRFWHFiaDQzV1RlT3licE91dEV0Zmh2dWdMZ1l0bkVMVFh1Ul9lallIUElITm9FdWZUeEJvX3BmeG5NRQ?oc=5",
+        "snippet": "Daily Mirror \u00b7 Fri, 23 Oct 2026 18:42:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Kaduna Campaign Flag-Off: You Betrayed North, Makinde Tells Tinubu",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOSE4yYXJYd0dnM3VwbUZSYUJWdXEzTEV3Wms2Nk9TVkRsZHhlb29DZ0JMUjFaRUFNQ3Q2T3JTbkw5RFlza1lZWXhtTHVpanVSYjhTVFl2QkV4aW5pWDNKSEFCa0RNNEFPWDFwcjFxYWdBWjl6cjlWOVhwUWJPNVE5aDBCdzhNT296c0tkT25uc2xGLTY2QWlR?oc=5",
+        "snippet": "New Telegraph \u00b7 Fri, 23 Oct 2026 21:48:15 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "Celebrity Traitors' newest murder victim revealed as Maya, James and Kenny turn on 'favourite' star",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSFBXd3lPWnZIM3RGcEJOaDRNb1pFMEZGZUVhSVBGR0hjZTM0SDI5YW5pY1hkQUNPMjFVOWwtMzBWc09zRVl4dmtvSjNvaVBMZXFNWEJFUmhGV0dtYnM4bTMtd21McVJlUVFhRUt4QnVPTUNTSGtUVnRvSFNXYTRBdkh5Y3lmSFp3UDBUb3NCYmI?oc=5",
+        "snippet": "The Sun \u00b7 Fri, 23 Oct 2026 19:11:00 GMT",
+        "people": 0
+      },
+      {
+        "platform": "News",
+        "title": "The Bold and the Beautiful, plots from October 26 to 31, 2026",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxORVRMc0tWb2NHT1dieHVBakQ4bjZHb3RrdWp3U0lkVWYwOXVwaFB2OHdqSFNITmlBS1I0amFPakRGQ0tva3V3bGZhRTVSWklfVUFDZk1iUC1aeENtRzhKWWRVSUNxQldWZGN0aWlFSUlINFlOZ01YT19VbzNzY05GY3RDckdFR1kzY24xTEhYR3Myc3pMNDNJSA?oc=5",
+        "snippet": "Napolike.com \u00b7 Sat, 24 Oct 2026 16:42:56 GMT",
+        "people": 0
+      }
+    ],
+    "source": "GDELT 24h timeline + Google News",
+    "per_hour": 6.8,
+    "current_rate": 10,
+    "betrayed_total": 432041,
+    "articles_with_count": 42
+  },
+  "generated_at": "2026-10-24T18:39:22.566171+00:00"
+}
